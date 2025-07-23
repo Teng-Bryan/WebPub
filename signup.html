@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up - KeElectronics</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:#87CEEB;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      border: 3px solid #87CEEB;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      outline: none;
+      border-color: #A6C6D3;
+    }
+
+    .signup-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #87CEEB;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .signup-btn:hover {
+      background-color: #A6C6D3;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #87CEEB;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .signin-link {
+      margin-top: 20px;
+      color: #666;
+    }
+
+    .signin-link a {
+      color: #87CEEB;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signin-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form onsubmit="signup(event)">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    
+    <div class="signin-link">
+      Already have an account? <a href="signin.html">Sign In</a>
+    </div>
+    
+    <a href="webp.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    function signup(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (users.some(user => user.username === username)) {
+        alert("Username already taken!");
+        return;
+      }
+
+      users.push({ username, password });
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("loggedInUser", username);
+
+      alert("Sign up successful!");
+      window.location.href = "webp.html";
+    }
+  </script>
+</body>
+</html>
