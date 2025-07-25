@@ -1,0 +1,229 @@
+.MainFrame {
+	font-family: 'Montserrat';
+}
+
+.Subtitle {
+font-family: 'Merriweather';
+    background-color: #87ceeb;
+    color: black;
+    text-align: center;
+	padding:10px;
+}
+
+.linkButton {
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.NBarLink {
+	font-weight: bold;
+	text-decoration: underline;
+	color: black; 
+	padding: 0;
+	font-size:15px;
+	border: none;
+	cursor: pointer;
+	transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.NBar:hover {
+	text-shadow: 0 0 8px #ffffff, 0 0 12px #87ceeb;
+	color: #005577;
+}
+
+.Blubanner {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: center;
+}
+
+.EBanner {
+	display: flex;
+	flex-direction: column;
+}
+
+.BannerText {
+	font-size: 2em;
+	font-weight: bold;
+	font-family: 'Merriweather';
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	margin: 0;
+}
+	
+.container img {
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.webform {
+font-family: 'Montserrat';
+font-weight: bold;
+width:100%;
+}
+  .webform {
+    width: 150%;
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Montserrat';
+  }
+
+  .webform label {
+    font-weight: bold;
+    display: block;
+    margin: 15px 0 5px;
+  }
+
+  .webform input,
+  .webform select,
+  .webform textarea {
+	text-align: left;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  .webform textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  .webform button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #87ceeb;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+ .webform button:hover {
+    background-color: white;
+  }
+  
+  .webform {
+   text-align:left;
+   width:100%;
+  }
+  
+  .Ginfonorm{
+	font-family:Montserrat;
+	text-align:center;
+	color:black;
+  }
+  
+  .Ginfosub{
+	font-family:Merriweather;
+	background-color:#A6C6D3; 
+	text-align:left;
+	color:black;
+  }
+   .wholeG {
+	background-color:#A6C6D3; 
+	padding: 1px;
+  }
+  .submit{
+	text-align:center;
+	background-color: #87ceeb;
+  }
+  
+ .image-row {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.image-row img {
+  width: 300px;
+  height: 348px;
+  object-fit: cover;
+}
+
+.pic{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 33%;
+  height: auto;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 250px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.logo {
+  width: 155px;
+  height: auto;
+}
+
+.mission {
+	font-family:Montserrat;
+	text-align:center;
+	color:black;	
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.logotxt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+  height: 320px;
+  justify content: flex-start;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logotxt p {
+  font-size: 14px;
+  line-height: 1.4;
+}
