@@ -227,13 +227,12 @@
         } 
 	else {
             // Not logged in
-            authButtons.innerHTML = `
-    <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
-    <a href="signup.html?redirect=contact_us.html">
+authButtons.innerHTML = `
+    <a href="signin.html?redirect=index.html" class="text-link">Sign In</a>
+    <a href="signup.html?redirect=index.html">
         <button class="signup-btn">Sign Up</button>
     </a>
 `;
-
         function logout() {
   			localStorage.removeItem("loggedInUser");
   			window.location.reload();
