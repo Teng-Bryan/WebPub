@@ -192,53 +192,52 @@
         </div>
     </div>
 
-    <script>
+<script>
+    function openModal() {
+        document.getElementById('laptopModal').style.display = 'block';
+    }
 
-        function openModal() {
-            document.getElementById('laptopModal').style.display = 'block';
-        }
+    function closeModal() {
+        document.getElementById('laptopModal').style.display = 'none';
+    }
 
-        function closeModal() {
-            document.getElementById('laptopModal').style.display = 'none';
-        }
+    function openModal2() {
+        document.getElementById('phoneModal').style.display = 'block';
+    }
 
-        function openModal2() {
-            document.getElementById('phoneModal').style.display = 'block';
-        }
+    function closeModal2() {
+        document.getElementById('phoneModal').style.display = 'none';
+    }
 
-        function closeModal2() {
-            document.getElementById('phoneModal').style.display = 'none';
-        }
-        // Scroll to top function
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    // Scroll to top function
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-        const authButtons = document.getElementById("authButtons");
-  		const username = localStorage.getItem("loggedInUser");
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+    }
 
-        if (username) {
-            // User is logged in
-            authButtons.innerHTML = `
-                <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-                <button onclick="logout()" class="signup-btn">Logout</button>
-            `;
-        } 
-	else {
-            // Not logged in
-authButtons.innerHTML = `
-    <a href="signin.html?redirect=index.html" class="text-link">Sign In</a>
-    <a href="signup.html?redirect=index.html">
-        <button class="signup-btn">Sign Up</button>
-    </a>
-`;
-	}
-        function logout() {
-  			localStorage.removeItem("loggedInUser");
-  			window.location.reload();
-		}
+    // Auth buttons functionality
+    const authButtons = document.getElementById("authButtons");
+    const username = localStorage.getItem("loggedInUser");
 
-    </script>
+    if (username) {
+        // User is logged in
+        authButtons.innerHTML = `
+            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+            <button onclick="logout()" class="signup-btn">Logout</button>
+        `;
+    } else {
+        // Not logged in
+        authButtons.innerHTML = `
+            <a href="signin.html?redirect=index.html" class="text-link">Sign In</a>
+            <a href="signup.html?redirect=index.html">
+                <button class="signup-btn">Sign Up</button>
+            </a>
+        `;
+    }
+</script>
 </body>
 </html>
