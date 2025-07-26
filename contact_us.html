@@ -114,38 +114,36 @@
 				<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
 				<a class="EBButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
 				<!-- Back to Top Java-->
-	<script>
-		function scrollToTop() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-					}
-				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-		  			const authButtons = document.getElementById("authButtons");
-  					const username = localStorage.getItem("loggedInUser");
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        			if (username) {
-           			// User is logged in
-authButtons.innerHTML = `
-    <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
-    <a href="signup.html?redirect=contact_us.html">
-        <button class="signup-btn">Sign Up</button>
-    </a>
-`;
-				}
-					else {
-            		// Not logged in
-            		authButtons.innerHTML = `
-    <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
-    <a href="signup.html?redirect=contact_us.html">
-        <button class="signup-btn">Sign Up</button>
-    </a>
-`;
-				}
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+    }
 
-        			function logout() {
-  						localStorage.removeItem("loggedInUser");
-  						window.location.reload();
-					}
-		</script>
+    // Auth buttons functionality
+    const authButtons = document.getElementById("authButtons");
+    const username = localStorage.getItem("loggedInUser");
+
+    if (username) {
+        // User is logged in - show welcome message and logout button
+        authButtons.innerHTML = `
+            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+            <button onclick="logout()" class="signup-btn">Logout</button>
+        `;
+    } else {
+        // Not logged in - show sign in and sign up buttons
+        authButtons.innerHTML = `
+            <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
+            <a href="signup.html?redirect=contact_us.html">
+                <button class="signup-btn">Sign Up</button>
+            </a>
+        `;
+    }
+</script>
 		    </div>
 			<text style="font-size: 20px">Have any feedback for us? Leave it down here!</text>
 			<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback Form</a>
