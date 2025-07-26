@@ -144,7 +144,10 @@
       if (matchingUser) {
         localStorage.setItem("loggedInUser", username);
         alert("Welcome back, " + username + "!");
-        window.location.reload();
+        // Get the redirect parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTo = urlParams.get('redirect') || 'index.html';
+    window.location.href = redirectTo;
       } else {
         alert("Invalid username or password.");
       }
