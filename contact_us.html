@@ -9,41 +9,37 @@
 </head>
 <body>
 <!-- Blue Banner -->
-		<div class="blubanner" style="background-color: #87ceeb; padding: 10px 20px; height: 80px;"/>
-			<div class="container">
-				<img src="KeElectronics_Logo.png" alt="Description" width="60" height="60"/>
-				<div class="BannerText">KeElectronics</div>
-			</div>
-			
-			<div class="container" style="font-size:20px;">
-				<a class="linkButton" href="" target="" style="background-color: #87ceeb; padding: 10px 20px; color: black; font-size :15px;">Sign In</a>
-				&nbsp;
-				<a class="linkButton" href="" target="" style="background-color: #A6C6D3; padding: 10px 20px; color: black; font-size :15px; border: 1px solid #000;">Sign Up</a>
-			</div>
-			
-		</div>
+	<div class="header">
+        <div class="logo-section">
+            <img src="bongpictures/KeElectronics_Logo.png" />
+            <h1 class="logo-text">KeElectronics</h1>
+        </div>
+        
+        <div class="button-container" id="authButtons">
+            <!-- Buttons will be inserted by JavaScript -->
+        </div>
+    </div>
 
-	<!-- Navigation Bar	-->	
-		<div class="NavBar" style="background-color: #A6C6D3; gap: 100px; padding: 10px;">
-			<div class="container">
-				<img style="margin-left:10px" src="bongpictures/Home.png" alt="home icon" width="35" height="35">
-			 <a class="NBarLink" href="index.html" target="" style="padding: 10px 10px; color: black;">Home</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="bongpictures/Shop.png" alt="Shopping cart icon" width="40" height="40">
-				<a class="NbarLink" href="" target="" style="padding: 10px 10px; color: black;">Products</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="bongpictures/AboutUs.png" alt="about us icon" width="35" height="35">
-				<a class="NbarLink" href="about_us.html" target="" style="padding: 10px 10px; color: black;">About Us</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="bongpictures/ContactUs.png" alt="contact us icon" width="35" height="35">
-				<a class="NbarLink" href="contact_us.html" target="" style="padding: 10px 10px; color: black;">Contact Us</a>
-			</div>
-		</div>
-	
-		
+    <div class="backgroundnav">
+        <div class="navigate">
+            <a href="index.html">
+                <img src="bongpictures/Home.png" alt="Home" />
+                Home
+            </a>
+            <a href="#products">
+                <img src="bongpictures/Shop.png" alt="Products" />
+                Products
+            </a>
+            <a href="about_us.html">
+                <img src="bongpictures/AboutUs.png" alt="About Us" />
+                About Us
+            </a>
+            <a href="contact_us.html">
+                <img src="bongpictures/ContactUs.png" alt="Contact Us" />
+                Contact Us
+            </a>
+        </div>
+    </div>
 	<!-- Contact Us	-->	
 			<h2 class="Subtitle">Contact Us</h2>
 	
@@ -121,6 +117,31 @@
 				<script>
 				  function scrollToTop() {
 					window.scrollTo({ top: 0, behavior: 'smooth' });
+				 // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
+		  			const authButtons = document.getElementById("authButtons");
+  					const username = localStorage.getItem("loggedInUser");
+
+        			if (username) {
+           			// User is logged in
+            		authButtons.innerHTML = `
+                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+                		<button onclick="logout()" class="signup-btn">Logout</button>
+            			`;
+        			} 
+					else {
+            		// Not logged in
+            		authButtons.innerHTML = `
+                		<a href="signin.html" class="text-link">Sign In</a>
+                		<a href="signup.html">
+                    	<button class="signup-btn">Sign Up</button>
+                		</a>
+            			`;
+        			}
+
+        			function logout() {
+  						localStorage.removeItem("loggedInUser");
+  						window.location.reload();
+					}
 				  }
 				</script>
 		    </div>
