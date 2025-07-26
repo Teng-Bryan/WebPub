@@ -144,7 +144,7 @@
       if (matchingUser) {
         localStorage.setItem("loggedInUser", username);
         alert("Welcome back, " + username + "!");
-        window.location.href = "webp.html";
+        window.location.reload();
       } else {
         alert("Invalid username or password.");
       }
