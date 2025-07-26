@@ -124,11 +124,12 @@
 
         			if (username) {
            			// User is logged in
-            		authButtons.innerHTML = `
-                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-                		<button onclick="logout()" class="signup-btn">Logout</button>
-            			`;
-        			} 
+authButtons.innerHTML = `
+    <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
+    <a href="signup.html?redirect=contact_us.html">
+        <button class="signup-btn">Sign Up</button>
+    </a>
+`;
 					else {
             		// Not logged in
             		authButtons.innerHTML = `
