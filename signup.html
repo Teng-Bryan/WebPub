@@ -132,25 +132,30 @@
   </div>
 
   <script>
-    function signup(event) {
-      event.preventDefault();
+function signup(event) {
+    event.preventDefault();
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-      let users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-      if (users.some(user => user.username === username)) {
+    if (users.some(user => user.username === username)) {
         alert("Username already taken!");
         return;
-      }
+    }
 
-      users.push({ username, password });
-      localStorage.setItem("users", JSON.stringify(users));
-      localStorage.setItem("loggedInUser", username);
+    users.push({ username, password });
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedInUser", username);
 
-      alert("Sign up successful!");
-      window.location.reload();
+    alert("Sign up successful!");
+    
+    // Get the redirect parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTo = urlParams.get('redirect') || 'index.html';
+    window.location.href = redirectTo;
+}
     }
   </script>
 </body>
