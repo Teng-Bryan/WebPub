@@ -228,12 +228,11 @@
 	else {
             // Not logged in
             authButtons.innerHTML = `
-                <a href="signin.html" class="text-link">Sign In</a>
-                <a href="signup.html">
-                    <button class="signup-btn">Sign Up</button>
-                </a>
-            `;
-        }
+    <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
+    <a href="signup.html?redirect=contact_us.html">
+        <button class="signup-btn">Sign Up</button>
+    </a>
+`;
 
         function logout() {
   			localStorage.removeItem("loggedInUser");
