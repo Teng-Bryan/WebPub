@@ -1,51 +1,43 @@
 <html>
-<div class="MainFrame" width="100%">	
 	<head>
-		<title>Order Form</title>
-		<link href="style.css" rel="stylesheet"></link>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
-		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+		<title>Feedback Submitted</title>
+		<link href="zhengbostyle.css" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 		
-		<!-- Embedded -->
-		<style>
-		.miniText {
-		font-size: 11px; color: #757575;}
-		</style>
 	</head>
 	<body>
-	<!-- Blue Banner -->
-		<div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 15%; width: 100%">
-			<div class="container">
-				<img src="PNG/KeElectronics_Logo.png" alt="Description" width="60" height="60">
-				<div class="bannerText">KeElectronics</div>
-			</div>
-			
-			<div class="container" style="font-size:20px;">
-				<a class="linkButton" href="Log In.html" target="_blank" style="background-color: #87ceeb; padding: 10px 20px; color: black;">Sign In</a>
-				&nbsp;
-				<a class="linkButton" href="Sign Up.html" target="_blank" style="background-color: #A6C6D3; padding: 10px 20px; color: black; border: 1px solid #000;">Sign Up</a>
-			</div>
-			
-		</div>
-	<!-- Selection Banner	-->	
-		<div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 10px;">
-			<div class="container">
-				<img style="margin-left:10px" src="PNG/Home.png" alt="Description" width="35" height="35">
-				<a class="bannerLink" href="Homepage.html" target="_blank" style="padding: 10px 10px; color: black;">Home</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="PNG/Shopping Cart.png" alt="Description" width="40" height="40">
-				<a class="bannerLink" href="Catalog.html" target="_blank" style="padding: 10px 10px; color: black;">Products</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="PNG/About Us.png" alt="Description" width="35" height="35">
-				<a class="bannerLink" href="About Us.html" target="_blank" style="padding: 10px 10px; color: black;">About Us</a>
-			</div>
-			<div class="container">
-				<img style="margin-left:10px" src="PNG/Telephone_Icon.png" alt="Description" width="45" height="45">
-				<a class="bannerLink" href="Contact Us.html" target="_blank" style="padding: 10px 10px; color: black;">Contact Us</a>
-			</div>
-		</div>
+	<div class="header">
+        <div class="logo-section">
+            <img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+            <h1 class="logo-text">KeElectronics</h1>
+        </div>
+        
+        <div class="button-container" id="authButtons">
+            <!-- Buttons will be inserted by JavaScript -->
+        </div>
+    </div>
+
+    <div class="backgroundnav">
+        <div class="navigate">
+            <a href="index.html">
+                <img src="zhengbopictures/Home.png" alt="Home" />
+                Home
+            </a>
+            <a href="Product_Catalogue.html">
+                <img src="zhengbopictures/Shop.png" alt="Products" />
+                Products
+            </a>
+            <a href="about_us.html">
+                <img src="zhengbopictures/AboutUs.png" alt="About Us" />
+                About Us
+            </a>
+            <a href="contact_us.html">
+                <img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
+                Contact Us
+            </a>
+        </div>
+    </div>
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:10px; padding: 10px 0px; height: 25px;">
 			<div class="container">
@@ -224,8 +216,8 @@
 			<span style="font-size: 20px">You’ve reached the end of the Order Form.</span>
 			<!---->
 			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
-				<a class="linkButton" href="Homepage.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
-				<a class="linkButton" href="About Us.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
 				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
 				<!-- Back to Top Java-->
 				<script>
@@ -235,10 +227,37 @@
 				</script>
 		    </div>
 			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
-			<a class="linkButton" href="Feedback Form.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
 			<br/>
 			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
+				<script>
+				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
+		  			const authButtons = document.getElementById("authButtons");
+  					const username = localStorage.getItem("loggedInUser");
+
+        			if (username) {
+           			// User is logged in
+            		authButtons.innerHTML = `
+                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+                		<button onclick="logout()" class="signup-btn">Logout</button>
+            			`;
+        			} 
+					else {
+            		// Not logged in
+            		authButtons.innerHTML = `
+        			<a href="signin.html?redirect=Order_Form.html" class="text-link">Sign In</a>
+        			<a href="signup.html?redirect=Order_Form.html">
+            			<button class="signup-btn">Sign Up</button>
+        			</a>
+    				`;
+			}
+
+        			function logout() {
+  						localStorage.removeItem("loggedInUser");
+  						window.location.reload();
+					}
+				</script>
 	</body>
 </div>	
 </html>
