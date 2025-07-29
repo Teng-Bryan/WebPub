@@ -299,6 +299,21 @@ width:100%;
   line-height: 1.4;
 }
 
+.HListBanner {
+  display: flex;
+  justify-content: center;
+}
+
+.VListBanner {
+	display: flex;
+	flex-direction: column;
+}
+
+.bannerText {
+	font-size: 3em;
+	font-weight: bold;
+	font-family: 'Merriweather';
+}
  /* Animations */
         @keyframes slideDowntop {
             0% {
