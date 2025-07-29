@@ -1,0 +1,72 @@
+.MainFrame {
+	font-family: 'Montserrat';
+}
+
+.linkButton {
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.bannerLink {
+	font-weight: bold;
+	text-decoration: underline;
+	color: black; 
+	padding: 0;
+	font-size:30px;
+	border: none;
+	cursor: pointer;
+	transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.bannerLink:hover {
+	text-shadow: 0 0 8px #ffffff, 0 0 12px #87ceeb;
+	color: #005577;
+}
+
+.LRbanner {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+}
+
+.HListBanner {
+  display: flex;
+  justify-content: center;
+}
+
+.VListBanner {
+	display: flex;
+	flex-direction: column;
+}
+
+.bannerText {
+	font-size: 3em;
+	font-weight: bold;
+	font-family: 'Merriweather';
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	margin: 0;
+}
+	
+.container img {
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+	

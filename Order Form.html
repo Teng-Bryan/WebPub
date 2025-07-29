@@ -1,0 +1,244 @@
+<html>
+<div class="MainFrame" width="100%">	
+	<head>
+		<title>Order Form</title>
+		<link href="style.css" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+		
+		<!-- Embedded -->
+		<style>
+		.miniText {
+		font-size: 11px; color: #757575;}
+		</style>
+	</head>
+	<body>
+	<!-- Blue Banner -->
+		<div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 15%; width: 100%">
+			<div class="container">
+				<img src="PNG/KeElectronics_Logo.png" alt="Description" width="60" height="60">
+				<div class="bannerText">KeElectronics</div>
+			</div>
+			
+			<div class="container" style="font-size:20px;">
+				<a class="linkButton" href="Log In.html" target="_blank" style="background-color: #87ceeb; padding: 10px 20px; color: black;">Sign In</a>
+				&nbsp;
+				<a class="linkButton" href="Sign Up.html" target="_blank" style="background-color: #A6C6D3; padding: 10px 20px; color: black; border: 1px solid #000;">Sign Up</a>
+			</div>
+			
+		</div>
+	<!-- Selection Banner	-->	
+		<div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 10px;">
+			<div class="container">
+				<img style="margin-left:10px" src="PNG/Home.png" alt="Description" width="35" height="35">
+				<a class="bannerLink" href="Homepage.html" target="_blank" style="padding: 10px 10px; color: black;">Home</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="PNG/Shopping Cart.png" alt="Description" width="40" height="40">
+				<a class="bannerLink" href="Catalog.html" target="_blank" style="padding: 10px 10px; color: black;">Products</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="PNG/About Us.png" alt="Description" width="35" height="35">
+				<a class="bannerLink" href="About Us.html" target="_blank" style="padding: 10px 10px; color: black;">About Us</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="PNG/Telephone_Icon.png" alt="Description" width="45" height="45">
+				<a class="bannerLink" href="Contact Us.html" target="_blank" style="padding: 10px 10px; color: black;">Contact Us</a>
+			</div>
+		</div>
+	<!-- Hanger Below Banner	-->
+		<div class="LRbanner" style="margin-top:10px; padding: 10px 0px; height: 25px;">
+			<div class="container">
+				<img style="margin-left:10px" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
+				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 5px 10px; font-size: 1em;">Back to Browsing</a>
+			</div>
+			
+			<div class="container">
+				<span style="font-size:1em">We Deliver Worldwide!</span>
+				<img style="margin-right:10px" src="PNG/Globe.png" alt="Description" width="30" height="30">
+			</div>
+		</div>
+		
+	<!-- Order Form -->
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; margin-top: 10px;">
+			<div align="center" style="margin-left:0px;">
+				<span class="bannerText">Order Today!</span><br/><br/>
+				<span>Help us fill in your details and we help do the work<br/>
+				just so you can provide what you want!</span>
+			</div>
+		</div>
+		<form action="Order Submitted.html" method="post">
+			<div class="miniText" align="center" style="font-style:italic; margin-top:25px">Fields labeled with * are required!</div>
+			<div class="HListBanner" style="gap: 50px; padding: 10px; margin-left:50px; margin-bottom:50px">
+				<table border="0" style="background-color:white; border-collapse: separate;">
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Person_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Name:<br/>
+							<input type="text" size="30" id="username" name="username" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Telephone_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Phone Number:<br/>
+							<input type="tel" size="30" id="phonenumber" name="phonenumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Flag_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Country:<br/>
+							<input type="text" size="30" id="country" name="country" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Location_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Address:<br/>
+							<input type="address" size="30" id="address" name="address" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<img style="margin-top:20px" src="PNG/Clock_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">							
+							Scheduled Delivery:<br/>
+							<input type="date" size="30" id="dategoal" name="dategoal" style="font-size: 25px; width:215px; border-radius:5px;">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<span class="miniText">Don't Fill if you want immediate delivery schedule!</span>
+						</td>
+					</tr>
+				</table>
+			<!---->	
+				<table border="0" style="padding:15px ;background-color:white;border: 1px solid #333; height: 10px; border-radius:10px; margin-top:20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*Mode of Transport:
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="airTransport" required="required">&nbsp;Air Transport</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Fast but costs more!
+							  </div>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="seaTransport">&nbsp;Sea Transport</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Cheaper but slower!
+							  </div>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+						<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="local">&nbsp;Local</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Select this if you are in our country!
+							  </div>
+						</td>
+					</tr>
+				</table>
+			</div>	
+			
+			<!-- Billing Banner -->	
+			<div class="VListBanner" style="background-color: #87ceeb; padding: 10px;">
+				<div class="bannerText" align="center">Billing</div>
+			</div>
+			
+			<!-- Billing Input -->
+			<div class="HListBanner" style="gap: 50px; height: 185px; padding: 10px;">
+				<table border="0" style="background-color:white; border-spacing: 10px 20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*Name on Card:<br/>	
+							<input type="text" size="30" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					<tr>
+						<td style="font-weight:bold;">
+							*Card Number:<br/>
+							<input type="text" size="30" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+				</table>
+				
+				<table border="0" style="background-color:white; border-spacing: 0 20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*CVV Number:<br/>
+							<input type="text" size="15" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px; width:215px;">
+						</td>
+					</tr>
+					<tr>
+						<td style="font-weight:bold;">		
+							*Expiry Date:<br/>
+							<input type="date" id="expiryDate" name="expiryDate" required="required" style="font-size: 25px; width:215px; border-radius:5px;">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div align="center" style="margin-bottom:40px;">
+				<input type="submit" value="Confirm Order" style="background-color: #27A74E; font-size: 20px; border-radius:5px; margin-left:650px;">
+			</div>
+		</form>
+	
+	<!-- End Banner -->
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+			<div class="bannerText">
+				<img style="margin-top:20px" src="PNG/KeELightningBolt.png" alt="Description" width="40" height="40">
+				End of the line!
+			</div>
+			<!---->
+			<span style="font-size: 20px">You’ve reached the end of the Order Form.</span>
+			<!---->
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
+				<a class="linkButton" href="Homepage.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="About Us.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    </div>
+			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
+			<a class="linkButton" href="Feedback Form.html" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
+			<br/>
+			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+		</div>
+	</body>
+</div>	
+</html>
