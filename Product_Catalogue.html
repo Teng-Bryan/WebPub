@@ -4,46 +4,41 @@
 		<link href="aarushstyle.css" rel="stylesheet"></link>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+	
 	</head>
 	<body>
-		<div class="MainFrame">	
-	<!-- Blue Banner -->
-		<div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
-			<div class="container">
-				<img src="images/KeElectronics_Logo.png" alt="Description" width="50" height="50">
-				<div class="bannerText">KeElectronics</div>
-			</div>
-			
-			<div class="container" id="authButtons" style="font-size:20px;">
-				<!-- JS will fill this -->
-			</div>
+		<div class="header">
+        <div class="logo-section">
+            <img src="aarushpictures/KeELogoWhiteTransparent2NoText.png" />
+            <h1 class="logo-text">KeElectronics</h1>
+        </div>
+        
+        <div class="button-container" id="authButtons">
+            <!-- Buttons will be inserted by JavaScript -->
+        </div>
+    </div>
 
-			
-		</div>
-	<!-- Selection Banner	-->	
-		<div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
-		  <a class="navItem" href="#">
-			<img src="images/home.png" alt="Home" width="20" height="20">
-			<span>Home</span>
-		  </a>
+    <div class="backgroundnav">
+        <div class="navigate">
+            <a href="index.html">
+                <img src="aarushpictures/Home.png" alt="Home" />
+                Home
+            </a>
+            <a href="#products">
+                <img src="aarushpictures/Shop.png" alt="Products" />
+                Products
+            </a>
+            <a href="about_us.html">
+                <img src="aarushpictures/AboutUs.png" alt="About Us" />
+                About Us
+            </a>
+            <a href="contact_us.html">
+                <img src="aarushpictures/ContactUs.png" alt="Contact Us" />
+                Contact Us
+            </a>
+        </div>
+    </div>
 
-		  <a class="navItem" href="#">
-			<img src="images/shopcart.png" alt="Products" width="20" height="20">
-			<span>Products</span>
-		  </a>
-
-		  <a class="navItem" href="#">
-			<img src="images/aboutus.png" alt="About Us" width="20" height="20">
-			<span>About Us</span>
-		  </a>
-
-		  <a class="navItem" href="#">
-			<img src="images/contus.png" alt="Contact Us" width="20" height="20">
-			<span>Contact Us</span>
-		  </a>
-		</div>
-
-			
 		<section class="product-catalogue">
   <h1>Product Catalogue</h1>
   <p class="subheading">Browse our selection of Smartphones, Tablets and Laptops!</p>
@@ -142,36 +137,33 @@
 			<div id="overlay" class="overlay"></div>
 
 			<script>
-			// Scroll to top function
-			function scrollToTop() {
-				window.scrollTo({ top: 0, behavior: 'smooth' });
-			}
+				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
+		  			const authButtons = document.getElementById("authButtons");
+  					const username = localStorage.getItem("loggedInUser");
 
-			// Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-			const authButtons = document.getElementById("authButtons");
-			const username = localStorage.getItem("loggedInUser");
+        			if (username) {
+           			// User is logged in
+            		authButtons.innerHTML = `
+                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+                		<button onclick="logout()" class="signup-btn">Logout</button>
+            			`;
+        			} 
+					else {
+            		// Not logged in
+            		authButtons.innerHTML = `
+                		<a href="signin.html" class="text-link">Sign In</a>
+                		<a href="signup.html">
+                    	<button class="signup-btn">Sign Up</button>
+                		</a>
+            			`;
+        			}
 
-			if (username) {
-			  // User is logged in
-			  authButtons.innerHTML = `
-				<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-				<button onclick="logout()" class="signup-btn">Logout</button>
-			  `;
-			} else {
-			  // Not logged in
-			  authButtons.innerHTML = `
-				<a href="signin.html" class="auth-btn">Sign In</a>
-				<a href="signup.html" class="signup-btn">Sign Up</a>
-			  `;
-			}
+        			function logout() {
+  						localStorage.removeItem("loggedInUser");
+  						window.location.reload();
+					}
+				</script>
 
-
-			function logout() {
-				localStorage.removeItem("loggedInUser");
-				window.location.reload();
-			}
-
-		</script>
 		<!-- Bookmark Reminder -->
 		<script>
 		  function bookmark(productName) {
