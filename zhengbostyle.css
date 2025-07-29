@@ -172,6 +172,9 @@
 	margin-right: 5px;
 }
 
+table.alignRight td:nth-child(2) {
+    text-align: center;
+}
  /* Animations */
         @keyframes slideDowntop {
             0% {
