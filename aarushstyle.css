@@ -1,6 +1,117 @@
-.MainFrame {
-	font-family: 'Montserrat';
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #87CEEB;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            animation: slideDowntop 0.7s ease-out forwards;
+        }
+
+        .logo-section img {
+            width: 110px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-family: 'Merriweather', serif;
+            color: black;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            animation: slideDownsignin 0.6s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .text-link {
+            font-size: 26px;
+            color: black;
+            text-decoration: none;
+            font-weight: medium;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            font-size: 26px;
+            border-radius: 10px;
+            background-color: #A6C6D3;
+            border: none;
+            cursor: pointer;
+            height: 45px;
+            width: 130px;
+            font-weight: medium;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #95b5c2;
+        }
+
+        .backgroundnav {
+            background-color: #A6C6D3;
+            width:  100%;
+            padding: 0;
+        }
+
+        .navigate {
+            text-align: center;
+            font-size: 25px;
+            background-color: #A6C6D3;
+            padding: 10px 0;
+            animation: slideright 0.8s ease-out 0.7s forwards;
+            opacity: 0;
+        }
+
+        .navigate a {
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 10px 70px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigate a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navigate img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 25px;
+            height: 25px;
+        }
 
 .linkButton {
 	text-decoration: none;
@@ -26,46 +137,6 @@
 	color: #005577;
 }
 
-.navItem {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-family: 'Montserrat';
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: black;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-.navItem::before {
-  content: '';
-  position: absolute;
-  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.navItem:hover::before {
-  transform: scaleX(1);
-}
-
-
-
-.LRbanner {
-	display: flex;
-    justify-content: space-between;
-    align-items: center;
-	width: 100%;
-	box-sizing: border-box;
-}
 
 .HListBanner {
   display: flex;
@@ -81,18 +152,6 @@
 	font-size: 3em;
 	font-weight: bold;
 	font-family: 'Merriweather';
-}
-
-.container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-	margin: 0;
-}
-	
-.container img {
-    margin-left: 5px;
-	margin-right: 5px;
 }
 
 html, body {
@@ -206,26 +265,6 @@ img.product-img {
   background-color: #1e1e23;
   object-fit: cover;
 }
-
-.signup-btn {
-  font-size: 18px;
-  font-family: 'Montserrat';
-  border-radius: 10px;
-  background-color: #A6C6D3;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-}
-
-.signup-btn:hover {
-  background-color: #95b5c2;
-}
-
 
 .linkButton {
     font-size: 20px;
@@ -352,4 +391,65 @@ a.btn {
   text-decoration: none;
 }
 
+ /* Animations */
+        @keyframes slideDowntop {
+            0% {
+                transform: translateY(-140%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
+        @keyframes slideright {
+            0% {
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDownsignin {
+            0% {
+                transform: translateY(-140%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                min-height: auto;
+                padding: 20px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+
+            .navigate a {
+                margin: 10px 20px;
+                font-size: 24px;
+            }
+
+            .bannerText {
+                font-size: 2em;
+            }
+        }
