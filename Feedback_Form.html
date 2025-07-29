@@ -14,6 +14,14 @@
 		table.alignRight td:first-child {
 		text-align: right;
 		}
+		
+		/* Center the slider elements */
+		.slider-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+		}
 		</style>
 	</head>
 	<body>
@@ -80,8 +88,10 @@
 					</td>
 					
 					<td style="width: 500px">
-						&nbsp;<input type="range" min="1" max="5" id="productQuality" name="productQuality" required="required" style="width: 400px;">&nbsp;
-						<span id="productQualityNo"></span>
+						<div class="slider-container">
+							<input type="range" min="1" max="5" id="productQuality" name="productQuality" required="required" style="width: 400px;">
+							<span id="productQualityNo"></span>
+						</div>
 						<script>
 						  const productQualitySlider = document.getElementById("productQuality");
 						  const productQualityOutput = document.getElementById("productQualityNo");
@@ -100,8 +110,10 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" min="1" max="5" id="deliverySpeed" name="deliverySpeed" required="required" style="width: 400px;">&nbsp;
-						<span id="deliverySpeedNo"></span>
+						<div class="slider-container">
+							<input type="range" min="1" max="5" id="deliverySpeed" name="deliverySpeed" required="required" style="width: 400px;">
+							<span id="deliverySpeedNo"></span>
+						</div>
 						<script>
 						  const deliverySpeedSlider = document.getElementById("deliverySpeed");
 						  const deliverySpeedNoOutput = document.getElementById("deliverySpeedNo");
@@ -120,8 +132,10 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" min="1" max="5" id="customerService" name="customerService" required="required" style="width: 400px;">&nbsp;
-						<span id="customerServiceNo"></span>
+						<div class="slider-container">
+							<input type="range" min="1" max="5" id="customerService" name="customerService" required="required" style="width: 400px;">
+							<span id="customerServiceNo"></span>
+						</div>
 						<script>
 						  const customerServiceSlider = document.getElementById("customerService");
 						  const customerServiceNoOutput = document.getElementById("customerServiceNo");
@@ -140,8 +154,10 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" min="1" max="5" id="productValue" name="productValue" required="required" style="width: 400px;">&nbsp;
-						<span id="productValueNo"></span>
+						<div class="slider-container">
+							<input type="range" min="1" max="5" id="productValue" name="productValue" required="required" style="width: 400px;">
+							<span id="productValueNo"></span>
+						</div>
 						<script>
 						  const productValueSlider = document.getElementById("productValue");
 						  const productValueNoOutput = document.getElementById("productValueNo");
@@ -160,8 +176,10 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" min="1" max="5" id="convenience" name="convenience" required="required" style="width: 400px;">&nbsp;
-						<span id="convenienceNo"></span>
+						<div class="slider-container">
+							<input type="range" min="1" max="5" id="convenience" name="convenience" required="required" style="width: 400px;">
+							<span id="convenienceNo"></span>
+						</div>
 						<script>
 						  const convenienceSlider = document.getElementById("convenience");
 						  const convenienceNoOutput = document.getElementById("convenienceNo");
@@ -184,7 +202,7 @@
 			
 			<div style="margin-bottom:25px;">
 				<span style="font-size: 20px; margin-left:120px;">
-					Any suggestions? &#40;Leave “N/A” if none&#41;:
+					Any suggestions? &#40;Leave "N/A" if none&#41;:
 				</span>
 				<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:20px;"></textarea>
 			</div>	
@@ -199,7 +217,7 @@
 		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
 			<div class="bannerText">End of the line!</div>
 			<!---->
-			<span style="font-size: 20px">You’ve reached the end of the Order Form.</span>
+			<span style="font-size: 20px">You've reached the end of the Order Form.</span>
 			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
 				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
 				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
