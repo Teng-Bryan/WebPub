@@ -177,17 +177,6 @@
 			alert(productName + " has been bookmarked!");
 		  }
 
-	// Insert after the navigation instead of at the very beginning
-            const nav = document.querySelector('.backgroundnav');
-            if (nav && nav.nextSibling) {
-                nav.parentNode.insertBefore(reminder, nav.nextSibling);
-            } else {
-                // Fallback: insert after nav or at the beginning of main content
-                const mainContent = document.querySelector('.phone-showcase');
-                if (mainContent) {
-                    mainContent.parentNode.insertBefore(reminder, mainContent);
-                }
-	    }
 		  window.onload = function () {
 			const user = localStorage.getItem("loggedInUser");
 			if (user) {
@@ -203,6 +192,18 @@
 				document.body.insertBefore(reminder, document.body.firstChild);
 			  }
 			}
+			  	// Insert after the navigation instead of at the very beginning
+            const nav = document.querySelector('.backgroundnav');
+            if (nav && nav.nextSibling) {
+                nav.parentNode.insertBefore(reminder, nav.nextSibling);
+            } 
+	    else {
+                // Fallback: insert after nav or at the beginning of main content
+                const mainContent = document.querySelector('.phone-showcase');
+                if (mainContent) {
+                    mainContent.parentNode.insertBefore(reminder, mainContent);
+                }
+	    }
 		  };
 			
 		</script>
