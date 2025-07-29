@@ -87,14 +87,11 @@
 			
 			<table class="alignRight" border="0" align="center" style="font-weight: bold; font-family: Merriweather; font-size: 35px; border-spacing: 20px 40px;">
 				<tr>
-					<td>
-						Product Quality:
-					</td>
-					
-					<td style="width: 500px">
-						<div class="slider-container">
-							<input type="range" min="1" max="5" id="productQuality" name="productQuality" required="required" style="width: 400px;">
-							<span id="productQualityNo"></span>
+					<td colspan="2" style="text-align: center;">
+   					<div style="font-size: 25px;">Product Quality:</div>
+					<div class="slider-container" style="margin-top: 10px;">
+						<input type="range" min="1" max="5" id="productQuality" name="productQuality" required="required" style="width: 400px;">
+						<span id="productQualityNo"></span>
 						</div>
 						<script>
 						  const productQualitySlider = document.getElementById("productQuality");
