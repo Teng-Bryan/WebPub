@@ -238,6 +238,37 @@
             </a>
         `;
     }
+
+	<!-- Bookmark Reminder -->
+		<script>
+		  function bookmark(productName) {
+			const user = localStorage.getItem("loggedInUser");
+			if (!user) {
+			  alert("Please sign in to bookmark products.");
+			  return;
+			}
+
+			localStorage.setItem(`bookmark_${user}`, productName);
+			alert(productName + " has been bookmarked!");
+		  }
+
+		  window.onload = function () {
+			const user = localStorage.getItem("loggedInUser");
+			if (user) {
+			  const bookmarked = localStorage.getItem(`bookmark_${user}`);
+			  if (bookmarked) {
+				const reminder = document.createElement("div");
+				reminder.innerText = `👋 Hey ${user}! Remember the "${bookmarked}"? Get it while you still can!`;
+				reminder.style.background = "#FFF7C2";
+				reminder.style.padding = "15px";
+				reminder.style.fontWeight = "bold";
+				reminder.style.fontSize = "18px";
+				reminder.style.textAlign = "center";
+				reminder.style.marginBottom = "15px";
+				document.body.insertBefore(reminder, document.body.firstChild);
+			  }
+			}
+		  };
 </script>
 </body>
 </html>
