@@ -1,0 +1,209 @@
+<html>
+	<head>
+		<title>Product Catalogue</title>
+		<link href="style.css" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+	</head>
+	<body>
+		<div class="MainFrame">	
+	<!-- Blue Banner -->
+		<div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
+			<div class="container">
+				<img src="images/KeElectronics_Logo.png" alt="Description" width="50" height="50">
+				<div class="bannerText">KeElectronics</div>
+			</div>
+			
+			<div class="container" id="authButtons" style="font-size:20px;">
+				<!-- JS will fill this -->
+			</div>
+
+			
+		</div>
+	<!-- Selection Banner	-->	
+		<div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
+		  <a class="navItem" href="#">
+			<img src="images/home.png" alt="Home" width="20" height="20">
+			<span>Home</span>
+		  </a>
+
+		  <a class="navItem" href="#">
+			<img src="images/shopcart.png" alt="Products" width="20" height="20">
+			<span>Products</span>
+		  </a>
+
+		  <a class="navItem" href="#">
+			<img src="images/aboutus.png" alt="About Us" width="20" height="20">
+			<span>About Us</span>
+		  </a>
+
+		  <a class="navItem" href="#">
+			<img src="images/contus.png" alt="Contact Us" width="20" height="20">
+			<span>Contact Us</span>
+		  </a>
+		</div>
+
+			
+		<section class="product-catalogue">
+  <h1>Product Catalogue</h1>
+  <p class="subheading">Browse our selection of Smartphones, Tablets and Laptops!</p>
+
+  <table class="product-table">
+    <tr>
+      <td class="product-card">
+        <img src="images/asusa14.jpg" alt="ASUS TUF Gaming A14">
+        <div class="product-info">
+          <h3>ASUS TUF Gaming A14</h3>
+          <p class="type">Laptop</p>
+          <p class="price">$1499</p>
+          <div class="btn-group">
+            <a href="#asus-panel" class="btn btn-info">More Info</a>
+            <button class="btn btn-bookmark" onclick="bookmark('ASUS TUF Gaming A14')">Bookmark</button>
+          </div>
+        </div>
+      </td>
+
+      <td class="product-card">
+        <img src="images/victus.png" alt="HP Victus 15">
+        <div class="product-info">
+          <h3>HP Victus 15</h3>
+          <p class="type">Laptop</p>
+          <p class="price">$1925</p>
+          <div class="btn-group">
+            <a href="#victus-panel" class="btn btn-info">More Info</a>
+            <button class="btn btn-bookmark" onclick="bookmark('HP Victus 15')">Bookmark</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="product-card">
+        <img src="images/tabs7gal.png" alt="Galaxy Tab S7">
+        <div class="product-info">
+          <h3>Galaxy Tab S7</h3>
+          <p class="type">Tablet</p>
+          <p class="price">$1595</p>
+          <div class="btn-group">
+            <a href="#tabs-panel" class="btn btn-info">More Info</a>
+            <button class="btn btn-bookmark" onclick="bookmark('Galaxy Tab S7')">Bookmark</button>
+          </div>
+        </div>
+      </td>
+
+      <td class="product-card">
+        <img src="images/s25.png" alt="Samsung S25">
+        <div class="product-info">
+          <h3>Samsung S25</h3>
+          <p class="type">Smartphone</p>
+          <p class="price">$1500</p>
+          <div class="btn-group">
+            <a href="#s25-panel" class="btn btn-info">More Info</a>
+            <button class="btn btn-bookmark" onclick="bookmark('Samsung S25')">Bookmark</button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</section>
+
+	
+	<!-- End Banner -->
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+			<div class="bannerText">End of the line!</div>
+			<!---->
+			<span style="font-size: 20px">You’ve reached the end of the Product Catalogue.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
+				<a class="linkButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    </div>
+			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
+			<a class="linkButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
+			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+		</div>
+		
+		<!-- Slide-in panel -->
+			<div id="asus-panel" class="slide-panel">
+			  <a href="#" class="close-btn">×</a>
+			  <h2>ASUS TUF Gaming A14</h2>
+			  <p><strong>CPU:</strong> AMD Ryzen 7 7840HS</p>
+			  <p><strong>GPU:</strong> NVIDIA RTX 4060</p>
+			  <p><strong>RAM:</strong> 16GB DDR5</p>
+			  <p><strong>Storage:</strong> 1TB SSD</p>
+			  <p><strong>Display:</strong> 15.6” FHD 144Hz</p>
+			</div>
+			<div id="overlay" class="overlay"></div>
+
+			<script>
+			// Scroll to top function
+			function scrollToTop() {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+
+			// Auth buttons functionality (using sessionStorage instead of localStorage for demo)
+			const authButtons = document.getElementById("authButtons");
+			const username = localStorage.getItem("loggedInUser");
+
+			if (username) {
+			  // User is logged in
+			  authButtons.innerHTML = `
+				<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+				<button onclick="logout()" class="signup-btn">Logout</button>
+			  `;
+			} else {
+			  // Not logged in
+			  authButtons.innerHTML = `
+				<a href="signin.html" class="auth-btn">Sign In</a>
+				<a href="signup.html" class="signup-btn">Sign Up</a>
+			  `;
+			}
+
+
+			function logout() {
+				localStorage.removeItem("loggedInUser");
+				window.location.reload();
+			}
+
+		</script>
+		<!-- Bookmark Reminder -->
+		<script>
+		  function bookmark(productName) {
+			const user = localStorage.getItem("loggedInUser");
+			if (!user) {
+			  alert("Please sign in to bookmark products.");
+			  return;
+			}
+
+			localStorage.setItem(`bookmark_${user}`, productName);
+			alert(productName + " has been bookmarked!");
+		  }
+
+		  window.onload = function () {
+			const user = localStorage.getItem("loggedInUser");
+			if (user) {
+			  const bookmarked = localStorage.getItem(`bookmark_${user}`);
+			  if (bookmarked) {
+				const reminder = document.createElement("div");
+				reminder.innerText = `👋 Hey ${user}! Remember the "${bookmarked}"? Get it while you still can!`;
+				reminder.style.background = "#FFF7C2";
+				reminder.style.padding = "15px";
+				reminder.style.fontWeight = "bold";
+				reminder.style.fontSize = "18px";
+				reminder.style.textAlign = "center";
+				reminder.style.marginBottom = "15px";
+				document.body.insertBefore(reminder, document.body.firstChild);
+			  }
+			}
+		  };
+		</script>
+
+	</body>
+</div>	
+</html>

@@ -1,0 +1,355 @@
+.MainFrame {
+	font-family: 'Montserrat';
+}
+
+.linkButton {
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.bannerLink {
+	font-weight: bold;
+	text-decoration: underline;
+	color: black; 
+	padding: 0;
+	font-size:30px;
+	border: none;
+	cursor: pointer;
+	transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.bannerLink:hover {
+	text-shadow: 0 0 8px #ffffff, 0 0 12px #87ceeb;
+	color: #005577;
+}
+
+.navItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: 'Montserrat';
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.navItem::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navItem:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+.LRbanner {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.HListBanner {
+  display: flex;
+  justify-content: center;
+}
+
+.VListBanner {
+	display: flex;
+	flex-direction: column;
+}
+
+.bannerText {
+	font-size: 3em;
+	font-weight: bold;
+	font-family: 'Merriweather';
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	margin: 0;
+}
+	
+.container img {
+    margin-left: 5px;
+	margin-right: 5px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+	
+.product-catalogue {
+  text-align: center !important;
+  padding: 5px 40px;
+}
+
+.product-catalogue h1 {
+  font-family: 'Merriweather';
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.product-catalogue .subheading {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.product-table {
+  margin: 0 auto;
+  border-spacing: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  width: 350px;
+  height: 220px;
+  vertical-align: top;
+}
+
+.product-card img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin-right: 15px;
+  border-radius: 12px;
+  background-color: #1e1e23;
+}
+
+.product-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.product-info h3 {
+  margin: 0;
+  font-size: 25px;
+  font-family: 'Montserrat';
+}
+
+.product-info .type {
+  color: #777;
+  margin: 4px 0;
+  font-size: 17px;
+}
+
+.product-info .price {
+  font-weight: bold;
+  margin: 4px 0;
+  font-size: 23px;
+}
+
+.btn-info {
+  background-color: #a7dbf1;
+  color: black;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  margin-top: 10px
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  transition: opacity 0.3s;
+}
+
+.btn-bookmark {
+  background: #ffe066;
+  color: #333;
+}
+
+
+img.product-img {
+  float: left;
+  width: 130px;
+  height: 130px;
+  margin-right: 15px;
+  border-radius: 12px;
+  background-color: #1e1e23;
+  object-fit: cover;
+}
+
+.signup-btn {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: #A6C6D3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.signup-btn:hover {
+  background-color: #95b5c2;
+}
+
+
+.linkButton {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: black;
+    border: 1px solid #000;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.linkButton:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bannerLink {
+  position: relative;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.bannerLink::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.bannerLink:hover::before {
+  width: 110%;
+}
+
+.auth-btn {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid #A6C6D3;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.auth-btn:hover {
+  background-color: #A6C6D3;
+  color: white;
+}
+
+.slide-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  padding: 30px 20px;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.25);
+  transition: right 0.4s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  font-family: 'Montserrat';
+}
+
+.slide-panel:target {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.2); /* optional tint */
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Only show when panel is open */
+#asus-panel:target ~ #overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #87ceeb;
+}
+
+a.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+
