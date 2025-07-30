@@ -192,7 +192,21 @@
 		</div>
 
 <script>
+        function openModal() {
+            document.getElementById('laptopModal').style.display = 'block';
+        }
 
+        function closeModal() {
+            document.getElementById('laptopModal').style.display = 'none';
+        }
+
+        function openModal2() {
+            document.getElementById('phoneModal').style.display = 'block';
+        }
+
+        function closeModal2() {
+            document.getElementById('phoneModal').style.display = 'none';
+        }
     function logout() {
         localStorage.removeItem("loggedInUser");
         window.location.reload();
