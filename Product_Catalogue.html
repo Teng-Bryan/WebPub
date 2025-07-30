@@ -177,34 +177,36 @@
 			alert(productName + " has been bookmarked!");
 		  }
 
-		  window.onload = function () {
-			const user = localStorage.getItem("loggedInUser");
-			if (user) {
-			  const bookmarked = localStorage.getItem(`bookmark_${user}`);
-			  if (bookmarked) {
-				const reminder = document.createElement("div");
-				reminder.innerText = `👋 Hey ${user}! Remember the "${bookmarked}"? Get it while you still can!`;
-				reminder.style.background = "#FFF7C2";
-				reminder.style.padding = "15px";
-				reminder.style.fontWeight = "bold";
-				reminder.style.fontSize = "18px";
-				reminder.style.textAlign = "center";
-				document.body.insertBefore(reminder, document.body.firstChild);
-			  }
-			}
-			  	// Insert after the navigation instead of at the very beginning
+			window.onload = function () {
+    const user = localStorage.getItem("loggedInUser");
+    if (user) {
+        const bookmarked = localStorage.getItem(`bookmark_${user}`);
+        if (bookmarked) {
+            const reminder = document.createElement("div");
+            reminder.innerText = `👋 Hey ${user}! Remember the "${bookmarked}"? Get it while you still can!`;
+            reminder.style.background = "#FFF7C2";
+            reminder.style.padding = "15px";
+            reminder.style.fontWeight = "bold";
+            reminder.style.fontSize = "18px";
+            reminder.style.textAlign = "center";
+            
+            // Insert after the navigation instead of at the very beginning
             const nav = document.querySelector('.backgroundnav');
             if (nav && nav.nextSibling) {
                 nav.parentNode.insertBefore(reminder, nav.nextSibling);
-            } 
-	    else {
+            } else {
                 // Fallback: insert after nav or at the beginning of main content
-                const mainContent = document.querySelector('.phone-showcase');
+                const mainContent = document.querySelector('.product-catalogue'); // ✅ Fixed selector
                 if (mainContent) {
                     mainContent.parentNode.insertBefore(reminder, mainContent);
+                } else {
+                    // Last resort: insert after body opening
+                    document.body.insertBefore(reminder, document.body.firstChild);
                 }
-	    }
-		  };
+            }
+        }
+    }
+};
 			
 		</script>
 
