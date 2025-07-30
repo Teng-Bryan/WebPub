@@ -44,20 +44,67 @@
         <div class="phone-description">Sky high productivity with cutting-edge technology.</div>
         
         <div class="phone-buttons" style="display: none;">
-            <button class="learn-more-btn2">Learn more</button>
-            <a href="Product_Catalogue.html#s25-panel" class="buy-btn2">Buy</a>
+            <button class="learn-more-btn2" onclick="openModal2()">Learn more</button>
+            <a href="#buy" class="buy-btn2">Buy</a>
         </div>
 
         <div class="phone-image-container">
             <img src="bryanpictures/phone.png" class="phone-image">
+            
+            <div class="image-overlay-buttons2">
+                <button class="overlay-btn overlay-learn-more2" onclick="openModal2()">Learn more</button>
+                <a href="#buy" class="overlay-btn overlay-buy2">Buy</a>
+            </div>
+        </div>
 
         <p class="feature-highlight2">Built for Professional Excellence.</p>
-    	</div>
+    </div>
+
+    <!-- Modal for Phone -->
+    <div id="phoneModal" class="modal2">
+        <div class="modal-content2">
+            <span class="close2" onclick="closeModal2()">&times;</span>
+            <h2>KePro Iphone</h2>
+            <p>Experience the perfect blend of performance and portability with our flagship KePro Laptop. Designed for professionals who demand excellence in every detail.</p>
+            
+            <div class="specs-list2">
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li>
+                        <span class="spec-name2">Processor:</span>
+                        <span class="spec-value2">Intel Core i2-13700H</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Memory:</span>
+                        <span class="spec-value2">12GB DDR5 RAM</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Storage:</span>
+                        <span class="spec-value2">2TB SSD</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Display:</span>
+                        <span class="spec-value2">15.6" 8K OLED</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Graphics:</span>
+                        <span class="spec-value2">NVIDIA RTX 3060</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Battery:</span>
+                        <span class="spec-value2">Up to 20 hours</span>
+                    </li>
+                    <li>
+                        <span class="spec-name2">Weight:</span>
+                        <span class="spec-value2">1.6 lbs</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- GAP BETWEEN PRODUCTS -->
     <div style="height: 20px;"></div>
-
     <!-- LAPTOP PRODUCT (NOW SECOND) -->
     <div class="laptop-showcase">
         <h1 class="laptop-title">KePro Laptop</h1>
