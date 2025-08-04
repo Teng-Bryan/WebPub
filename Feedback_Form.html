@@ -78,7 +78,7 @@
 				<div class="bannerText" >Share your feedback!</div>
 				<span style="font-size: 22px;">We would like to hear our performance.</span>
 				<div style="margin-top: 10px;">Rating ranges from 
-				<span style="color: red">1 &#40;Unsatisfactory&#41;</span> to <span style="color:green">5 &#40;Satisfactory&#41;</span></div>
+				<span style="color: red">1 - 2 &#40;Unsatisfactory&#41;</span> and <span style="color:green">4 - 5 &#40;Satisfactory&#41;</span></div>
 			</div>
 		</div>
 		
@@ -92,15 +92,21 @@
 					</td>
 					
 					<td style="width: 500px">
-						&nbsp;<input type="range" min="1" max="5" value="5" id="productQuality" name="productQuality" required="required" style="width: 400px;">&nbsp;
-						<span id="productQualityNo"></span>
+						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						<span id="qualityNo">1</span>
+												
 						<script>
-						  const productQualitySlider = document.getElementById("productQuality");
-						  const productQualityOutput = document.getElementById("productQualityNo");
+						  const qualitySlider = document.getElementById("qualitySlider");
+						  const qualityNo = document.getElementById("qualityNo");
+						  const qualityNoAllowed = [1, 2, 4, 5];
 
-						  productQualityOutput.textContent = productQualitySlider.value;
-						  productQualitySlider.addEventListener("input", () => {
-							productQualityOutput.textContent = productQualitySlider.value;
+						  qualitySlider.addEventListener("input", () => {
+							const val = parseInt(qualitySlider.value);
+							const nearest = qualityNoAllowed.reduce((prev, curr) =>
+							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+							);
+							qualitySlider.value = nearest;
+							qualityNo.textContent = nearest;
 						  });
 						</script>
 					</td>
@@ -112,17 +118,21 @@
 					</td>
 					
 					<td>
-						<div class="slider-container">
-							<input type="range" min="1" max="5" value="5" id="deliverySpeed" name="deliverySpeed" required="required" style="width: 400px;">
-							<span id="deliverySpeedNo"></span>
-						</div>
+						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						<span id="deliverySpeedNo">1</span>
+												
 						<script>
-						  const deliverySpeedSlider = document.getElementById("deliverySpeed");
-						  const deliverySpeedNoOutput = document.getElementById("deliverySpeedNo");
-						  
-						  deliverySpeedNoOutput.textContent = deliverySpeedSlider.value;
-						  deliverySpeedSlider.addEventListener("input", () => {
-							deliverySpeedNoOutput.textContent = deliverySpeedSlider.value;
+						  const deliverySpeed = document.getElementById("deliverySpeed");
+						  const deliverySpeedNo = document.getElementById("deliverySpeedNo");
+						  const deliverySpeedAllowed = [1, 2, 4, 5];
+
+						  deliverySpeed.addEventListener("input", () => {
+							const val = parseInt(deliverySpeed.value);
+							const nearest = deliverySpeedAllowed.reduce((prev, curr) =>
+							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+							);
+							deliverySpeed.value = nearest;
+							deliverySpeedNo.textContent = nearest;
 						  });
 						</script>
 					</td>
@@ -134,17 +144,21 @@
 					</td>
 					
 					<td>
-						<div class="slider-container">
-							<input type="range" min="1" max="5" value="5" id="customerService" name="customerService" required="required" style="width: 400px;">
-							<span id="customerServiceNo"></span>
-						</div>
+						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						<span id="customerServiceNo">1</span>
+												
 						<script>
-						  const customerServiceSlider = document.getElementById("customerService");
-						  const customerServiceNoOutput = document.getElementById("customerServiceNo");
+						  const customerService = document.getElementById("customerService");
+						  const customerServiceNo = document.getElementById("customerServiceNo");
+						  const customerServiceAllowed = [1, 2, 4, 5];
 
-						  customerServiceNoOutput.textContent = customerServiceSlider.value;
-						  customerServiceSlider.addEventListener("input", () => {
-							customerServiceNoOutput.textContent = customerServiceSlider.value;
+						  customerService.addEventListener("input", () => {
+							const val = parseInt(customerService.value);
+							const nearest = customerServiceAllowed.reduce((prev, curr) =>
+							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+							);
+							customerService.value = nearest;
+							customerServiceNo.textContent = nearest;
 						  });
 						</script>
 					</td>
@@ -156,17 +170,21 @@
 					</td>
 					
 					<td>
-						<div class="slider-container">
-							<input type="range" min="1" max="5" value="5" id="productValue" name="productValue" required="required" style="width: 400px;">
-							<span id="productValueNo"></span>
-						</div>
+						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						<span id="productValueNo">1</span>
+						
 						<script>
-						  const productValueSlider = document.getElementById("productValue");
-						  const productValueNoOutput = document.getElementById("productValueNo");
+						  const productValue = document.getElementById("productValue");
+						  const productValueNo = document.getElementById("productValueNo");
+						  const productValueAllowed = [1, 2, 4, 5];
 
-						  productValueNoOutput.textContent = productValueSlider.value;
-						  productValueSlider.addEventListener("input", () => {
-							productValueNoOutput.textContent = productValueSlider.value;
+						  productValue.addEventListener("input", () => {
+							const val = parseInt(productValue.value);
+							const nearest = productValueAllowed.reduce((prev, curr) =>
+							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+							);
+							productValue.value = nearest;
+							productValueNo.textContent = nearest;
 						  });
 						</script>
 					</td>
@@ -178,17 +196,21 @@
 					</td>
 					
 					<td>
-						<div class="slider-container">
-							<input type="range" min="1" max="5" value="5" id="convenience" name="convenience" required="required" style="width: 400px;">
-							<span id="convenienceNo"></span>
-						</div>
+						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						<span id="convenienceNo">1</span>						
+						
 						<script>
-						  const convenienceSlider = document.getElementById("convenience");
-						  const convenienceNoOutput = document.getElementById("convenienceNo");
+						  const convenience = document.getElementById("convenience");
+						  const convenienceNo = document.getElementById("convenienceNo");
+						  const convenienceAllowed = [1, 2, 4, 5];
 
-						  convenienceNoOutput.textContent = convenienceSlider.value;
-						  convenienceSlider.addEventListener("input", () => {
-							convenienceNoOutput.textContent = convenienceSlider.value;
+						  convenience.addEventListener("input", () => {
+							const val = parseInt(convenience.value);
+							const nearest = convenienceAllowed.reduce((prev, curr) =>
+							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
+							);
+							convenience.value = nearest;
+							convenienceNo.textContent = nearest;
 						  });
 						</script>
 					</td>
