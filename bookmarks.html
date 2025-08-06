@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookmarks</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .MainFrame {
+      flex: 1;
+    }
+    .VListBanner {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="MainFrame">
+    <!-- Top Banner -->
+    <div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
+      <div class="container logo-section" >
+        <img src="images/KeElectronics_Logo.png" alt="KeElectronics Logo" width="50" height="50" class="logo-img">
+        <div class="bannerText">KeElectronics</div>
+      </div>
+      <div class="container" id="authButtons" style="font-size: 20px;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
+      <a class="navItem" href="index.html"><img src="images/home.png" alt="Home" width="20" height="20"><span>Home</span></a>
+      <a class="navItem" href="products.html"><img src="images/shopcart.png" alt="Products" width="20" height="20"><span>Products</span></a>
+      <a class="navItem" href="bookmarks.html"><img src="images/bkmk.png" alt="Bookmarks" width="20" height="20"><span>Bookmarks</span></a>
+      <a class="navItem" href="about.html"><img src="images/aboutus.png" alt="About Us" width="20" height="20"><span>About Us</span></a>
+      <a class="navItem" href="contact.html"><img src="images/contus.png" alt="Contact Us" width="20" height="20"><span>Contact Us</span></a>
+    </div>
+
+    <!-- Bookmarks Content -->
+    <section class="product-catalogue">
+      <h1>My Bookmarked Products</h1>
+      <p class="subheading">Here are the products you’ve saved for later!</p>
+       <div id="bookmarksList" style="text-align:center; padding: 20px;">Loading bookmarks…</div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+    <div class="bannerText">End of the line!</div>
+    <span style="font-size: 20px">You've reached the end of your Bookmarks.</span>
+    <div class="HListBanner" style="gap: 20px; padding: 10px;">
+      <a class="linkButton" href="index.html">Home Page</a>
+      <a class="linkButton" href="about.html">About Us</a>
+      <a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()">Back To Top</a>
+    </div>
+    <span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
+    <a class="linkButton" href="feedback.html">Feedback</a>
+    <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+  </div>
+
+  <script>
+  // 1) your master list of all products:
+  const products = [
+    { id: 1, name: "ASUS TUF Gaming A14",    type: "Laptop",     price: 1499, image: "images/asusa14.jpg" },
+    { id: 2, name: "MacBook Pro M3",          type: "Laptop",     price: 1999, image: "images/mac.png"    },
+    { id: 3, name: "HP Victus 15",            type: "Laptop",     price: 1925, image: "images/victus.png"      },
+    { id: 4, name: "Dell XPS 13",             type: "Laptop",     price: 1299, image: "images/dellxps.jpg"     },
+    { id: 5, name: "iPhone 15 Pro",           type: "Smartphone", price:  999, image: "images/iphone15.jpg"   },
+    { id: 6, name: "Samsung Galaxy S24",      type: "Smartphone", price:  899, image: "images/galaxys24.jpg"  },
+    { id: 7, name: "iPad Pro",                type: "Tablet",     price: 1199, image: "images/ipadpro.jpg"     },
+    { id: 8, name: "Samsung Galaxy Tab S9",   type: "Tablet",     price:  799, image: "images/galaxytab.jpg"   }
+  ];
+
+  // 2) then your existing code…
+  function loadBookmarks() {
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      document.getElementById("bookmarksList").innerHTML =
+        "<p>Please sign in to view your bookmarks.</p>";
+      return;
+    }
+
+    const bookmarksKey = `bookmarks_${user}`;
+    let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
+
+    if (bookmarks.length === 0) {
+      document.getElementById("bookmarksList").innerHTML =
+        "<p>No bookmarks found.</p>";
+      return;
+    }
+
+    // build your table exactly as before…
+    let html = '<table class="product-table"><tr>';
+    bookmarks.forEach((id, idx) => {
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+      html += `
+        <td class="product-card">
+          <img src="${product.image}" alt="${product.name}" class="product-img">
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            <p class="type">${product.type}</p>
+            <p class="price">$${product.price}</p>
+            <div class="btn-group">
+              <div class="btn-row">
+                <button class="btn-modern btn-cart" onclick="buyNow(${product.id})">
+                  Buy Now
+                </button>
+              </div>
+              <div>
+                <button class="btn-modern btn-bookmark" onclick="removeBookmark(${product.id})">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </td>
+      `;
+      if ((idx + 1) % 2 === 0 && idx !== bookmarks.length - 1) {
+        html += '</tr><tr>';
+      }
+    });
+    html += '</tr></table>';
+    document.getElementById("bookmarksList").innerHTML = html;
+  }
+
+  function removeBookmark(productId) {
+    const user = localStorage.getItem("loggedInUser");
+    const key  = `bookmarks_${user}`;
+    let  bmk  = JSON.parse(localStorage.getItem(key)) || [];
+    bmk = bmk.filter(id => id !== productId);
+    localStorage.setItem(key, JSON.stringify(bmk));
+    loadBookmarks();
+  }
+
+  function buyNow(productId) {
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      alert("Please sign in to make a purchase.");
+      return;
+    }
+    window.location.href = "order.html?product=" + productId;
+  }
+
+  window.onload = loadBookmarks;
+</script>
+</body>
+</html>
