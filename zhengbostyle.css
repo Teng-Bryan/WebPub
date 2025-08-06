@@ -107,10 +107,17 @@ html, body {
 
         .navigate img {
             vertical-align: middle;
-            margin-right: 10px;
+            margin-right: 0.5vw;
             width: 25px;
             height: 25px;
         }
+		
+		@media (max-width: 600px) {
+		  .navigate img {
+			width: 13px;
+			height: 13px;
+		  }
+		}
 
 .linkButton {
 	text-decoration: none;
