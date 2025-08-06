@@ -1,16 +1,4 @@
-  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        
-        .header {
+ .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,8 +37,9 @@
         }
 
         .text-link {
-            font-size: 26px;
+            font-size: clamp(15px, 2vw, 25px);
             color: black;
+			padding: 1vw;
             text-decoration: none;
             font-weight: medium;
         }
@@ -60,13 +49,12 @@
         }
 
         .signup-btn {
-            font-size: 26px;
+            font-size: clamp(15px, 2vw, 25px);
             border-radius: 10px;
             background-color: #A6C6D3;
             border: none;
             cursor: pointer;
-            height: 45px;
-            width: 130px;
+            padding: 1vw;
             font-weight: medium;
             transition: background-color 0.3s ease;
         }
@@ -82,12 +70,13 @@
         }
 
         .navigate {
-            text-align: center;
-            font-size: 25px;
+	       display: flex;
+               justify-content: center;
+            font-size: clamp(10px, 2vw, 25px);
             background-color: #A6C6D3;
-            padding: 10px 0;
             animation: slideright 0.8s ease-out 0.7s forwards;
             opacity: 0;
+			gap: 5%;
         }
 
         .navigate a {
@@ -96,10 +85,9 @@
             color: black;
             font-weight: bold;
             text-decoration: none;
-            margin: 10px 70px;
-            padding: 10px 15px;
-            border-radius: 6px;
+            border-radius: 3px;
             transition: background-color 0.3s ease;
+			margin: 0.5%;
         }
 
         .navigate a:hover {
@@ -108,18 +96,17 @@
 
         .navigate img {
             vertical-align: middle;
-            margin-right: 10px;
+            margin-right: 0.5vw;
             width: 25px;
             height: 25px;
         }
 
-.linkButton {
-	text-decoration: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	display: inline-block;
-	text-align: center;
-}
+		@media (max-width: 600px) {
+		  .navigate img {
+			width: 13px;
+			height: 13px;
+		  }
+		}
 
 .MainFrame {
 	font-family: 'Montserrat';
@@ -534,6 +521,7 @@ function closePopup(id) {
                 font-size: 2em;
             }
      
+
 
 
 
