@@ -122,7 +122,7 @@ html, body {
 		}
 
         .laptop-showcase {
-           background: #e090fc;
+           background: #e6f3ff;
     padding: 40px 10px 10px 10px;
     text-align: center;
     display: flex;
@@ -265,7 +265,7 @@ html, body {
         }
 
 .phone-showcase {
-    background: #e6f3ff;
+    background: #f0f8ff;
     padding: 40px 10px 10px 10px;
     text-align: center;
     display: flex;
@@ -410,7 +410,7 @@ html, body {
 
 
 .tablet-showcase {
-    background: #96f8ff;
+    background: #ddeeff;
     padding: 40px 10px 10px 10px;
     text-align: center;
     display: flex;
@@ -678,6 +678,7 @@ html, body {
             transition: background-color 0.3s ease;
 			}    
         }
+
 
 
 
