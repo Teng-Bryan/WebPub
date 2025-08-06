@@ -9,46 +9,49 @@
 </head>
 <body>
 <!-- Blue Banner -->
-	<div class="header">
-        <div class="logo-section">
-            <img src="bongpictures/KeElectronics_Logo.png" />
-            <h1 class="logo-text">KeElectronics</h1>
-        </div>
-        
-        <div class="button-container" id="authButtons">
-            <!-- Buttons will be inserted by JavaScript -->
-        </div>
-    </div>
+	<div class="blubanner" style="background-color: #87ceeb; padding: 10px 20px; height: 80px;">
+			<div class="container">
+				<img src="KeElectronics_Logo.png" alt="logo" width="60" height="60"/>
+				<div class="BannerText">KeElectronics</div>
+			</div>
+			
+			<div class="container" style="font-size:20px;">
+				<a class="linkButton" href="" target="_blank" style="background-color: #87ceeb; padding: 10px 20px; color: black; font-size :15px;">Sign In</a>
+				&nbsp;
+				<a class="linkButton" href="" target="_blank" style="background-color: #A6C6D3; padding: 10px 20px; color: black; font-size :15px; border: 1px solid #000;">Sign Up</a>
+			</div>
+			
+		</div>
 
-    <div class="backgroundnav">
-        <div class="navigate">
-            <a href="index.html">
-                <img src="bongpictures/Home.png" alt="Home" />
-                Home
-            </a>
-            <a href="Product_Catalogue">
-                <img src="bongpictures/Shop.png" alt="Products" />
-                Products
-            </a>
-            <a href="about_us.html">
-                <img src="bongpictures/AboutUs.png" alt="About Us" />
-                About Us
-            </a>
-            <a href="contact_us.html">
-                <img src="bongpictures/ContactUs.png" alt="Contact Us" />
-                Contact Us
-            </a>
-        </div>
-    </div>
+	<!-- Navigation Bar	-->	
+		<div class="NavBar" style="background-color: #A6C6D3; gap: 100px; padding: 10px;">
+			<div class="container">
+				<img style="margin-left:10px" src="home.png" alt="home icon" width="35" height="35">
+			 <a class="NBarLink" href="" target="_blank" style="padding: 10px 10px; color: black;">Home</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="shopcart.png" alt="Shopping cart icon" width="40" height="40">
+				<a class="NbarLink" href="" target="_blank" style="padding: 10px 10px; color: black;">Products</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="info.png" alt="about us icon" width="35" height="35">
+				<a class="NbarLink" href="about us.html" target="_blank" style="padding: 10px 10px; color: black;">About Us</a>
+			</div>
+			<div class="container">
+				<img style="margin-left:10px" src="phone.png" alt="contact us icon" width="35" height="35">
+				<a class="NbarLink" href="contact us.html" target="_blank" style="padding: 10px 10px; color: black;">Contact Us</a>
+			</div>
+		</div>
+		
 	<!-- About Us	-->
 	<h2 class="Subtitle">Our Story</h2>
 	
 	<!-- Pictures	-->
 	<div class="image-row">
-<img src="bongpictures/member 1.png" alt="Team member 1">
-  <img src="bongpictures/member 2.png" alt="Team member 2">
-	<img src="bongpictures/member 3.png" alt="Team member 3">
-		<img src="bongpictures/member 4.png" alt="Team member 4">
+<img src="member 1.png" alt="Team member 1">
+  <img src="member 2.png" alt="Team member 2">
+	<img src="member 3.png" alt="Team member 3">
+		<img src="member 4.png" alt="Team member 4">
 	</div>
 	<!--  Text	-->
 	<div class="Ginfonorm">
@@ -64,7 +67,7 @@ At KeElectronics, our vision is not only to grow as a business but to create a s
 </br>
 	<!--  Pic	-->
 <div class="pic">
-  <img src="bongpictures/picture2.png" alt="Mission Pic" class="center-img">
+  <img src="picture2.png" alt="Mission Pic" class="center-img">
 </div>
 <br/>
 	<!--  Mission	-->
@@ -72,53 +75,110 @@ At KeElectronics, our vision is not only to grow as a business but to create a s
   <h2 class="subtitle">Our Mission</h2>
 	<div class="logo-row">
   <div class="logotxt">
-    <img src="bongpictures/logo1.png" alt="logo1" class="logo">
+    <img src="logo1.png" alt="logo1" class="logo">
     <p>1. To deliver high quality and affordable consumer electronics with exceptional customer service across the globe</p>
   </div>
   <div class="logotxt">
-    <img src="bongpictures/logo2.png" alt="logo2" class="logo">
+  </br></br>
+    <img src="logo2.png" alt="logo2" class="logo">
+	</br>
     <p>2. To build lasting relationships with our consumers by providing trustworthy, efficient and friendly service</p>
   </div>
   <div class="logotxt">
-    <img src="bongpictures/logo3.png" alt="logo3" class="logo">
+  </br>
+    <img src="logo3.png" alt="logo3" class="logo">
     <p>3. To create a seamless and accessible online shopping experience for electronics, ensuring fast delivery and reliable support</p>
   </div>
 </div>
  
-<!--  Vision	-->
+	<!--  Vision	-->
 	<h2 class="subtitle">Our Vision</h2>
+			</br>
+		<div class="pic">
+  <img src="picture3.png" alt="Mission Pic" class="center-img">
+</div>
 	
-	<script>
-		function scrollToTop() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-					}
-				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-		  			const authButtons = document.getElementById("authButtons");
-  					const username = localStorage.getItem("loggedInUser");
-
-        			if (username) {
-    // User is logged in
-    authButtons.innerHTML = `
-        <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-        <button onclick="logout()" class="signup-btn">Logout</button>
-    `;
-} 
-else {
-    // Not logged in
-    authButtons.innerHTML = `
-        <a href="signin.html?redirect=about_us.html" class="text-link">Sign In</a>
-        <a href="signup.html?redirect=about_us.html">
-            <button class="signup-btn">Sign Up</button>
-        </a>
-    `;
-}
-
-        			function logout() {
-  						localStorage.removeItem("loggedInUser");
-  						window.location.reload();
-					}
-		</script>
+	<div class="Ginfonorm">
+		<p>
+		1. To be the go-to brand for reliable, innovative and affordable electronics worldwide.</br>
+We aim to become the most trusted source for modern tech solutions by offering</br> quality-assured products at competitive prices, backed by a commitment to continuous innovation.
+</br></br></br>
+2. To become a globally trusted name in consumer electronics, known for its excellent service and customer satisfaction</br>
+Our goal is to build long-lasting relationships with customers through exceptional support, fast delivery,</br> and a shopping experience that exceeds expectations across borders
+</br></br></br>
+3. To revolutionise the way people shop for customer-friendly online platforms in Asia</br>
+We envision reshaping the e-commerce landscape by creating an intuitive, seamless, and mobile-first platform</br> that empowers users to shop with confidence, convenience, and clarity.
+		</p>
+	</div>
 	
+	<!--  Newsroom	-->
+	<h2 class="subtitle">Newsroom Showcase</h2>
+	<div class="newsroom">
+	<div class="news-card" onclick="openPopup('popup1')">
+    <img src="newsroom2.png" alt="News Image">
+    <div class="news-info">
+      <p class="label">UPDATE</p>
+      <h3>Upcoming Events</h3>
+      <p class="date">2 days ago</p>
+	      </div>
+		</div>
+	
+		</br>
+		
+	<div class="news-card2" onclick="openPopup('popup2')">
+    <img src="newsroom1.jpg" alt="News Image">
+    <div class="news-info">
+      <p class="label">PRESS RELEASE</p>
+      <h3>KeElectronics first ever launch in the US </h3>
+      <p class="date">July 17, 2025</p>
+    </div>
+  </div>
+	
+	<div class="news-card2" onclick="openPopup('popup2')">
+    <img src="newsroom4.jpg" alt="News Image">
+    <div class="news-info">
+      <p class="label">UPDATE</p>
+      <h3>Collaboration with our overseas investors</h3>
+      <p class="date">Feb 11, 2025</p>
+    </div>
+  </div>
+		
+		</br>
+		
+		<div class="news-card" onclick="openPopup('popup1')">
+    <img src="newsroom3.png" alt="News Image">
+    <div class="news-info">
+      <p class="label">PRESS RELEASE</p>
+      <h3>Worldwide Top 30 E-commerce Platform</h3>
+      <p class="date">August 7, 2025</p>
+	      </div>
+		</div>
+
+		
+		</div>	
+	
+	<!-- End Banner	-->	
+		<div class="EBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+			<div class="BannerText">End of the line!</div>
+			<!---->
+			<text style="font-size: 20px">You’ve reached the end of our About Us Page.</text>
+			<!---->
+			<div class="NavBar" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
+				<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
+				<a class="EBButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    </div>
+			<text style="font-size: 20px">Have any feedback for us? Leave it down here!</text>
+			<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback Form</a>
+			<br/>
+			<text style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</text>
+		</div>
 	
 	
 	</body>
