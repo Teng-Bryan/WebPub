@@ -61,14 +61,14 @@
         </div>
     </div>
 	<!-- Hanger Below Banner	-->
-		<div class="LRbanner" style="margin-top:10px; padding: 10px 0px; height: 25px;">
+		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
 				&nbsp;
 			</div>
 			
 			<div class="container">
-				<span style="font-size:1em">We Deliver Worldwide!</span>
-				<img style="margin-right:10px" src="zhengbopictures/Globe.png" alt="Description" width="30" height="30">
+				<span style="font-size: clamp(15px, 2vw, 20px)">We Deliver Worldwide!</span>
+				<img style="margin-right:0.5vw" src="zhengbopictures/Globe.png" alt="Description" width="25px" height="auto">
 			</div>
 		</div>
 	
@@ -85,7 +85,7 @@
 	<!-- Feedback Form -->
 		<form action="Feedback_Submitted.html" method="get">
 			
-			<table class="alignRight" border="0" align="center" style="font-weight: bold; font-family: Merriweather; font-size: 35px; border-spacing: 20px 40px;">
+			<table class="alignRight" border="0" align="center" style="font-weight: bold; font-family: Merriweather; border-spacing: 20px 40px;">
 				<tr>
 					<td>
 						Product Quality:
@@ -93,7 +93,7 @@
 					
 					<td style="width: 500px">
 						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="qualityNo">1</span>
+						<span id="qualityNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
 						  const qualitySlider = document.getElementById("qualitySlider");
@@ -119,8 +119,8 @@
 					
 					<td>
 						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="deliverySpeedNo">1</span>
-												
+						<span id="deliverySpeedNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
+						
 						<script>
 						  const deliverySpeed = document.getElementById("deliverySpeed");
 						  const deliverySpeedNo = document.getElementById("deliverySpeedNo");
@@ -145,7 +145,7 @@
 					
 					<td>
 						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="customerServiceNo">1</span>
+						<span id="customerServiceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
 						  const customerService = document.getElementById("customerService");
@@ -171,7 +171,7 @@
 					
 					<td>
 						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="productValueNo">1</span>
+						<span id="productValueNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
 						  const productValue = document.getElementById("productValue");
@@ -197,7 +197,7 @@
 					
 					<td>
 						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="convenienceNo">1</span>						
+						<span id="convenienceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
 						  const convenience = document.getElementById("convenience");
@@ -217,35 +217,35 @@
 				</tr>
 			</table>
 			
-			<div style="margin-bottom:25px;">
-				<span style="font-size: 20px; margin-left:120px;">
+			<div style="margin-bottom:4%;">
+				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
 					Share your detailed feedback:
 				</span>
-				<textarea rows="8" cols="105" required="required" style="display: block; margin: 5px auto; border-radius: 10px; font-size:20px;"></textarea>
+				<textarea rows="8" cols="105" required="required" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
 			</div>	
 			
-			<div style="margin-bottom:25px;">
-				<span style="font-size: 20px; margin-left:120px;">
+			<div style="margin-bottom:2%;">
+				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
 					Any suggestions? &#40;Leave "N/A" if none&#41;:
 				</span>
-				<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:20px;"></textarea>
+				<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
 			</div>	
 			
-			<div align="center" style="margin-bottom:30px; margin-top:30px;">
-				<input type="submit" value="Submit" style="background-color: #87ceeb; font-size: 25px; border-radius:5px; margin-left:1025px; border: 1px solid #000; 
+			<div align="center" style="margin-bottom:2%; margin-top:2%;">
+				<input type="submit" value="Submit" style="background-color: #87ceeb; font-size: clamp(8px, 2vw, 20px); border-radius:5px; margin-left:75%; border: 1px solid #000; 
 				padding: 15px; padding-bottom: 5px; padding-top: 5px;">
 			</div>
 		</form>
 		
 	<!-- End Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center;">
 			<div class="bannerText">End of the line!</div>
 			<!---->
-			<span style="font-size: 20px">You've reached the end of the Order Form.</span>
-			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
-				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
-				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
-				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
+			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+				<a class="linkButton" href="index.html" target="" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
 				<!-- Back to Top Java-->
 				<script>
 				  function scrollToTop() {
@@ -254,7 +254,7 @@
 				</script>
 		    	</div>
 			<br/>
-			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
 
 			<script>
@@ -265,7 +265,7 @@
         			if (username) {
            			// User is logged in
             		authButtons.innerHTML = `
-                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+                		<span style="font-size: font-size: clamp(10px, 2vw, 25px); margin-right: 20px;">Welcome, <strong>${username}</strong></span>
                 		<button onclick="logout()" class="signup-btn">Logout</button>
             			`;
         			} 
