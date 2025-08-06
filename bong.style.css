@@ -1,3 +1,125 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #87CEEB;
+            position: relative;
+            min-height: 120px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            animation: slideDowntop 0.7s ease-out forwards;
+        }
+
+        .logo-section img {
+            width: 110px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-family: 'Merriweather', serif;
+            color: black;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            animation: slideDownsignin 0.6s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .text-link {
+            font-size: 26px;
+            color: black;
+            text-decoration: none;
+            font-weight: medium;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            font-size: 26px;
+            border-radius: 10px;
+            background-color: #A6C6D3;
+            border: none;
+            cursor: pointer;
+            height: 45px;
+            width: 130px;
+            font-weight: medium;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #95b5c2;
+        }
+
+        .backgroundnav {
+            background-color: #A6C6D3;
+            width:  100%;
+            padding: 0;
+        }
+
+        .navigate {
+            text-align: center;
+            font-size: 25px;
+            background-color: #A6C6D3;
+            padding: 10px 0;
+            animation: slideright 0.8s ease-out 0.7s forwards;
+            opacity: 0;
+        }
+
+        .navigate a {
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 10px 70px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigate a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navigate img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 25px;
+            height: 25px;
+        }
+
+.linkButton {
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+}
 
 .MainFrame {
 	font-family: 'Montserrat';
@@ -412,6 +534,7 @@ function closePopup(id) {
                 font-size: 2em;
             }
      
+
 
 
 
