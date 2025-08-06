@@ -1,32 +1,10 @@
 <html>
 	<head>
-		<title>Feedback Form</title>
+		<title>Feedback Submitted</title>
 		<link href="zhengbostyle.css" rel="stylesheet"></link>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 		
-		<!-- Embedded -->
-		<style>
-		.miniText {
-		font-size: 11px; color: #757575;
-		}
-		
-		table.alignRight td:first-child {
-		text-align: right;
-		}
-
-		table.alignRight td:nth-child(2) {
-    		text-align: center;
-		}
-		
-		/* Center the slider elements */
-		.slider-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 10px;
-		}
-		</style>
 	</head>
 	<body>
 	<div class="header">
@@ -61,204 +39,199 @@
         </div>
     </div>
 	<!-- Hanger Below Banner	-->
-		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
+		<div class="LRbanner" style="margin-top:10px; padding: 10px 0px; height: 25px;">
 			<div class="container">
-				&nbsp;
+				<img style="margin-left:10px" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
+				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 5px 10px; font-size: 1em;">Back to Browsing</a>
 			</div>
 			
 			<div class="container">
-				<span style="font-size: clamp(15px, 2vw, 20px)">We Deliver Worldwide!</span>
-				<img src="zhengbopictures/Globe.png" alt="Globe Icon"
-				   style="width: clamp(18px, 2vw, 25px); height: auto;">
-			</div>
-		</div>
-	
-	<!-- Review Banner -->
-		<div class="VListBanner" style="background-color: white; padding: 10px;">
-			<div align="center">
-				<div class="bannerText" >Share your feedback!</div>
-				<span style="font-size: 22px;">We would like to hear our performance.</span>
-				<div style="margin-top: 10px;">Rating ranges from 
-				<span style="color: red">1 - 2 &#40;Unsatisfactory&#41;</span> and <span style="color:green">4 - 5 &#40;Satisfactory&#41;</span></div>
+				<span style="font-size:1em">We Deliver Worldwide!</span>
+				<img style="margin-right:10px" src="PNG/Globe.png" alt="Description" width="30" height="30">
 			</div>
 		</div>
 		
-	<!-- Feedback Form -->
-		<form action="Feedback_Submitted.html" method="get">
-			
-			<table class="alignRight" border="0" align="center" style="font-weight: bold; font-family: Merriweather; border-spacing: 20px 40px;">
-				<tr>
-					<td>
-						Product Quality:
-					</td>
+	<!-- Order Form -->
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; margin-top: 10px;">
+			<div align="center" style="margin-left:0px;">
+				<span class="bannerText">Order Today!</span><br/><br/>
+				<span>Help us fill in your details and we help do the work<br/>
+				just so you can provide what you want!</span>
+			</div>
+		</div>
+		<form action="Order_Submitted.html" method="post">
+			<div class="miniText" align="center" style="font-style:italic; margin-top:25px">Fields labeled with * are required!</div>
+			<div class="HListBanner" style="gap: 50px; padding: 10px; margin-left:50px; margin-bottom:50px">
+				<table border="0" style="background-color:white; border-collapse: separate;">
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Person_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Name:<br/>
+							<input type="text" size="30" id="username" name="username" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
 					
-					<td style="width: 500px">
-						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="qualityNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
-												
-						<script>
-						  const qualitySlider = document.getElementById("qualitySlider");
-						  const qualityNo = document.getElementById("qualityNo");
-						  const qualityNoAllowed = [1, 2, 4, 5];
-
-						  qualitySlider.addEventListener("input", () => {
-							const val = parseInt(qualitySlider.value);
-							const nearest = qualityNoAllowed.reduce((prev, curr) =>
-							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
-							);
-							qualitySlider.value = nearest;
-							qualityNo.textContent = nearest;
-						  });
-						</script>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Delivery Speed:
-					</td>
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Telephone_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Phone Number:<br/>
+							<input type="tel" size="30" id="phonenumber" name="phonenumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
 					
-					<td>
-						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="deliverySpeedNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
-						
-						<script>
-						  const deliverySpeed = document.getElementById("deliverySpeed");
-						  const deliverySpeedNo = document.getElementById("deliverySpeedNo");
-						  const deliverySpeedAllowed = [1, 2, 4, 5];
-
-						  deliverySpeed.addEventListener("input", () => {
-							const val = parseInt(deliverySpeed.value);
-							const nearest = deliverySpeedAllowed.reduce((prev, curr) =>
-							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
-							);
-							deliverySpeed.value = nearest;
-							deliverySpeedNo.textContent = nearest;
-						  });
-						</script>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Customer Service:
-					</td>
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Flag_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Country:<br/>
+							<input type="text" size="30" id="country" name="country" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
 					
-					<td>
-						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="customerServiceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
-												
-						<script>
-						  const customerService = document.getElementById("customerService");
-						  const customerServiceNo = document.getElementById("customerServiceNo");
-						  const customerServiceAllowed = [1, 2, 4, 5];
-
-						  customerService.addEventListener("input", () => {
-							const val = parseInt(customerService.value);
-							const nearest = customerServiceAllowed.reduce((prev, curr) =>
-							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
-							);
-							customerService.value = nearest;
-							customerServiceNo.textContent = nearest;
-						  });
-						</script>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Product Value:
-					</td>
+					<tr height="80px">
+						<td>
+							<img style="margin-top:20px" src="PNG/Location_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">
+							*Address:<br/>
+							<input type="address" size="30" id="address" name="address" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
 					
-					<td>
-						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="productValueNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
-						
-						<script>
-						  const productValue = document.getElementById("productValue");
-						  const productValueNo = document.getElementById("productValueNo");
-						  const productValueAllowed = [1, 2, 4, 5];
-
-						  productValue.addEventListener("input", () => {
-							const val = parseInt(productValue.value);
-							const nearest = productValueAllowed.reduce((prev, curr) =>
-							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
-							);
-							productValue.value = nearest;
-							productValueNo.textContent = nearest;
-						  });
-						</script>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-						Convenience:
-					</td>
+					<tr>
+						<td>
+							<img style="margin-top:20px" src="PNG/Clock_Icon.png" alt="Description" width="35" height="35">
+						</td>
+						<td style="font-weight:bold;">							
+							Scheduled Delivery:<br/>
+							<input type="date" size="30" id="dategoal" name="dategoal" style="font-size: 25px; width:215px; border-radius:5px;">
+						</td>
+					</tr>
 					
-					<td>
-						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
-						<span id="convenienceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
-						
-						<script>
-						  const convenience = document.getElementById("convenience");
-						  const convenienceNo = document.getElementById("convenienceNo");
-						  const convenienceAllowed = [1, 2, 4, 5];
-
-						  convenience.addEventListener("input", () => {
-							const val = parseInt(convenience.value);
-							const nearest = convenienceAllowed.reduce((prev, curr) =>
-							  Math.abs(curr - val) < Math.abs(prev - val) ? curr : prev
-							);
-							convenience.value = nearest;
-							convenienceNo.textContent = nearest;
-						  });
-						</script>
-					</td>
-				</tr>
-			</table>
-			
-			<div style="margin-bottom:4%;">
-				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
-					Share your detailed feedback:
-				</span>
-				<textarea rows="8" cols="105" required="required" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							<span class="miniText">Don't Fill if you want immediate delivery schedule!</span>
+						</td>
+					</tr>
+				</table>
+			<!---->	
+				<table border="0" style="padding:15px ;background-color:white;border: 1px solid #333; height: 10px; border-radius:10px; margin-top:20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*Mode of Transport:
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="airTransport" required="required">&nbsp;Air Transport</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Fast but costs more!
+							  </div>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="seaTransport">&nbsp;Sea Transport</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Cheaper but slower!
+							  </div>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+						<div>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="local">&nbsp;Local</label>
+							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
+								Select this if you are in our country!
+							  </div>
+						</td>
+					</tr>
+				</table>
 			</div>	
 			
-			<div style="margin-bottom:2%;">
-				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
-					Any suggestions? &#40;Leave "N/A" if none&#41;:
-				</span>
-				<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
-			</div>	
+			<!-- Billing Banner -->	
+			<div class="VListBanner" style="background-color: #87ceeb; padding: 10px;">
+				<div class="bannerText" align="center">Billing</div>
+			</div>
 			
-			<div align="center" style="margin-bottom:2%; margin-top:2%;">
-				<input type="submit" value="Submit" style="background-color: #87ceeb; font-size: clamp(8px, 2vw, 20px); border-radius:5px; margin-left:75%; border: 1px solid #000; 
-				padding: 15px; padding-bottom: 5px; padding-top: 5px;">
+			<!-- Billing Input -->
+			<div class="HListBanner" style="gap: 50px; height: 185px; padding: 10px;">
+				<table border="0" style="background-color:white; border-spacing: 10px 20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*Name on Card:<br/>	
+							<input type="text" size="30" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+					<tr>
+						<td style="font-weight:bold;">
+							*Card Number:<br/>
+							<input type="text" size="30" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px;">
+						</td>
+					</tr>
+				</table>
+				
+				<table border="0" style="background-color:white; border-spacing: 0 20px;">
+					<tr>
+						<td style="font-weight:bold;">
+							*CVV Number:<br/>
+							<input type="text" size="15" id="cardNumber" name="cardNumber" required="required" style="font-size: 25px; border-radius:5px; width:215px;">
+						</td>
+					</tr>
+					<tr>
+						<td style="font-weight:bold;">		
+							*Expiry Date:<br/>
+							<input type="date" id="expiryDate" name="expiryDate" required="required" style="font-size: 25px; width:215px; border-radius:5px;">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div align="center" style="margin-bottom:40px;">
+				<input type="submit" value="Confirm Order" style="background-color: #27A74E; font-size: 20px; border-radius:5px; margin-left:650px;">
 			</div>
 		</form>
-		
+	
 	<!-- End Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center;">
-			<div class="bannerText">End of the line!</div>
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+			<div class="bannerText">
+				<img style="margin-top:20px" src="PNG/KeELightningBolt.png" alt="Description" width="40" height="40">
+				End of the line!
+			</div>
 			<!---->
-			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
-			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
-				<a class="linkButton" href="index.html" target="" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
-				<a class="linkButton" href="about_us.html" target="" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">About Us</a>
-				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 2% 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
+			<span style="font-size: 20px">You’ve reached the end of the Order Form.</span>
+			<!---->
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
+				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
 				<!-- Back to Top Java-->
 				<script>
 				  function scrollToTop() {
 					window.scrollTo({ top: 0, behavior: 'smooth' });
 				  }
 				</script>
-		    	</div>
+		    </div>
+			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
 			<br/>
-			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
+			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
-
-			<script>
+				<script>
 				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
 		  			const authButtons = document.getElementById("authButtons");
   					const username = localStorage.getItem("loggedInUser");
@@ -266,15 +239,15 @@
         			if (username) {
            			// User is logged in
             		authButtons.innerHTML = `
-                		<span style="font-size: font-size: clamp(10px, 2vw, 25px); margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
                 		<button onclick="logout()" class="signup-btn">Logout</button>
             			`;
         			} 
 					else {
             		// Not logged in
             		authButtons.innerHTML = `
-        			<a href="signin.html?redirect=Feedback_Form.html" class="text-link">Sign In</a>
-        			<a href="signup.html?redirect=Feedback_Form.html">
+        			<a href="signin.html?redirect=Order_Form.html" class="text-link">Sign In</a>
+        			<a href="signup.html?redirect=Order_Form.html">
             			<button class="signup-btn">Sign Up</button>
         			</a>
     				`;
@@ -286,4 +259,5 @@
 					}
 				</script>
 	</body>
+</div>	
 </html>
