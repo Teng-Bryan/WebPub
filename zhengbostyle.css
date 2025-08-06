@@ -48,7 +48,7 @@ html, body {
         }
 
         .text-link {
-            font-size: 26px;
+            font-size: clamp(15px, 2vw, 25px);
             color: black;
             text-decoration: none;
             font-weight: medium;
@@ -59,7 +59,7 @@ html, body {
         }
 
         .signup-btn {
-            font-size: 26px;
+            font-size: clamp(15px, 2vw, 25px);
             border-radius: 10px;
             background-color: #A6C6D3;
             border: none;
@@ -81,12 +81,13 @@ html, body {
         }
 
         .navigate {
-            text-align: center;
-            font-size: 25px;
+			display: flex;
+			justify-content: center;
+            font-size: clamp(10px, 2vw, 25px);
             background-color: #A6C6D3;
-            padding: 10px 0;
             animation: slideright 0.8s ease-out 0.7s forwards;
             opacity: 0;
+			gap: 10%;
         }
 
         .navigate a {
@@ -95,10 +96,9 @@ html, body {
             color: black;
             font-weight: bold;
             text-decoration: none;
-            margin: 10px 70px;
-            padding: 10px 15px;
-            border-radius: 6px;
+            border-radius: 3px;
             transition: background-color 0.3s ease;
+			margin: 0.5%;
         }
 
         .navigate a:hover {
@@ -114,10 +114,14 @@ html, body {
 
 .linkButton {
 	text-decoration: none;
-	padding: 10px 20px;
 	border-radius: 5px;
 	display: inline-block;
 	text-align: center;
+	transition: background-color 0.3s ease;
+}
+
+.linkButton:hover {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .bannerLink {
@@ -154,7 +158,7 @@ html, body {
 }
 
 .bannerText {
-	font-size: 3em;
+	font-size: clamp(30px, 3vw, 60px);
 	font-weight: bold;
 	font-family: 'Merriweather';
 }
@@ -167,8 +171,8 @@ html, body {
 }
 	
 .container img {
-    margin-left: 5px;
-	margin-right: 5px;
+    margin-left: 1%px;
+	margin-right: 1%px;
 }
 
  /* Animations */
@@ -206,6 +210,26 @@ html, body {
         }
 
         /* Responsive design */
+
+
+@media (max-width: 600px) {
+  input[type="range"] {
+    max-width: 280px;
+  }
+}
+
+.alignRight td,
+.alignRight tr{
+	font-size: clamp(12px, 2vw, 35px);
+}
+
+textarea {
+  width: 85%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+		
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -223,13 +247,23 @@ html, body {
                 font-size: 2rem;
                 margin-top: 10px;
             }
+			
+			.navigate {
+			display: flex;
+			flex-direction: column;
+            background-color: #A6C6D3;
+            animation: slideright 0.8s ease-out 0.7s forwards;
+            opacity: 0;
+			gap: 10%;
+			}
 
             .navigate a {
-                margin: 10px 20px;
-                font-size: 24px;
-            }
-
-            .bannerText {
-                font-size: 2em;
-            }
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+			}    
         }
