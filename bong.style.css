@@ -23,7 +23,7 @@ font-family: 'Merriweather';
 	text-decoration: underline;
 	color: black; 
 	padding: 0;
-	font-size:15px;
+	font-size:25px;
 	border: none;
 	cursor: pointer;
 	transition: text-shadow 0.3s ease, color 0.3s ease;
@@ -409,4 +409,5 @@ function closePopup(id) {
                 font-size: 2em;
             }
      
+
 
