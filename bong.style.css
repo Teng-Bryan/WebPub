@@ -1,117 +1,5 @@
-* {
-	margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-}
-
-body {
-        background-color: #ffffff;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-}
-
-.header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-	background-color: #87CEEB;
-        position: relative;
-        min-height: 120px;
-}
-
-.logo-section {
-        display: flex;
-        align-items: center;
-        animation: slideDowntop 0.7s ease-out forwards;
-}
-
-        
-.logo-section img {
-        width: 110px;
-        height: 100px;
-        margin-right: 10px;
-}
-
-.logo-text {
-        font-weight: bold;
-        font-size: clamp(2rem, 4vw, 3.5rem);
-        font-family: 'Merriweather', serif;
-        color: black;
-        margin: 0;
-}
-
-.button-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        animation: slideDownsignin 0.6s ease-out 0.5s forwards;
-        opacity: 0;
-}
-
-.text-link {
-	font-size: 26px;
-        color: black;
-        text-decoration: none;
-        font-weight: medium;
-}
-
-.text-link:hover {
-        text-decoration: underline;
-}
-
-.signup-btn {
-        font-size: 26px;
-        border-radius: 10px;
-        background-color: #A6C6D3;
-        border: none;
-        cursor: pointer;
-        height: 45px;
-        width: 130px;
-        font-weight: medium;
-        transition: background-color 0.3s ease;
-}
-
-.signup-btn:hover {
-        background-color: #95b5c2;
-}
-
-.backgroundnav {
-        background-color: #A6C6D3;
-        width:  100%;
-        padding: 0;
-}
-
-.navigate {
-        text-align: center;
-        font-size: 25px;
-        background-color: #A6C6D3;
-        padding: 10px 0;
-        animation: slideright 0.8s ease-out 0.7s forwards;
-        opacity: 0;
-}
-
-.navigate a {
-        display: inline-flex;
-        align-items: center;
-        color: black;
-        font-weight: bold;
-	text-decoration: none;
-        margin: 10px 70px;
-        padding: 10px 15px;
-        border-radius: 6px;
-        transition: background-color 0.3s ease;
-}
-
-.navigate a:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navigate img {
-	vertical-align: middle;
-        margin-right: 10px;
-        width: 25px;
-	height: 25px;
+.MainFrame {
+	font-family: 'Montserrat';
 }
 
 .Subtitle {
@@ -130,6 +18,35 @@ font-family: 'Merriweather';
 	text-align: center;
 }
 
+.NBarLink {
+	font-weight: bold;
+	text-decoration: underline;
+	color: black; 
+	padding: 0;
+	font-size:15px;
+	border: none;
+	cursor: pointer;
+	transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.NBar:hover {
+	text-shadow: 0 0 8px #ffffff, 0 0 12px #87ceeb;
+	color: #005577;
+}
+
+.Blubanner {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.NavBar {
+  display: flex;
+  justify-content: center;
+}
+
 .EBanner {
 	display: flex;
 	flex-direction: column;
@@ -139,6 +56,18 @@ font-family: 'Merriweather';
 	font-size: 2em;
 	font-weight: bold;
 	font-family: 'Merriweather';
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	margin: 0;
+}
+	
+.container img {
+    margin-left: 5px;
+	margin-right: 5px;
 }
 
 html, body {
@@ -285,7 +214,7 @@ width:100%;
   text-align: center;
   box-sizing: border-box;
   height: 320px;
-  justify content: flex-start;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -299,21 +228,125 @@ width:100%;
   line-height: 1.4;
 }
 
-.HListBanner {
+.newsroom{
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
   justify-content: center;
 }
 
-.VListBanner {
-	display: flex;
-	flex-direction: column;
+.news-card {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 880px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
-.bannerText {
-	font-size: 3em;
-	font-weight: bold;
-	font-family: 'Merriweather';
+.news-card:hover {
+  transform: scale(1.05);
 }
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+}
+
+.date {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Popup Modal */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  padding: 8px 20px;
+  background-color: #0071e3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.news-card2 {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 450px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.news-card2:hover {
+  transform: scale(1.05);
+}
+
+.news-card2 img {
+  width: 100%;
+  height: 180px;
+  
+}
+
+
+
+
+
+
+
+
+
+✅ 3. JavaScript (Open/Close Popup)
+html
+Copy
+Edit
+<script>
+function openPopup(id) {
+  document.getElementById(id).style.display = "flex";
+}
+
+function closePopup(id) {
+  document.getElementById(id).style.display = "none";
+}
+</script>
+
  /* Animations */
         @keyframes slideDowntop {
             0% {
@@ -376,3 +409,4 @@ width:100%;
                 font-size: 2em;
             }
      
+
