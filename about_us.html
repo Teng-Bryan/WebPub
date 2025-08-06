@@ -161,12 +161,12 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
 		</div>	
 	
 	<!-- End Banner	-->	
-		<div class="EBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
-			<div class="BannerText">End of the line!</div>
+		<!-- End Banner	-->	
+				<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
+			<div class="bannerText">End of the line!</div>
 			<!---->
-			<text style="font-size: 20px">You’ve reached the end of our About Us Page.</text>
-			<!---->
-			<div class="NavBar" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
+			<span style="font-size: 20px">You’ve reached the end of our Contact Page.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
 				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
 				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
 				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
@@ -176,16 +176,40 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
 					window.scrollTo({ top: 0, behavior: 'smooth' });
 				  }
 				</script>
-		    </div>
-			<text style="font-size: 20px">Have any feedback for us? Leave it down here!</text>
-			<a class="EBButton" href="" target="_blank" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback Form</a>
-			<br/>
-			<text style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</text>
-		</div>
-	
-	
-	</body>
+			</div>
+			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
+			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+			</div>	
+<script>
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+    }
+
+    // Auth buttons functionality
+    const authButtons = document.getElementById("authButtons");
+    const username = localStorage.getItem("loggedInUser");
+
+    if (username) {
+        // User is logged in - show welcome message and logout button
+        authButtons.innerHTML = `
+            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+            <button onclick="logout()" class="signup-btn">Logout</button>
+        `;
+    } else {
+        // Not logged in - show sign in and sign up buttons
+        authButtons.innerHTML = `
+            <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
+            <a href="signup.html?redirect=contact_us.html">
+                <button class="signup-btn">Sign Up</button>
+            </a>
+        `;
+    }
+</script>
+</body>
 </html>
+
 
 
 
