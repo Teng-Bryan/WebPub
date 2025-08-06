@@ -450,7 +450,7 @@ width:100%;
 }
 
 .bannerText {
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: bold;
 	font-family: 'Merriweather';
 }
@@ -622,6 +622,7 @@ function closePopup(id) {
         }
 
        
+
 
 
 
