@@ -1,7 +1,9 @@
 <html>
 	<head>
 		<title>Feedback Form</title>
+		
 		<link href="zhengbostyle.css" rel="stylesheet"></link>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 		
@@ -29,37 +31,37 @@
 		</style>
 	</head>
 	<body>
-	<div class="header">
-        <div class="logo-section">
-            <img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
-            <h1 class="logo-text">KeElectronics</h1>
-        </div>
-        
-        <div class="button-container" id="authButtons">
-            <!-- Buttons will be inserted by JavaScript -->
-        </div>
-    </div>
+		<div class="header">
+			<div class="logo-section">
+				<img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+				<h1 class="logo-text">KeElectronics</h1>
+			</div>
+			
+			<div class="button-container" id="authButtons">
+				<!-- Buttons will be inserted by JavaScript -->
+			</div>
+		</div>
 
-    <div class="backgroundnav">
-        <div class="navigate">
-            <a href="index.html">
-                <img src="zhengbopictures/Home.png" alt="Home" />
-                Home
-            </a>
-            <a href="Product_Catalogue.html">
-                <img src="zhengbopictures/Shop.png" alt="Products" />
-                Products
-            </a>
-            <a href="about_us.html">
-                <img src="zhengbopictures/AboutUs.png" alt="About Us" />
-                About Us
-            </a>
-            <a href="contact_us.html">
-                <img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
-                Contact Us
-            </a>
-        </div>
-    </div>
+		<div class="backgroundnav">
+			<div class="navigate">
+				<a href="index.html">
+					<img src="zhengbopictures/Home.png" alt="Home" />
+					Home
+				</a>
+				<a href="Product_Catalogue.html">
+					<img src="zhengbopictures/Shop.png" alt="Products" />
+					Products
+				</a>
+				<a href="about_us.html">
+					<img src="zhengbopictures/AboutUs.png" alt="About Us" />
+					About Us
+				</a>
+				<a href="contact_us.html">
+					<img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
+					Contact Us
+				</a>
+			</div>
+		</div>
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
@@ -69,7 +71,7 @@
 			<div class="container">
 				<span style="font-size: clamp(15px, 2vw, 20px)">We Deliver Worldwide!</span>
 				<img src="zhengbopictures/Globe.png" alt="Globe Icon"
-				   style="width: clamp(18px, 2vw, 25px); height: auto;">
+				   style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;">
 			</div>
 		</div>
 	
@@ -93,7 +95,7 @@
 					</td>
 					
 					<td style="width: 500px">
-						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="qualityNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
@@ -119,7 +121,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="deliverySpeedNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -145,7 +147,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="customerServiceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
@@ -171,7 +173,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="productValueNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -197,7 +199,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 400px;">&nbsp;
+						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="convenienceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -239,7 +241,7 @@
 		</form>
 		
 	<!-- End Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center;">
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
 			<div class="bannerText">End of the line!</div>
 			<!---->
 			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
