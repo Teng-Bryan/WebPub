@@ -439,7 +439,21 @@ width:100%;
 
 
 
+.HListBanner {
+  display: flex;
+  justify-content: center;
+}
 
+.VListBanner {
+	display: flex;
+	flex-direction: column;
+}
+
+.bannerText {
+	font-size: 3em;
+	font-weight: bold;
+	font-family: 'Merriweather';
+}
 
 
 
@@ -521,6 +535,7 @@ function closePopup(id) {
                 font-size: 2em;
             }
      
+
 
 
 
