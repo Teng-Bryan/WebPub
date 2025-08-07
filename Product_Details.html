@@ -1,159 +1,198 @@
 <html>
 	<head>
-		<title>Feedback Form</title>
-		<link href="zhengbostyle.css" rel="stylesheet"></link>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+		<title>Product Details</title>
 		
-		<!-- Embedded -->
+		<link href="zhengbostyle.css" rel="stylesheet"></link>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+	
 		<style>
-		.miniText {
-		font-size: 11px; color: #757575;}
+		  .product-table {
+			width: 60%;
+			table-layout: fixed;
+			border-collapse: collapse;
+			margin-left: 3%;
+			margin-top: 6%;
+		  }
+
+		  .product-table th, .product-table td {
+			padding: 2%;
+			font-size: clamp(12px, 2vw, 25px);
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+		  }
+
+		  .product-table th:first-child {
+			width: 70%;
+			text-align: left;
+		  }
+
+		  .product-table th:last-child {
+			width: 30%;
+			text-align: right;
+		  }
+
+		  .product-table td[colspan="2"] {
+			font-size: clamp(10px, 1.8vw, 20px);
+		  }
 		</style>
+		
 	</head>
 	<body>
-	<div class="header">
-        <div class="logo-section">
-            <img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
-            <h1 class="logo-text">KeElectronics</h1>
-        </div>
-        
-        <div class="button-container" id="authButtons">
-            <!-- Buttons will be inserted by JavaScript -->
-        </div>
-    </div>
+		<div class="header">
+			<div class="logo-section">
+				<img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+				<h1 class="logo-text">KeElectronics</h1>
+			</div>
+			
+			<div class="button-container" id="authButtons">
+				<!-- Buttons will be inserted by JavaScript -->
+			</div>
+		</div>
 
-    <div class="backgroundnav">
-        <div class="navigate">
-            <a href="index.html">
-                <img src="zhengbopictures/Home.png" alt="Home" />
-                Home
-            </a>
-            <a href="Product_Catalogue.html">
-                <img src="zhengbopictures/Shop.png" alt="Products" />
-                Products
-            </a>
-            <a href="about_us.html">
-                <img src="zhengbopictures/AboutUs.png" alt="About Us" />
-                About Us
-            </a>
-            <a href="contact_us.html">
-                <img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
-                Contact Us
-            </a>
-        </div>
-    </div>
+		<div class="backgroundnav">
+			<div class="navigate">
+				<a href="index.html">
+					<img src="zhengbopictures/Home.png" alt="Home" />
+					Home
+				</a>
+				<a href="Product_Catalogue.html">
+					<img src="zhengbopictures/Shop.png" alt="Products" />
+					Products
+				</a>
+				<a href="Product_Catalogue.html">
+					<img src="zhengbopictures/Shop.png" alt="Products" />
+					Bookmark
+				</a>
+				<a href="about_us.html">
+					<img src="zhengbopictures/AboutUs.png" alt="About Us" />
+					About Us
+				</a>
+				<a href="contact_us.html">
+					<img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
+					Contact Us
+				</a>
+			</div>
+		</div>
 	<!-- Hanger Below Banner	-->
-		<div class="LRbanner" style="margin-top:10px; padding: 10px 0px; height: 25px;">
+		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
-				<img style="margin-left:10px" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
-				<a class="linkButton" href="Product_Catalogue.html" target="" style="background-color: black; color: white; padding: 5px 10px; font-size: 1em;">Back to Browsing</a>
+				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
+				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(15px, 2vw, 20px)">Back to Browsing</a>
 			</div>
 			
 			<div class="container">
-				<span style="font-size:1em">We Deliver Worldwide!</span>
-				<img style="margin-right:10px" src="zhengbopictures/Globe.png" alt="Description" width="30" height="30">
+				<span style="font-size: clamp(15px, 2vw, 20px)">We Deliver Worldwide!</span>
+				<img src="zhengbopictures/Globe.png" alt="Globe Icon"
+				   style="width: clamp(15px, 2vw, 25px); height: auto; margin: 0.5vw;">
 			</div>
 		</div>
 		
 	<!-- Product Info -->
-		<div style="display:flex; margin-bottom: 75px">
-			<img style="margin-left:200px; margin-top:50px; border-radius: 25px" src="" alt="Description" width="400" height="400">
+		<div style="display:flex; margin-bottom: 5%">
+			<img style="margin-left:25%; margin-top:4%; border-radius: 25px; width: 25vw; height: auto;" src="" alt="Description">
 			
 			<div>
-				<table border="0" cellpadding="10" height="10px" width="600px" style="margin-top:20px; margin-left:90px;">
-				<tr style="font-size: 35px">
+				<table class="product-table">
+				  <tr>
 					<th>
-						Product Name
-					</th>	
-					<th style="padding-left:100px">
-						Price($)
+					  Product Name
+					</th>   
+					<th>
+					  Price($)
 					</th>
-				</tr>
-				<tr style="font-size: 25px">
+				  </tr>
+				  <tr>
 					<td colspan="2">
-						Dimensions:
-						<br/><br/>
-						Description:
-					</td>	
-				</tr>
-			</table>
-				<div class="HListBanner" style="justify-content: right; font-size:20px; margin-top:100px; gap: 10px;">
+					  Dimensions:<br><br>
+					  Description:
+					</td>   
+				  </tr>
+				</table>
+				
+				<div class="HListBanner" style="margin-left: 1%;font-size: clamp(10px, 2vw, 20px); margin-top:4%; gap: 0.5vw;">
 					<a class="linkButton" href="Order Form.html" target="_blank" 
-					style="background-color: #A6C6D3; padding: 10px 20px; color: black; border: 1px solid #000;">Order</a>
+					style="background-color: #A6C6D3; padding: 0.5vw 1vw; color: black; border: 1px solid #000;">Order</a>
 					
 					<a class="linkButton" href="Order Form.html" target="_blank" 
-					style="background-color: #A6C6D3; padding: 10px 20px; color: black; border: 1px solid #000;">Cart</a>
+					style="background-color: #A6C6D3; padding: 0.5vw 1vw; color: black; border: 1px solid #000;">Cart</a>
 				</div>
 			</div>
 		</div>
 		
 	<!-- Review Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px;">
-			<div class="bannerText" style="margin-left:90px;">Product Feedback</div>
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 0.5%;">
+			<div class="bannerText">Product Feedback</div>
 		</div>
 		<!-- Reviews -->
-		<div class="HListBanner" style="background-color: #87ceeb; gap: 50px; height: 185px; padding: 0px;">
+		<div class="HListBanner" style="background-color: #87ceeb; gap: 2vw; padding: 1%;">
 			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 30px; font-size: 25px;">
+					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
 				<tr>
-					<td rowspan="2" align="center" style="padding-left: 0">
-						<img src="zhengbopictures/Profile.PNG" alt="Description" width="45" height="45" style="padding-bottom: 15px; padding-left: 15px">
+					<td rowspan="2" style="text-align: center; vertical-align: middle;">
+					  <img src="zhengbopictures/Profile.PNG" alt="Description"
+						   width="30vw" height="auto"
+						   style="display: inline-block; margin: auto;">
 					</td>
-					<td style="font-size: 15px;">
+					<td style="font-size: clamp(7px, 2vw, 15px);">
 						Name
 					</td>
 				</tr>
 				<tr>
-					<td style="font-size: 15px; padding-bottom: 15px; padding-right: 55px;">
+					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
 						Description
 					</td>
 					
 				</tr>
 			</table>
 			
-			<table border="0" height="10px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
+			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 30px; font-size: 25px;">
+					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
 				<tr>
-					<td rowspan="2" align="center" style="padding-left: 0">
-						<img src="zhengbopictures/Profile.PNG" alt="Description" width="45" height="45" style="padding-bottom: 15px; padding-left: 15px">
+					<td rowspan="2" style="text-align: center; vertical-align: middle;">
+					  <img src="zhengbopictures/Profile.PNG" alt="Description"
+						   width="30vw" height="auto"
+						   style="display: inline-block; margin: auto;">
 					</td>
-					<td style="font-size: 15px;">
+					<td style="font-size: clamp(7px, 2vw, 15px);">
 						Name
 					</td>
 				</tr>
 				<tr>
-					<td style="font-size: 15px; padding-bottom: 15px; padding-right: 55px;">
+					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
 						Description
 					</td>
 					
 				</tr>
 			</table>
 			
-			<table border="0" height="10px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
+			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 30px; font-size: 25px;">
+					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
 				<tr>
-					<td rowspan="2" align="center" style="padding-left: 0">
-						<img src="zhengbopictures/Profile.PNG" alt="Description" width="45" height="45" style="padding-bottom: 15px; padding-left: 15px">
+					<td rowspan="2" style="text-align: center; vertical-align: middle;">
+					  <img src="zhengbopictures/Profile.PNG" alt="Description"
+						   width="30vw" height="auto"
+						   style="display: inline-block; margin: auto;">
 					</td>
-					<td style="font-size: 15px;">
+					<td style="font-size: clamp(7px, 2vw, 15px);">
 						Name
 					</td>
 				</tr>
 				<tr>
-					<td style="font-size: 15px; padding-bottom: 15px; padding-right: 55px;">
+					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
 						Description
 					</td>
 					
@@ -162,12 +201,12 @@
 		</div>
 	<!-- Review Submit -->
 		<div id="feedbackSection" style="margin-top: 25px; margin-bottom: 25px;">
-			<span style="font-size: 20px; margin-left:120px;">
+			<span style="font-size: clamp(10px, 2vw, 25px); margin-left:12%;">
 				Submit your experience! &#40;If you have ordered the product&#41;:
 			</span>
-			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:20px;"></textarea>
+			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:clamp(10px, 2vw, 20px);"></textarea>
 			<a class="linkbutton" href="javascript:void(0)" onclick="submitFeedback()" 
-			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 1200px; font-size: 1.2em; border: 1px solid #000;">
+			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 1px solid #000;">
 			  Submit
 			</a>
 		</div>
@@ -184,28 +223,27 @@
 		</script>
 	
 	<!-- End Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
-			<div class="bannerText">
-				<img style="margin-top:20px" src="zhengbopictures/KeELightningBolt.png" alt="Description" width="40" height="40">
-				End of the line!
-			</div>
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
+			<div class="bannerText">End of the line!</div>
 			<!---->
-				<span style="font-size: 20px">You've reached the end of the Order Form.</span>
-				<div class="HListBanner" style="background-color: #87ceeb; gap: 20px; padding: 10px;">
-				<a class="linkButton" href="index.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Home Page</a>
-				<a class="linkButton" href="about_us.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">About Us</a>
-				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Back To Top</a>
+			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+				<a class="linkButton" href="index.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
 				<!-- Back to Top Java-->
 				<script>
 				  function scrollToTop() {
 					window.scrollTo({ top: 0, behavior: 'smooth' });
 				  }
 				</script>
-		    </div>
-			<span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
-			<a class="linkButton" href="Feedback_Form.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
+		    	</div>
+                	<div style="font-size: clamp(15px, 2vw, 20px)">Have any feedback for us? Leave it down here!</div>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000; font-size: clamp(13px, 2vw, 20px);">
+			Feedback</a>
+
 			<br/>
-			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
 					<script>
 				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
