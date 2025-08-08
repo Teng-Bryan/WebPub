@@ -36,8 +36,22 @@
 		  .product-table td[colspan="2"] {
 			font-size: clamp(10px, 1.8vw, 20px);
 		  }
+			
+			.btn-bookmark {
+			  background-color: #ffb933;
+			  color: white;
+			  
+			  text-decoration: none;
+				border-radius: 10px;
+				display: inline-block;
+				text-align: center;
+				transition: background-color 0.3s ease;
+				font-family: 'Montserrat';
+				font-weight: bold;
+			}
+			
+			
 		</style>
-		
 	</head>
 	<body>
 		<div class="header">
@@ -63,7 +77,7 @@
 				</a>
 				<a href="bookmarks.html">
 					<img src="aarushpictures/bkmk.png" alt="Products" />
-					Bookmark
+					Bookmarks
 				</a>
 				<a href="about_us.html">
 					<img src="zhengbopictures/AboutUs.png" alt="About Us" />
@@ -75,15 +89,17 @@
 				</a>
 			</div>
 		</div>
+		
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
-				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
-				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(15px, 2vw, 20px)">Back to Browsing</a>
+				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
+				<!-- <a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(15px, 2vw, 20px)">Back to Browsing</a> -->
+				<button class="linkButton" onclick="history.back()" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(10px, 1.5vw, 20px)">Back to Browsing</button>
 			</div>
 			
 			<div class="container">
-				<span style="font-size: clamp(15px, 2vw, 20px)">We Deliver Worldwide!</span>
+				<span style="font-size: clamp(10px, 1.5vw, 20px)">We Deliver Worldwide!</span>
 				<img src="zhengbopictures/Globe.png" alt="Globe Icon"
 				   style="width: clamp(15px, 2vw, 25px); height: auto; margin: 0.5vw;">
 			</div>
@@ -91,32 +107,33 @@
 		
 	<!-- Product Info -->
 		<div style="display:flex; margin-bottom: 5%">
-			<img style="margin-left:25%; margin-top:4%; border-radius: 25px; width: 25vw; height: auto;" src="" alt="Description">
+			<img style="margin-left:25%; margin-top:4%; border-radius: 25px; width: 25vw; height: auto;" id="product-image" src="" alt="Description">
 			
 			<div>
 				<table class="product-table">
 				  <tr>
 					<th>
-					  Product Name
+					  <span id="product-name"></span>
 					</th>   
 					<th>
-					  Price($)
+					  <span id="product-price"></span>
 					</th>
 				  </tr>
 				  <tr>
 					<td colspan="2">
-					  Dimensions:<br><br>
-					  Description:
+					  Dimensions:<br>
+					  <span id="product-dimensions"></span><br><br>
+					  Description<br>
+					  <span id="product-description"></span>
 					</td>   
 				  </tr>
 				</table>
 				
-				<div class="HListBanner" style="margin-left: 1%;font-size: clamp(10px, 2vw, 20px); margin-top:4%; gap: 0.5vw;">
-					<a class="linkButton" href="Order Form.html" target="_blank" 
-					style="background-color: #A6C6D3; padding: 0.5vw 1vw; color: black; border: 1px solid #000;">Order</a>
+				<div class="HListBanner" style="margin-left: 1%; margin-top:4%; gap: 0.5vw;">
+					<a class="linkButton" href="Order Form.html" target="_blank" style="background-color: #87CEEB; padding: 0.5vw 1vw; color: black; font-size: clamp(10px, 2vw, 20px);">Order</a>
 					
-					<a class="linkButton" href="Order Form.html" target="_blank" 
-					style="background-color: #A6C6D3; padding: 0.5vw 1vw; color: black; border: 1px solid #000;">Cart</a>
+					<button id="bookmark-btn" class="btn-bookmark" style="padding: 0.5vw 1vw; font-size: clamp(10px, 2vw, 20px); border:0px;">Bookmark</button>
+					
 				</div>
 			</div>
 		</div>
@@ -129,7 +146,7 @@
 		<div class="HListBanner" style="background-color: #87ceeb; gap: 2vw; padding: 1%;">
 			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
+					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
@@ -153,7 +170,7 @@
 			
 			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
+					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
@@ -177,7 +194,7 @@
 			
 			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 10%; padding-top: 5%; padding-bottom: 3%; font-size: clamp(15px, 2vw, 30px);">
+					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
 						"A terrific piece of praise"
 					</td>
 				</tr>
@@ -206,7 +223,7 @@
 			</span>
 			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:clamp(10px, 2vw, 20px);"></textarea>
 			<a class="linkbutton" href="javascript:void(0)" onclick="submitFeedback()" 
-			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 1px solid #000;">
+			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 0px;">
 			  Submit
 			</a>
 		</div>
@@ -272,6 +289,48 @@
   						window.location.reload();
 					}
 				</script>
+				
+				<!-- This Loads Required Data From Previous Page! -->
+				<script>
+		// Parse the product ID from the URL
+		window.onload = function () {
+		  const productData = JSON.parse(localStorage.getItem("selectedProduct"));
+
+		  if (productData) {
+			document.getElementById("product-name").textContent = productData.name;
+			document.getElementById("product-price").textContent = `$${productData.price}`;
+			document.getElementById("product-image").src = productData.image;
+			document.getElementById("product-image").alt = productData.name;
+			
+			const bookmarkBtn = document.getElementById("bookmark-btn");
+			bookmarkBtn.onclick = function () {
+			  bookmark(productData.id, productData.name);
+			};
+		  } else {
+			document.body.innerHTML = "<h2 style='text-align:center;'>Product not found.</h2>";
+		  }
+		};
+		
+		//Book Mark
+		 function bookmark(productId, productName) {
+		  const user = localStorage.getItem("loggedInUser");
+		  <!-- if (!user) { -->
+			<!-- alert("Please sign in to bookmark products."); -->
+			<!-- return; -->
+		  <!-- } -->
+		  
+		  const bookmarksKey = `bookmarks_${user}`;
+		  let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
+		  
+		  if (!bookmarks.includes(productId)) {
+			bookmarks.push(productId);
+			localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
+			alert(productName + " has been bookmarked!");
+		  } else {
+			alert(productName + " is already bookmarked!");
+		  }
+		}
+		</script>
 	</body>
 </div>	
 </html>
