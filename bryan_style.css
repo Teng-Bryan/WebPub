@@ -29,13 +29,12 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    animation: slideDowntop 0.7s ease-out forwards;
 }
 
 .logo-section img {
     width: 60px;
     height: 60px;
-    margin-right: 10px;
+    margin-right: 0;
     object-fit: contain;
     background: none;
     padding: 0;
@@ -116,6 +115,29 @@ body {
 .auth-btn:hover {
   background-color: #A6C6D3;
   color: white;
+}
+
+.signup-btn {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: #A6C6D3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.signup-btn:hover {
+  background-color: #95b5c2;
+}
+
+#authButtons {
+  font-size: 20px;
 }
 
 .backgroundnav {
@@ -308,11 +330,11 @@ body {
 
 .phone-showcase {
     background: #f0f8ff;
-    padding: 40px 10px 10px 10px;
+    padding: 20px 10px 10px 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This ensures everything is centered */
+    align-items: center;
     z-index: 1; 
 }
 
@@ -634,6 +656,14 @@ body {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  background-color: #87ceeb;
+  padding: 10px 20px;
+  height: 90px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
 }
 
 .VListBanner {
@@ -653,6 +683,9 @@ body {
 .HListBanner {
   display: flex;
   justify-content: center;
+  background-color: #A6C6D3;
+  gap: 100px;
+  padding: 1px;
 }
 
 .linkButton {
