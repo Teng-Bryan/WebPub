@@ -139,18 +139,19 @@
   }
 
   function buyNow(productId) {
-    const user = localStorage.getItem("loggedInUser");
-   
-    window.location.href = "order.html?product=" + productId;
-  }
+	  const user = localStorage.getItem("loggedInUser");
+	 
+	 if (!user) {
+        alert("Please sign in to make a purchase.");
+        return;
+      }
+
+	  const product = products.find(p => p.id === productId);
+	  localStorage.setItem("selectedProduct", JSON.stringify(product));
+	  window.location.href = "Product_Details.html";
+	}
 
   window.onload = loadBookmarks;
 </script>
 </body>
 </html>
-
-
-
-
-
-
