@@ -364,7 +364,7 @@ const products = [
       }
 
 	  const product = products.find(p => p.id === productId);
-	  localStorage.setItem("selectedProduct", JSON.stringify(product));
+	  sessionStorage.setItem("selectedProduct", JSON.stringify(product));
 	  window.location.href = "Product_Details.html";
 	}
 
@@ -426,3 +426,4 @@ const products = [
 </script>
 </body>
 </html>
+
