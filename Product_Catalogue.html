@@ -359,14 +359,18 @@ const products = [
     }
 
     function buyNow(productId) {
-      const user = localStorage.getItem("loggedInUser");
-      if (!user) {
-        alert("Please sign in to make a purchase.");
-        return;
-      }
-      window.location.href = "order.html?product=" + productId;
-    }
-
+  	  const user = localStorage.getItem("loggedInUser");
+  	 
+  	 if (!user) {
+          alert("Please sign in to make a purchase.");
+          return;
+        }
+  
+  	  const product = products.find(p => p.id === productId);
+  	  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  	  window.location.href = "Product_Details.html";
+	  }
+    
    function styleBanner(el) {
     el.style.background   = "#FFF7C2";
     el.style.padding      = "15px";
@@ -425,6 +429,7 @@ const products = [
 </script>
 </body>
 </html>
+
 
 
 
