@@ -25,13 +25,6 @@
 					height: 13px;
 				}
 			}
-		
-			input[type="text"],
-			input[type="tel"],
-			input[type="address"],
-			input[type="date"]		{
-				font-size: clamp(5px, 2vw, 25px);
-			}
 		</style>
 		
 	</head>
@@ -74,7 +67,7 @@
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
-				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
+				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
 				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(15px, 2vw, 20px)">Back to Browsing</a>
 			</div>
 			
@@ -96,7 +89,7 @@
 		
 		<form action="Order_Submitted.html" method="get">
 			<div class="miniText" align="center" style="font-style:italic; margin-top:2%">Fields labeled with * are required!</div>
-			<div class="HListBanner" style="gap: 3vw; padding: 10px; margin-left:4vw; margin-bottom:4vw">
+			<div class="HListBanner" style="gap: 3%; padding: 10px; margin-left:4vw; margin-bottom:4vw">
 				<table border="0" style="background-color:white; border-collapse: separate;">
 					<tr height="1vw">
 						<td>
@@ -168,7 +161,7 @@
 					<tr>
 						<td style="padding-top: 0; padding-bottom:0">
 							<div>
-							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="airTransport" required="required">&nbsp;Air Transport</label>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="Air" required="required">&nbsp;Air Transport</label>
 							  <div class="miniText" style="margin-left: 25px; margin-bottom: 0.5vw;">
 								Fast but costs more!
 							  </div>
@@ -179,7 +172,7 @@
 					<tr>
 						<td>
 							<div>
-							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="seaTransport">&nbsp;Sea Transport</label>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="Sea">&nbsp;Sea Transport</label>
 							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
 								Cheaper but slower!
 							  </div>
@@ -190,7 +183,7 @@
 					<tr>
 						<td>
 						<div>
-							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="local">&nbsp;Local</label>
+							  <label style="font-weight:bold;"><input type="radio" id="modeofTransport" name="modeofTransport" value="Local">&nbsp;Local</label>
 							  <div class="miniText" style="margin-left: 25px; margin-bottom: 10px;">
 								Select this if you are in our country!
 							  </div>
@@ -237,7 +230,7 @@
 				</table>
 			</div>
 			<div align="center" style="margin-top: 1vw;">
-				<input type="submit" value="Confirm Order" style="background-color: #27A74E; font-size: clamp(5px, 2vw, 20px); border-radius:5px; margin-left:60%;">
+				<button type="submit" value="Confirm Order" style="background-color: #27A74E; font-size: clamp(5px, 2vw, 20px); border-radius:5px; margin-left:60%;">Submit Order</button>
 			</div>
 		</form>
 	
@@ -284,12 +277,31 @@
             			<button class="signup-btn">Sign Up</button>
         			</a>
     				`;
-			}
+					}
 
         			function logout() {
   						localStorage.removeItem("loggedInUser");
   						window.location.reload();
 					}
+					
+					document.getElementById("Order_Submitted.html").addEventListener("submit", function (e) {
+					  e.preventDefault(); // Stop default form submission
+
+					  // Collect form data
+					  const formData = new FormData(this);
+					  const params = new URLSearchParams();
+					  for (const [key, value] of formData.entries()) {
+						params.append(key, value);
+					  }
+
+					  // Store product data in sessionStorage
+					  const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
+					  
+					  sessionStorage.setItem("selectedProduct", JSON.stringify(productData));
+
+					  // Redirect manually with query string
+					  window.location.href = `Order_Submitted.html?${params.toString()}`;
+					});
 				</script>
 	</body>
 </div>	
