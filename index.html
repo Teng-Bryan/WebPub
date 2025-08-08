@@ -115,7 +115,11 @@
 			<br/>
 			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
-	<script>
+<script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function logout() {
         localStorage.removeItem("loggedInUser");
         window.location.reload();
@@ -134,46 +138,83 @@
     } else {
         // Not logged in
         authButtons.innerHTML = `
-            <a href="signin.html?redirect=index.html" class="text-link">Sign In</a>
-            <a href="signup.html?redirect=index.html">
-                <button class="signup-btn">Sign Up</button>
-            </a>
+            <a href="signin.html" class="auth-btn">Sign In</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
         `;
     }
-		  window.onload = function () {
-    const user = localStorage.getItem("loggedInUser");
-    if (user) {
-        const bookmarked = localStorage.getItem(`bookmark_${user}`);
-        if (bookmarked) {
-            const reminder = document.createElement("div");
-            reminder.innerText = `👋 Hey ${user}! Remember the "${bookmarked}"? Get it while you still can!`;
-            reminder.style.background = "#FFF7C2";
-            reminder.style.padding = "15px";
-            reminder.style.fontWeight = "bold";
-            reminder.style.fontSize = "18px";
-            reminder.style.textAlign = "center";
-            reminder.style.position = "relative";
-            reminder.style.zIndex = "1000";
-            reminder.style.width = "100%";
-            reminder.style.boxSizing = "border-box";
+
+    // Bookmark reminder functionality
+    window.onload = function () {
+        const user = localStorage.getItem("loggedInUser");
+        if (!user) return;  // not signed in
+
+        // Check for bookmarks using both possible keys
+        const keyNew = `bookmarks_${user}`;
+        const keyOld = `bookmark_${user}`;
+        let bmarks = JSON.parse(localStorage.getItem(keyNew)) 
+                  || JSON.parse(localStorage.getItem(keyOld)) 
+                  || [];
+
+        // Also check for old single bookmark format
+        const oldBookmark = localStorage.getItem(`bookmark_${user}`);
+        if (oldBookmark && !Array.isArray(bmarks)) {
+            bmarks = [oldBookmark];
+        }
+
+        if (bmarks.length >= 1) {
+            // Product data matching the catalogue
+            const products = [
+                { id: 1, name: "ASUS TUF Gaming A14" },
+                { id: 2, name: "MacBook Pro M3" },
+                { id: 3, name: "HP Victus 15" },
+                { id: 4, name: "Dell XPS 13" },
+                { id: 5, name: "iPhone 15 Pro" },
+                { id: 6, name: "Samsung Galaxy S24" },
+                { id: 7, name: "iPad Pro" },
+                { id: 8, name: "Samsung Galaxy Tab S9" }
+            ];
+
+            // Create banner element
+            const banner = document.createElement("div");
             
-            // Insert after the navigation instead of at the very beginning
-            const nav = document.querySelector('.backgroundnav');
-            if (nav && nav.nextSibling) {
-                nav.parentNode.insertBefore(reminder, nav.nextSibling);
+            if (bmarks.length === 1) {
+                const prodId = Array.isArray(bmarks) ? bmarks[0] : bmarks;
+                const prod = products.find(p => p.id === parseInt(prodId)) || { name: bmarks[0] };
+                banner.innerHTML = `
+                    👋 Hey ${user}! Remember "${prod.name}"? 
+                    <a href="Product_Catalogue.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Get it while you still can!
+                    </a>`;
             } else {
-                // Fallback: insert after nav or at the beginning of main content
-                const mainContent = document.querySelector('.phone-showcase');
-                if (mainContent) {
-                    mainContent.parentNode.insertBefore(reminder, mainContent);
-                }
+                banner.innerHTML = `
+                    👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
+                    <a href="bookmarks.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Check them out here or in your bookmarks page!
+                    </a>`;
+            }
+            
+            // Apply styling to match the product catalogue
+            banner.style.background = "#FFF7C2";
+            banner.style.padding = "15px";
+            banner.style.fontWeight = "bold";
+            banner.style.fontSize = "18px";
+            banner.style.textAlign = "center";
+            banner.style.marginBottom = "15px";
+            banner.style.cursor = "pointer";
+            
+            // Insert after navigation bar (below the blue menu)
+            const navBar = document.querySelector('.HListBanner');
+            if (navBar) {
+                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
             }
         }
-    }
-};
+    };
 </script>
 </body>
 </html>
+
 
 
 
