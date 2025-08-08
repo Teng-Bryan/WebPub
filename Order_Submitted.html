@@ -7,6 +7,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 		
+		<style>
+			.summaryBold {
+				font-size: clamp(5px, 1.5vw, 20px);
+				font-weight: bold;
+			}
+		
+			.summaryText {
+				font-size: clamp(5px, 1.5vw, 20px);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="header">
@@ -47,7 +57,7 @@
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
 			<div class="container">
-				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="PNG/Left_Arrow.png" alt="Description" width="25" height="20">
+				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
 				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(15px, 2vw, 20px)">Back to Browsing</a>
 			</div>
 			
@@ -58,8 +68,32 @@
 			</div>
 		</div>
 		
+		<!-- Order Summary -->
+		<div style="width: 100%; background-color: #87ceeb; margin-top:1%; padding-top: 3%; padding-bottom: 3%;">
+		  <div style="width: 60%; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-family: 'Montserrat';">
+			
+			<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+			  <!-- Left: Order Summary -->
+			  <div style="flex: 1; min-width: 250px;">
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Order Confirmation</span>
+				<div id="orderSummary"></div>
+			  </div>
+
+			  <!-- Right: Product Details -->
+			  <div style="flex: 1; min-width: 250px;"> 
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Product Details</span>
+					<div id="product-details">
+					  <img id="order-product-image" style="width: 25vw; border-radius: 25px" /><br/><br/>
+					  <div><span class="summaryBold">Product:</span> <span class="summaryText" id="order-product-name"></span></div>
+					  <div><span class="summaryBold">Price:</span> <span class="summaryText" id="order-product-price"></span></div>
+					</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
 		<!-- Message -->
-		<div class="VListBanner" style="padding: 10px; margin-top: 200px; margin-bottom: 200px; align-items: center;">
+		<div class="VListBanner" style="padding: 10px; margin-top: 200px; margin-bottom: 200px; .centered-content">
 			<span class="bannerText">Thank You For Ordering with Us!</span>
 			<span style="font-size:30px">Please order from us again</span>
 			<span style="font-size: 20px; margin-top:20px">Have any feedback for us? Leave it down here!</span>
@@ -87,32 +121,71 @@
 			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
 					<script>
-				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-		  			const authButtons = document.getElementById("authButtons");
-  					const username = localStorage.getItem("loggedInUser");
+					  // Auth buttons functionality
+					  const authButtons = document.getElementById("authButtons");
+					  const loggedInUser = localStorage.getItem("loggedInUser");
 
-        			if (username) {
-           			// User is logged in
-            		authButtons.innerHTML = `
-                		<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-                		<button onclick="logout()" class="signup-btn">Logout</button>
-            			`;
-        			} 
-					else {
-            		// Not logged in
-            		authButtons.innerHTML = `
-        			<a href="signin.html?redirect=Feedback_Form.html" class="text-link">Sign In</a>
-        			<a href="signup.html?redirect=Feedback_Form.html">
-            			<button class="signup-btn">Sign Up</button>
-        			</a>
-    				`;
-			}
+					  if (loggedInUser) {
+						authButtons.innerHTML = `
+						  <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${loggedInUser}</strong></span>
+						  <button onclick="logout()" class="signup-btn">Logout</button>
+						`;
+					  } else {
+						authButtons.innerHTML = `
+						  <a href="signin.html?redirect=Feedback_Form.html" class="text-link">Sign In</a>
+						  <a href="signup.html?redirect=Feedback_Form.html">
+							<button class="signup-btn">Sign Up</button>
+						  </a>
+						`;
+					  }
 
-        			function logout() {
-  						localStorage.removeItem("loggedInUser");
-  						window.location.reload();
-					}
-				</script>
+					  function logout() {
+						localStorage.removeItem("loggedInUser");
+						window.location.reload();
+					  }
+					  
+					  window.onload = function () {
+					  const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
+
+					  if (productData) {
+						document.getElementById("order-product-name").textContent = productData.name;
+						document.getElementById("order-product-price").textContent = `$${productData.price}`;
+						document.getElementById("order-product-image").src = productData.image;
+						document.getElementById("order-product-image").alt = productData.name;
+					  } else {
+						document.body.innerHTML = "<h2 style='text-align:center;'>No product selected for order.</h2>";
+					  }
+					};
+
+					  // Retrieve Form Inputs
+					  const params = new URLSearchParams(window.location.search);
+
+					  const username = params.get("username");
+					  const phonenumber = params.get("phonenumber");
+					  const country = params.get("country");
+					  const address = params.get("address");
+					  const dategoal = params.get("dategoal");
+					  const modeofTransport = params.get("modeofTransport");
+					  const nameOnCard = params.get("nameOnCard");
+					  const cardNumber = params.get("cardNumber");
+					  const cvvNumber = params.get("cvvNumber");
+					  const expiryDate = params.get("expiryDate");
+
+					  const maskedCard = cardNumber && cardNumber.length >= 4
+						? `**** **** **** ${cardNumber.slice(-4)}`
+						: "Invalid or missing card number";
+
+					  document.getElementById("orderSummary").innerHTML = `
+						<p><span class="summaryBold">Username:</span> <span class="summaryText">${username}</span></p>
+						<p><span class="summaryBold">Phonenumber:</span> <span class="summaryText">${phonenumber}</span></p>
+						<p><span class="summaryBold">Country:</span> <span class="summaryText">${country}</span></p>
+						<p><span class="summaryBold">Address:</span> <span class="summaryText">${address}</span></p>
+						<p><span class="summaryBold">Dategoal:</span> <span class="summaryText">${dategoal}</span></p>
+						<p><span class="summaryBold">Mode of Transport:</span> <span class="summaryText">${modeofTransport}</span></p>
+						<p><span class="summaryBold">Name On Card:</span> <span class="summaryText">${nameOnCard}</span></p>
+						<p><span class="summaryBold">Card Number:</span> <span class="summaryText">${maskedCard}</span></p>
+					  `;
+					</script>
 	</body>
 </div>
 </html>
