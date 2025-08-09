@@ -12,9 +12,9 @@
 			font-size: clamp(10px, 1.25vw, 25px);
 			font-weight: bold;
 			white-space: nowrap;
-			  overflow: hidden;
-			  text-overflow: ellipsis;
-			  max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 100%;
 		}
 	</style>
 </head>
@@ -336,8 +336,6 @@
       <p><strong>S Pen:</strong> Included</p>
     </div>
 
-    <div id="overlay" class="overlay"></div>
-
   <!-- Scripts -->
   <script>
     // Product data
@@ -363,7 +361,7 @@
 
     if (username) {
       authButtons.innerHTML = `
-        <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+        <span class="Username">Welcome, <strong>${username}</strong></span>
         <button onclick="logout()" class="signup-btn">Logout</button>
       `;
     } else {
