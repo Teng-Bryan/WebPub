@@ -105,121 +105,139 @@
 
 
   <script>
-	  function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    function logout() {
-        localStorage.removeItem("loggedInUser");
-        window.location.reload();
-    }
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  }
 
-    // Auth buttons functionality
-    const authButtons = document.getElementById("authButtons");
-    const username = localStorage.getItem("loggedInUser");
+  // Auth buttons
+  const authButtons = document.getElementById("authButtons");
+  const username = localStorage.getItem("loggedInUser");
+  if (username) {
+    authButtons.innerHTML = `
+      <span class="Username">Welcome, <strong>${username}</strong></span>
+      <button onclick="logout()" class="signup-btn">Logout</button>
+    `;
+  } else {
+    authButtons.innerHTML = `
+      <a href="signin.html?redirect=Feedback_Form.html"><button class="auth-btn">Sign In</button></a>
+      <a href="signup.html?redirect=Feedback_Form.html"><button class="signup-btn">Sign Up</button></a>
+    `;
+  }
 
-    if (username) {
-        // User is logged in
-        authButtons.innerHTML = `
-            <span class="Username">Welcome, <strong>${username}</strong></span>
-            <button onclick="logout()" class="signup-btn">Logout</button>
-        `;
-    } 
-	else {
-        // Not logged in
-        authButtons.innerHTML = `
-            <a href="signin.html?redirect=Feedback_Form.html">
-			<button class="auth-btn">Sign In</button></a>
-						
-			<a href="signup.html?redirect=Feedback_Form.html">
-			<button class="signup-btn">Sign Up</button></a>
-        `;
-    }
-	  
-  // 1) your master list of all products:
+  // Master list of products
   const products = [
-	  { id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
-	  { id: 2, name: "MacBook Pro M3", type: "Laptop", price: 1999, image: "aarushpictures/mac.png" },
-	  { id: 3, name: "HP Victus 15", type: "Laptop", price: 1925, image: "aarushpictures/victus.png" },
-	  { id: 4, name: "Dell XPS 13", type: "Laptop", price: 1299, image: "aarushpictures/xps.png" },
-	  { id: 5, name: "iPhone 15 Pro", type: "Smartphone", price: 999, image: "aarushpictures/iphone.png" },
-	  { id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
-	  { id: 7, name: "iPad Pro", type: "Tablet", price: 1199, image: "aarushpictures/ipadblue.png" },
-	  { id: 8, name: "Samsung Galaxy Tab S9", type: "Tablet", price: 799, image: "aarushpictures/tabs7gal.png" }
-	];
+    { id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
+    { id: 2, name: "MacBook Pro M3", type: "Laptop", price: 1999, image: "aarushpictures/mac.png" },
+    { id: 3, name: "HP Victus 15", type: "Laptop", price: 1925, image: "aarushpictures/victus.png" },
+    { id: 4, name: "Dell XPS 13", type: "Laptop", price: 1299, image: "aarushpictures/xps.png" },
+    { id: 5, name: "iPhone 15 Pro", type: "Smartphone", price: 999, image: "aarushpictures/iphone.png" },
+    { id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
+    { id: 7, name: "iPad Pro", type: "Tablet", price: 1199, image: "aarushpictures/ipadblue.png" },
+    { id: 8, name: "Samsung Galaxy Tab S9", type: "Tablet", price: 799, image: "aarushpictures/tabs7gal.png" }
+  ];
 
-  // 2) then your existing code…
   function loadBookmarks() {
     const user = localStorage.getItem("loggedInUser");
-    
-    const bookmarksKey = `bookmarks_${user}`;
-    let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
+    const key = `bookmarks_${user}`;
+    const list = JSON.parse(localStorage.getItem(key)) || [];
 
-    if (bookmarks.length === 0) {
-      document.getElementById("bookmarksList").innerHTML =`
-        <p style="padding: 3vw">No bookmarks found.</p>`;
+    if (!list.length) {
+      document.getElementById("bookmarksList").innerHTML = `<p style="padding: 3vw">No bookmarks found.</p>`;
       return;
     }
 
-    // build your table exactly as before…
     let html = '<table class="product-table"><tr>';
-    bookmarks.forEach((id, idx) => {
-      const product = products.find(p => p.id === id);
-      if (!product) return;
+    list.forEach((id, idx) => {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
       html += `
         <td class="product-card">
-          <img src="${product.image}" alt="${product.name}" class="product-img">
+          <img src="${p.image}" alt="${p.name}" class="product-img">
           <div class="product-info">
-            <span class="productName">${product.name}</span>
-            <p class="type">${product.type}</p>
-            <p class="price">$${product.price}</p>
+            <span class="productName">${p.name}</span>
+            <p class="type">${p.type}</p>
+            <p class="price">$${p.price}</p>
             <div class="btn-group">
               <div class="btn-row">
-                <button class="btn-modern btn-cart" onclick="buyNow(${product.id})">
-                  Buy Now
-                </button>
+                <button class="btn-modern btn-cart" onclick="buyNow(${p.id})">Buy Now</button>
               </div>
               <div>
-                <button class="btn-modern btn-bookmark" onclick="removeBookmark(${product.id})">
-                  Remove
-                </button>
+                <button class="btn-modern btn-bookmark" onclick="removeBookmark(${p.id})">Remove</button>
               </div>
             </div>
           </div>
-        </td>
-      `;
-      if ((idx + 1) % 2 === 0 && idx !== bookmarks.length - 1) {
-        html += '</tr><tr>';
-      }
+        </td>`;
+      if ((idx + 1) % 2 === 0 && idx !== list.length - 1) html += '</tr><tr>';
     });
     html += '</tr></table>';
+
     document.getElementById("bookmarksList").innerHTML = html;
   }
 
   function removeBookmark(productId) {
     const user = localStorage.getItem("loggedInUser");
-    const key  = `bookmarks_${user}`;
-    let  bmk  = JSON.parse(localStorage.getItem(key)) || [];
-    bmk = bmk.filter(id => id !== productId);
-    localStorage.setItem(key, JSON.stringify(bmk));
+    if (!user) {
+      showToast('Please sign in to manage bookmarks.', 'error');
+      return;
+    }
+
+    const key = `bookmarks_${user}`;
+    let list = JSON.parse(localStorage.getItem(key)) || [];
+
+    if (!list.includes(productId)) {
+      showToast('That item is no longer in your bookmarks.', 'info');
+      loadBookmarks();
+      return;
+    }
+
+    list = list.filter(id => id !== productId);
+    localStorage.setItem(key, JSON.stringify(list));
+
+    const prod = products.find(p => p.id === productId);
     loadBookmarks();
+    showToast(`${prod ? prod.name : 'Item'} removed from bookmarks.`, 'success');
   }
 
   function buyNow(productId) {
-	  const user = localStorage.getItem("loggedInUser");
-	 
-	 if (!user) {
-        alert("Please sign in to make a purchase.");
-        return;
-      }
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      showToast('Please sign in to make a purchase.', 'error');
+      return;
+    }
+    const product = products.find(p => p.id === productId);
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+    window.location.href = "Product_Details.html";
+  }
 
-	  const product = products.find(p => p.id === productId);
-	  localStorage.setItem("selectedProduct", JSON.stringify(product));
-	  window.location.href = "Product_Details.html";
-	}
-
-  window.onload = loadBookmarks;
+  window.addEventListener('DOMContentLoaded', loadBookmarks);
 </script>
+
+<div id="toast-root" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+  function showToast(message, type = 'info') {
+    const root = document.getElementById('toast-root');
+    if (!root) return;
+
+    const el = document.createElement('div');
+    el.className = `toast toast--${type}`;
+    el.setAttribute('role', 'status');
+    el.textContent = message;
+
+    el.addEventListener('animationend', (e) => {
+      if (e.animationName === 'toast-out') el.remove();
+    });
+
+    root.appendChild(el);
+  }
+</script>
+
 </body>
 </html>
+
 
