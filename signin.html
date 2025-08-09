@@ -3,11 +3,7 @@
 <head>
   <title>Sign In - KeElectronics</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background: #87CEEB;
@@ -22,29 +18,17 @@
       background: white;
       padding: 40px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       width: 100%;
       max-width: 400px;
       text-align: center;
     }
 
-    h2 {
-      margin-bottom: 30px;
-      font-size: 28px;
-      font-weight: bold;
-    }
+    h2 { margin-bottom: 30px; font-size: 28px; font-weight: bold; }
 
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
+    .form-group { margin-bottom: 20px; text-align: left; }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      font-size: 16px;
-    }
+    label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 16px; }
 
     input[type="text"], input[type="password"] {
       width: 100%;
@@ -73,10 +57,7 @@
       transition: background-color 0.3s ease;
       margin-top: 20px;
     }
-
-    .signin-btn:hover {
-      background-color: #A6C6D3;
-    }
+    .signin-btn:hover { background-color: #A6C6D3; }
 
     .back-link {
       display: inline-block;
@@ -86,24 +67,51 @@
       font-size: 16px;
       font-weight: bold;
     }
+    .back-link:hover { text-decoration: underline; }
 
-    .back-link:hover {
-      text-decoration: underline;
+    .signup-link { margin-top: 20px; color: #666; }
+    .signup-link a { color: #87CEEB; text-decoration: none; font-weight: bold; }
+    .signup-link a:hover { text-decoration: underline; }
+
+    /* --- Toasts (inline, no external CSS) --- */
+    .toast-container {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+      pointer-events: none;
+      align-items: center;
     }
-
-    .signup-link {
-      margin-top: 20px;
-      color: #666;
+    .toast {
+      min-width: 240px;
+      max-width: 360px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: #fff;
+      font: 600 14px/1.4 Arial, sans-serif;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: toast-in 280ms ease-out forwards,
+                 toast-out 300ms ease-in forwards 2600ms;
+      pointer-events: auto;
+      text-align: center;
     }
+    .toast:hover { animation-play-state: paused; }
+    .toast--success { background: #27ae60; }
+    .toast--error   { background: #e74c3c; }
+    .toast--info    { background: #3498db; }
 
-    .signup-link a {
-      color: #87CEEB;
-      text-decoration: none;
-      font-weight: bold;
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-
-    .signup-link a:hover {
-      text-decoration: underline;
+    @keyframes toast-out {
+      to { opacity: 0; transform: translateY(20px); }
     }
   </style>
 </head>
@@ -115,27 +123,43 @@
         <label for="username">Username:</label>
         <input type="text" id="username" required>
       </div>
-      
+
       <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" required>
       </div>
-      
+
       <button type="submit" class="signin-btn">Sign In</button>
     </form>
-    
+
     <div class="signup-link">
       Don't have an account? <a href="signup.html">Sign Up</a>
     </div>
-    
+
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 
+  <!-- Toast anchor -->
+  <div id="toast-root" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
   <script>
+    function showToast(message, type = 'info') {
+      const root = document.getElementById('toast-root');
+      if (!root) return;
+      const el = document.createElement('div');
+      el.className = `toast toast--${type}`;
+      el.setAttribute('role', 'status');
+      el.textContent = message;
+      el.addEventListener('animationend', (e) => {
+        if (e.animationName === 'toast-out') el.remove();
+      });
+      root.appendChild(el);
+    }
+
     function signin(event) {
       event.preventDefault();
 
-      const username = document.getElementById("username").value;
+      const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value;
 
       const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -143,13 +167,14 @@
 
       if (matchingUser) {
         localStorage.setItem("loggedInUser", username);
-        alert("Welcome back, " + username + "!");
-        // Get the redirect parameter from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirectTo = urlParams.get('redirect') || 'index.html';
-    window.location.href = redirectTo;
+        showToast(`Welcome back, ${username}!`, 'success');
+
+        // Respect ?redirect=..., fallback to index.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectTo = urlParams.get('redirect') || 'index.html';
+        setTimeout(() => { window.location.href = redirectTo; }, 600);
       } else {
-        alert("Invalid username or password.");
+        showToast("Invalid username or password.", 'error');
       }
     }
   </script>
