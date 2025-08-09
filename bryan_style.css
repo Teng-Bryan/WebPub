@@ -609,7 +609,7 @@ body {
   color: black;
   z-index: 1;
   transition: color 0.3s ease;
-  text-decoration: none;
+  text-decoration: _;
 }
 
 .navItem::before {
@@ -718,6 +718,7 @@ body {
 	transition: background-color 0.3s ease;
 	}    
 }
+
 
 
 
