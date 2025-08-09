@@ -13,7 +13,7 @@
 			table-layout: fixed;
 			border-collapse: collapse;
 			margin-left: 3%;
-			margin-top: 6%;
+			margin-top: 1%;
 		  }
 
 		  .product-table th, .product-table td {
@@ -91,22 +91,22 @@
 		</div>
 		
 	<!-- Hanger Below Banner	-->
-		<div class="LRbanner" style="margin-top:1%; padding: 0.1% 0px; height: 25px;">
+		<div class="LRbanner" style="margin-top:0.1%; padding: 0.1% 0px;">
 			<div class="container">
-				<img style="width: clamp(18px, 2vw, 25px); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
-				<button class="linkButton" onclick="history.back()" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(10px, 1.5vw, 20px)">Back to Browsing</button>
+				<img style="width: clamp(1rem, 2vw, 2rem); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
+				<a class="linkButton" href="Test.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(0.5rem, 2vw, 1rem)">Back to Browsing</a>
 			</div>
 			
 			<div class="container">
 				<span style="font-size: clamp(10px, 1.5vw, 20px)">We Deliver Worldwide!</span>
 				<img src="zhengbopictures/Globe.png" alt="Globe Icon"
-				   style="width: clamp(15px, 2vw, 25px); height: auto; margin: 0.5vw;">
+				   style="width: clamp(12.5px, 1.5vw, 25px); height: auto; margin: 0.5vw;">
 			</div>
 		</div>
 		
 	<!-- Product Info -->
 		<div style="display:flex; margin-bottom: 5%">
-			<img style="margin-left:25%; margin-top:4%; border-radius: 25px; width: 25vw; height: auto;" id="product-image" src="" alt="Description">
+			<img style="margin-left:25%; margin-top:0.5%; border-radius: 25px; width: 25vw; height: auto;" id="product-image" src="" alt="Description">
 			
 			<div>
 				<table class="product-table">
@@ -276,10 +276,11 @@
 					else {
             		// Not logged in
             		authButtons.innerHTML = `
-        			<a href="signin.html?redirect=Feedback_Form.html" class="text-link">Sign In</a>
+        			<a href="signin.html?redirect=Feedback_Form.html">
+					<button class="text-link">Sign In</button></a>
+					
         			<a href="signup.html?redirect=Feedback_Form.html">
-            			<button class="signup-btn">Sign Up</button>
-        			</a>
+            		<button class="signup-btn">Sign Up</button></a>
     				`;
 					}
 
