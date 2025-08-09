@@ -4,9 +4,19 @@
 		
 		<link href="zhengbostyle.css" rel="stylesheet"></link>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 		
+		<style>
+			.summaryBold {
+				font-size: clamp(5px, 1.5vw, 20px);
+				font-weight: bold;
+			}
+		
+			.summaryText {
+				font-size: clamp(5px, 1.5vw, 20px);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="header">
@@ -57,12 +67,25 @@
 			</div>
 		</div>
 		
+		<!-- Feedback Summary -->
+		<div style="width: 100%; background-color: #87ceeb; margin-top:0.1%; padding-top: 1.5%; padding-bottom: 1.5%;">
+		  <div style="width: 60%; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-family: 'Montserrat';">
+			
+			<div style="display: flex; flex-wrap: wrap; gap: 1vw">
+			  <!-- Left: Order Summary -->
+			  <div style="flex: 1; min-width: 250px;">
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Feedback Summary</span>
+				<div id="feedbackSummary"></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
 		
 		<!-- Thank You Text -->
 		<div class="VListBanner" style="padding: 1%; margin-top: 10%; margin-bottom: 10%; align-items: center;">
 			<span class="bannerText">Thank you for your feedback!</span>
 			<span style="font-size: clamp(15px, 2vw, 30px)">We love to improve ourselves for you</span>
-			<span style="font-size: clamp(10px, 2vw, 20px); margin-top:20px">Feel free to browse for more products.</span>
+			<span style="font-size: clamp(10px, 2vw, 20px); margin-top:2%">Feel free to browse for more products.</span>
 			<span style="font-size: clamp(10px, 2vw, 20px);">You might find something that catches your eyes!</span>
 		</div>
 		
@@ -113,6 +136,26 @@
   						localStorage.removeItem("loggedInUser");
   						window.location.reload();
 					}
+					
+					 const params = new URLSearchParams(window.location.search);
+
+					  const productQuality = params.get("productQuality");
+					  const deliverySpeed = params.get("deliverySpeed");
+					  const customerService = params.get("customerService");
+					  const productValue = params.get("productValue");
+					  const convenience = params.get("convenience");
+					  const detailedFeedback = params.get("detailedFeedback");
+					  const suggestions = params.get("suggestions");
+					 
+					  document.getElementById("feedbackSummary").innerHTML = `
+						<div><span class="summaryBold">Product Quality:</span> <span class="summaryText">${productQuality}</span></div>
+						<div><span class="summaryBold">Delivery Speed:</span> <span class="summaryText">${deliverySpeed}</span></div>
+						<div><span class="summaryBold">Customer Service:</span> <span class="summaryText">${customerService}</span></div>
+						<div><span class="summaryBold">Product Value:</span> <span class="summaryText">${productValue}</span></div>
+						<div><span class="summaryBold">Convenience:</span> <span class="summaryText">${convenience}</span></div>
+						<div><span class="summaryBold">Detailed Feedback:</span> <span class="summaryText">${detailedFeedback}</span></div>
+						<div><span class="summaryBold">Suggestions:</span> <span class="summaryText">${suggestions}</span></div>
+					  `;
 				</script>
 	</body>
 </html>
