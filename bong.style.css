@@ -8,6 +8,11 @@
             min-height: 120px;
         }
 
+/* === Base Font Styling === */
+.MainFrame {
+  font-family: 'Montserrat';
+}
+
         .logo-section {
             display: flex;
             align-items: center;
@@ -439,9 +444,49 @@ width:100%;
 
 
 
+/* === Banner and Navigation === */
+.LRbanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .HListBanner {
   display: flex;
   justify-content: center;
+}
+
+.navItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: 'Montserrat';
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.navItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navItem:hover::before {
+  transform: scaleX(1);
 }
 
 .VListBanner {
@@ -450,9 +495,9 @@ width:100%;
 }
 
 .bannerText {
-	font-size: 2em;
-	font-weight: bold;
-	font-family: 'Merriweather';
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Merriweather';
 }
 
 
@@ -473,68 +518,43 @@ function closePopup(id) {
 }
 </script>
 
- /* Animations */
-        @keyframes slideDowntop {
-            0% {
-                transform: translateY(-140%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideright {
-            0% {
-                transform: translateX(-50%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDownsignin {
-            0% {
-                transform: translateY(-140%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
 /* Responsive design */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 20px;
-                min-height: auto;
-                padding: 20px;
-            }
+@media (max-width: 700px) {
+	.header {
+		flex-direction: column;
+		min-height: auto;
+		padding: 20px;
+	}
 
-            .logo-section {
-                flex-direction: column;
-                text-align: center;
-            }
+	.logo-section {
+		flex-direction: column;
+		text-align: center;
+	}
 
-            .logo-text {
-                font-size: 2rem;
-                margin-top: 10px;
-            }
+	.logo-text {
+		font-size: 2rem;
+		margin-top: 10px;
+	}
+	
+	.navigate {
+	display: flex;
+	flex-direction: column;
+	background-color: #A6C6D3;
+	animation: slideright 0.8s ease-out 0.7s forwards;
+	opacity: 0;
+	gap: 10%;
+	}
 
-            .navigate a {
-                margin: 10px 20px;
-                font-size: 24px;
-            }
-
-            .bannerText {
-                font-size: 3em;
-            }
-     
+	.navigate a {
+	display: inline-flex;
+	align-items: center;
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: background-color 0.3s ease;
+	}    
+}
 .VListBanner {
   margin-top: auto;
   padding: 1%;
@@ -585,43 +605,8 @@ function closePopup(id) {
             font-size: 15px;
             margin-top: 20px;
             color: #333;
-        }
+        }	
 
-        /* Animations */
-        @keyframes slideDowntop {
-            0% {
-                transform: translateY(-140%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideright {
-            0% {
-                transform: translateX(-50%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDownsignin {
-            0% {
-                transform: translateY(-140%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-       
 
 
 
