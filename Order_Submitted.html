@@ -1,56 +1,21 @@
 <html>
 	<head>
-		<title>Product Details</title>
+		<title>Order Submitted</title>
 		
 		<link href="zhengbostyle.css" rel="stylesheet"></link>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
-	
+		
 		<style>
-		  .product-table {
-			width: 60%;
-			table-layout: fixed;
-			border-collapse: collapse;
-			margin-left: 3%;
-			margin-top: 1%;
-		  }
-
-		  .product-table th, .product-table td {
-			padding: 2%;
-			font-size: clamp(12px, 2vw, 25px);
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-		  }
-
-		  .product-table th:first-child {
-			width: 70%;
-			text-align: left;
-		  }
-
-		  .product-table th:last-child {
-			width: 30%;
-			text-align: right;
-		  }
-
-		  .product-table td[colspan="2"] {
-			font-size: clamp(10px, 1.8vw, 20px);
-		  }
-			
-			.btn-bookmark {
-			  background-color: #ffb933;
-			  color: white;
-			  
-			  text-decoration: none;
-				border-radius: 10px;
-				display: inline-block;
-				text-align: center;
-				transition: background-color 0.3s ease;
-				font-family: 'Montserrat';
+			.summaryBold {
+				font-size: clamp(5px, 1.5vw, 20px);
 				font-weight: bold;
 			}
-			
-			
+		
+			.summaryText {
+				font-size: clamp(5px, 1.5vw, 20px);
+			}
 		</style>
 	</head>
 	<body>
@@ -89,7 +54,6 @@
 				</a>
 			</div>
 		</div>
-		
 	<!-- Hanger Below Banner	-->
 		<div class="LRbanner" style="margin-top:0.1%; padding: 0.1% 0px;">
 			<div class="container">
@@ -104,146 +68,45 @@
 			</div>
 		</div>
 		
-	<!-- Product Info -->
-		<div style="display:flex; margin-bottom: 5%">
-			<img style="margin-left:25%; margin-top:0.5%; border-radius: 25px; width: 25vw; height: auto;" id="product-image" src="" alt="Description">
+		<!-- Order Summary -->
+		<div style="width: 100%; background-color: #87ceeb; margin-top:0.1%; padding-top: 1.5%; padding-bottom: 1.5%;">
+		  <div style="width: 60%; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-family: 'Montserrat';">
 			
-			<div>
-				<table class="product-table">
-				  <tr>
-					<th>
-					  <span id="product-name"></span>
-					</th>   
-					<th>
-					  <span id="product-price"></span>
-					</th>
-				  </tr>
-				  <tr>
-					<td colspan="2">
-					  Dimensions:<br>
-					  <span id="product-dimensions"></span><br><br>
-					  Description<br>
-					  <span id="product-description"></span>
-					</td>   
-				  </tr>
-				</table>
-				
-				<div class="HListBanner" style="margin-left: 1%; margin-top:4%; gap: 0.5vw;">
-					<button id="go-to-order-form" class="linkButton" style="background-color: #87CEEB; padding: 0.5vw 1vw; color: black; font-size: clamp(10px, 2vw, 20px); border:0px;">Order</button>
-					
-					<button id="bookmark-btn" class="btn-bookmark" style="padding: 0.5vw 1vw; font-size: clamp(10px, 2vw, 20px); border:0px;">Bookmark</button>
-					
-				</div>
+			<div style="display: flex; flex-wrap: wrap; gap: 1vw">
+			  <!-- Left: Order Summary -->
+			  <div style="flex: 1; min-width: 250px;">
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Order Confirmation</span>
+				<div id="orderSummary"></div>
+			  </div>
+
+			  <!-- Right: Product Details -->
+			  <div style="flex: 1; min-width: 250px;"> 
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Product Details</span>
+					<div id="product-details">
+					  <img id="order-product-image" style="width: 25vw; border-radius: 25px" /><br/><br/>
+					  <div><span class="summaryBold">Product:</span> <span class="summaryText" id="order-product-name"></span></div>
+					  <div><span class="summaryBold">Price:</span> <span class="summaryText" id="order-product-price"></span></div>
+					</div>
+			  </div>
 			</div>
+		  </div>
 		</div>
 		
-	<!-- Review Banner -->
-		<div class="VListBanner" style="background-color: #87ceeb; padding: 0.5%;">
-			<div class="bannerText">Product Feedback</div>
-		</div>
-		<!-- Reviews -->
-		<div class="HListBanner" style="background-color: #87ceeb; gap: 2vw; padding: 1%;">
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
-				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
-					</td>
-				</tr>
-				<tr>
-					<td rowspan="2" style="text-align: center; vertical-align: middle;">
-					  <img src="zhengbopictures/Profile.PNG" alt="Description"
-						   width="30vw" height="auto"
-						   style="display: inline-block; margin: auto;">
-					</td>
-					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
-					</td>
-				</tr>
-				<tr>
-					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
-					</td>
-					
-				</tr>
-			</table>
-			
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
-				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
-					</td>
-				</tr>
-				<tr>
-					<td rowspan="2" style="text-align: center; vertical-align: middle;">
-					  <img src="zhengbopictures/Profile.PNG" alt="Description"
-						   width="30vw" height="auto"
-						   style="display: inline-block; margin: auto;">
-					</td>
-					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
-					</td>
-				</tr>
-				<tr>
-					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
-					</td>
-					
-				</tr>
-			</table>
-			
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
-				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
-					</td>
-				</tr>
-				<tr>
-					<td rowspan="2" style="text-align: center; vertical-align: middle;">
-					  <img src="zhengbopictures/Profile.PNG" alt="Description"
-						   width="30vw" height="auto"
-						   style="display: inline-block; margin: auto;">
-					</td>
-					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
-					</td>
-				</tr>
-				<tr>
-					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
-					</td>
-					
-				</tr>
-			</table>
-		</div>
-	<!-- Review Submit -->
-		<div id="feedbackSection" style="margin-top: 25px; margin-bottom: 25px;">
-			<span style="font-size: clamp(10px, 2vw, 25px); margin-left:12%;">
-				Submit your experience! &#40;If you have ordered the product&#41;:
-			</span>
-			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:clamp(10px, 2vw, 20px);"></textarea>
-			<a class="linkbutton" href="javascript:void(0)" onclick="submitFeedback()" 
-			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 0px;">
-			  Submit
-			</a>
+		<!-- Message -->
+		<div class="VListBanner" style="padding: 10px; margin-top: 200px; margin-bottom: 200px; .centered-content">
+			<span class="bannerText">Thank You For Ordering with Us!</span>
+			<span style="font-size: clamp(10px, 1.5vw, 20px)">Please order from us again</span>
+			<span style="font-size: clamp(10px, 1.5vw, 20px); margin-top:1vh">Have any feedback for us? Leave it down here!</span>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000; font-size: clamp(10px, 2vw, 20px); background-color: #87ceeb;">
+			Feedback</a>
 		</div>
 		
-		<script>
-		  function submitFeedback() {
-			const section = document.getElementById("feedbackSection");
-			section.innerHTML = `
-			  <p style="font-size: 1.6em; text-align: center; color: green;">
-				Thank you for your response!
-			  </p>
-			`;
-		  }
-		</script>
-	
-	<!-- End Banner -->
+		<!-- End Banner -->
 		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
 			<div class="bannerText">End of the line!</div>
 			<!---->
-			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
-			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+			<span style="font-size: clamp(10px, 2vw, 20px)">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(10px, 2vw, 20px);">
 				<a class="linkButton" href="index.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
 				<a class="linkButton" href="about_us.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">About Us</a>
 				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
@@ -254,92 +117,77 @@
 				  }
 				</script>
 		    	</div>
-                	<div style="font-size: clamp(15px, 2vw, 20px)">Have any feedback for us? Leave it down here!</div>
-			<a class="linkButton" href="Feedback_Form.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000; font-size: clamp(13px, 2vw, 20px);">
-			Feedback</a>
-
+                	
 			<br/>
 			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
 					<script>
-				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
-		  			const authButtons = document.getElementById("authButtons");
-  					const username = localStorage.getItem("loggedInUser");
+					  // Auth buttons functionality
+					  const authButtons = document.getElementById("authButtons");
+					  const loggedInUser = localStorage.getItem("loggedInUser");
 
-        			if (username) {
-           			// User is logged in
-            		authButtons.innerHTML = `
-                		<span class="Username">Welcome, <strong>${username}</strong></span>
-                		<button onclick="logout()" class="signup-btn">Logout</button>
-            			`;
-        			} 
-					else {
-            		// Not logged in
-            		authButtons.innerHTML = `
-        			<a href="signin.html?redirect=Feedback_Form.html">
+					  if (loggedInUser) {
+						authButtons.innerHTML = `
+						 <span class="Username">Welcome, <strong>${username}</strong></span>
+						  <button onclick="logout()" class="signup-btn">Logout</button>
+						`;
+					  } else {
+						authButtons.innerHTML = `
+						 <a href="signin.html?redirect=Feedback_Form.html">
 					<button class="text-link">Sign In</button></a>
 					
         			<a href="signup.html?redirect=Feedback_Form.html">
             		<button class="signup-btn">Sign Up</button></a>
-    				`;
-					}
+						`;
+					  }
 
-        			function logout() {
-  						localStorage.removeItem("loggedInUser");
-  						window.location.reload();
-					}
-					
-					<!-- This Loads Required Data From Previous Page! -->
-					window.onload = function () {
+					  function logout() {
+						localStorage.removeItem("loggedInUser");
+						window.location.reload();
+					  }
+					  
+					  window.onload = function () {
 					  const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
-					  sessionStorage.setItem("selectedProduct", JSON.stringify(productData));
 
 					  if (productData) {
-						document.getElementById("product-name").textContent = productData.name;
-						document.getElementById("product-price").textContent = `$${productData.price}`;
-						document.getElementById("product-image").src = productData.image;
-						document.getElementById("product-image").alt = productData.name;
-						
-						const bookmarkBtn = document.getElementById("bookmark-btn");
-						bookmarkBtn.onclick = function () {
-						  bookmark(productData.id, productData.name);
-						};
+						document.getElementById("order-product-name").textContent = productData.name;
+						document.getElementById("order-product-price").textContent = `$${productData.price}`;
+						document.getElementById("order-product-image").src = productData.image;
+						document.getElementById("order-product-image").alt = productData.name;
 					  } else {
-						document.body.innerHTML = "<h2 style='text-align:center;'>Product not found.</h2>";
+						document.body.innerHTML = "<h2 style='text-align:center;'>No product selected for order.</h2>";
 					  }
 					};
-					
-					//Book Mark
-					 function bookmark(productId, productName) {
-					  const user = localStorage.getItem("loggedInUser");
-					  if (!user) {
-						alert("Please sign in to bookmark products.");
-						return;
-					  }
-					  
-					  const bookmarksKey = `bookmarks_${user}`;
-					  let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
-					  
-					  if (!bookmarks.includes(productId)) {
-						bookmarks.push(productId);
-						localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
-						alert(productName + " has been bookmarked!");
-					  } else {
-						alert(productName + " is already bookmarked!");
-					  }
-					}
-					
-					document.getElementById("go-to-order-form").onclick = function () {
-					  // Navigate to the order form page
-					  const user = localStorage.getItem("loggedInUser");
-					  <!-- if (!user) { -->
-						<!-- alert("Please sign in to make a purchase."); -->
-						<!-- return; -->
-					  <!-- } -->
-					  
-					  window.location.href = "Order_Form.html";
-					};
-				</script>		
+
+					  // Retrieve Form Inputs
+					  const params = new URLSearchParams(window.location.search);
+
+					  const username = params.get("username");
+					  const phonenumber = params.get("phonenumber");
+					  const country = params.get("country");
+					  const address = params.get("address");
+					  const dategoal = params.get("dategoal");
+					  const modeofTransport = params.get("modeofTransport");
+					  const nameOnCard = params.get("nameOnCard");
+					  const cardNumber = params.get("cardNumber");
+					  const cvvNumber = params.get("cvvNumber");
+					  const expiryDate = params.get("expiryDate");
+
+					  const maskedCard = cardNumber && cardNumber.length >= 4
+						? `**** **** **** ${cardNumber.slice(-4)}`
+						: "Invalid or missing card number";
+
+					  document.getElementById("orderSummary").innerHTML = `
+						<div><span class="summaryBold">Username:</span> <span class="summaryText">${username}</span></div>
+						<div><span class="summaryBold">Phonenumber:</span> <span class="summaryText">${phonenumber}</span></div>
+						<div><span class="summaryBold">Country:</span> <span class="summaryText">${country}</span></div>
+						<div><span class="summaryBold">Address:</span> <span class="summaryText">${address}</span></div>
+						<div><span class="summaryBold">Dategoal:</span> <span class="summaryText">${dategoal}</span></div>
+						<div><span class="summaryBold">Mode of Transport:</span> <span class="summaryText">${modeofTransport}</span></div>
+						<div><span class="summaryBold">Name On Card:</span> <span class="summaryText">${nameOnCard}</span></div>
+						<div><span class="summaryBold">Card Number:</span> <span class="summaryText">${maskedCard}</span></div>
+					  `;
+					</script>
 	</body>
-</div>	
+</div>
 </html>
