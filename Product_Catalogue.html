@@ -1,32 +1,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Catalogue</title>
-  <link rel="stylesheet" href="aarushstyle.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="aarushstyle.css"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+  
+	<style>
+		.productName {
+			font-size: clamp(10px, 1.25vw, 25px);
+			font-weight: bold;
+			white-space: nowrap;
+			  overflow: hidden;
+			  text-overflow: ellipsis;
+			  max-width: 100%;
+		}
+	</style>
 </head>
 
 <body>
-  <div class="MainFrame">
     <!-- Top Banner -->
-    <div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
-      <div class="container logo-section" >
-        <img src="aarushpictures/KeELogoWhiteTransparent2NoText.png" alt="KeElectronics Logo" width="50" height="50" class="logo-img">
-        <div class="bannerText">KeElectronics</div>
-      </div>
-      <div class="container" id="authButtons" style="font-size: 20px;"></div>
-    </div>
+    <div class="header">
+		<div class="logo-section">
+			<img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+			<h1 class="logo-text">KeElectronics</h1>
+		</div>
+			
+		<div class="button-container" id="authButtons">
+				<!-- Buttons will be inserted by JavaScript -->
+		</div>
+	</div>
 
     <!-- Navigation -->
-    <div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
-      <a class="navItem" href="index.html"><img src="aarushpictures/Home.png" alt="Home" width="20" height="20"><span>Home</span></a>
-      <a class="navItem" href="Product_Catalogue.html"><img src="aarushpictures/Shop.png" alt="Products" width="20" height="20"><span>Products</span></a>
-      <a class="navItem" href="bookmarks.html"><img src="aarushpictures/bkmk.png" alt="Bookmarks" width="20" height="20"><span>Bookmarks</span></a>
-      <a class="navItem" href="about_us.html"><img src="aarushpictures/AboutUs.png" alt="About Us" width="20" height="20"><span>About Us</span></a>
-      <a class="navItem" href="contact_us.html"><img src="aarushpictures/ContactUs.png" alt="Contact Us" width="20" height="20"><span>Contact Us</span></a>
-    </div>
+    <div class="backgroundnav">
+		<div class="navigate">
+			<a href="index.html">
+				<img src="aarushpictures/Home.png" alt="Home" />
+				Home
+			</a>
+			<a href="Product_Catalogue.html">
+				<img src="aarushpictures/Shop.png" alt="Products" />
+				Products
+			</a>
+			<a href="bookmarks.html">
+				<img src="aarushpictures/bkmk.png" alt="Products" />
+				Bookmarks
+			</a>
+			<a href="about_us.html">
+				<img src="aarushpictures/AboutUs.png" alt="About Us" />
+				About Us
+			</a>
+			<a href="contact_us.html">
+				<img src="aarushpictures/ContactUs.png" alt="Contact Us" />
+				Contact Us
+			</a>
+		</div>
+	</div>
 
     <!-- Catalogue -->
     <section class="product-catalogue">
@@ -39,7 +69,7 @@
           <td class="product-card">
             <img src="aarushpictures/asusa14.jpg" alt="ASUS TUF Gaming A14" class="product-img">
             <div class="product-info">
-              <h3>ASUS TUF Gaming A14</h3>
+              <span class="productName">ASUS TUF Gaming A14</span>
               <p class="type">Laptop</p>
               <p class="price">$1499</p>
               <div class="btn-group">
@@ -58,7 +88,7 @@
           <td class="product-card">
             <img src="aarushpictures/mac.png" alt="MacBook Pro M3" class="product-img">
             <div class="product-info">
-              <h3>MacBook Pro M3</h3>
+              <span class="productName">MacBook Pro M3</span>
               <p class="type">Laptop</p>
               <p class="price">$1999</p>
               <div class="btn-group">
@@ -78,7 +108,7 @@
           <td class="product-card">
             <img src="aarushpictures/victus.png" alt="HP Victus 15" class="product-img">
             <div class="product-info">
-              <h3>HP Victus 15</h3>
+              <span class="productName">HP Victus 15</span>
               <p class="type">Laptop</p>
               <p class="price">$1925</p>
               <div class="btn-group">
@@ -97,7 +127,7 @@
           <td class="product-card">
             <img src="aarushpictures/xps.png" alt="Dell XPS 13" class="product-img">
             <div class="product-info">
-              <h3>Dell XPS 13</h3>
+              <span class="productName">Dell XPS 13</span>
               <p class="type">Laptop</p>
               <p class="price">$1299</p>
               <div class="btn-group">
@@ -117,7 +147,7 @@
           <td class="product-card">
             <img src="aarushpictures/iphone.png" alt="iPhone 15 Pro" class="product-img">
             <div class="product-info">
-              <h3>iPhone 15 Pro</h3>
+              <span class="productName">iPhone 15 Pro</span>
               <p class="type">Smartphone</p>
               <p class="price">$999</p>
               <div class="btn-group">
@@ -136,7 +166,7 @@
           <td class="product-card">
             <img src="aarushpictures/s25.png" alt="Samsung Galaxy S24" class="product-img">
             <div class="product-info">
-              <h3>Samsung Galaxy S24</h3>
+              <span class="productName">Samsung Galaxy S24</span>
               <p class="type">Smartphone</p>
               <p class="price">$899</p>
               <div class="btn-group">
@@ -156,7 +186,7 @@
           <td class="product-card">
             <img src="aarushpictures/ipadblue.png" alt="iPad Pro" class="product-img">
             <div class="product-info">
-              <h3>iPad Pro</h3>
+              <span class="productName">iPad Pro</span>
               <p class="type">Tablet</p>
               <p class="price">$1199</p>
               <div class="btn-group">
@@ -175,7 +205,7 @@
           <td class="product-card">
             <img src="aarushpictures/tabs7gal.png" alt="Samsung Galaxy Tab S9" class="product-img">
             <div class="product-info">
-              <h3>Samsung Galaxy Tab S9</h3>
+              <span class="productName">Samsung Galaxy Tab S9</span>
               <p class="type">Tablet</p>
               <p class="price">$799</p>
               <div class="btn-group">
@@ -194,18 +224,28 @@
     </section>
 
     <!-- Footer -->
-    <div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
-      <div class="bannerText">End of the line!</div>
-      <span style="font-size: 20px">You've reached the end of the Product Catalogue.</span>
-      <div class="HListBanner" style="gap: 20px; padding: 10px;">
-        <a class="linkButton" href="index.html">Home Page</a>
-        <a class="linkButton" href="about_us.html">About Us</a>
-        <a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()">Back To Top</a>
-      </div>
-      <span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
-      <a class="linkButton" href="Feedback_Form.html">Feedback</a>
-      <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
-    </div>
+    <div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
+			<div class="bannerText">End of the line!</div>
+			<!---->
+			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+				<a class="linkButton" href="index.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    	</div>
+                	<div style="font-size: clamp(15px, 2vw, 20px)">Have any feedback for us? Leave it down here!</div>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000; font-size: clamp(13px, 2vw, 20px);">
+			Feedback</a>
+
+			<br/>
+			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
+		</div>
 
     <!-- Slide-in Panels -->
     <div id="asus-panel" class="slide-panel">
@@ -297,7 +337,6 @@
     </div>
 
     <div id="overlay" class="overlay"></div>
-  </div>
 
   <!-- Scripts -->
   <script>
@@ -329,8 +368,11 @@
       `;
     } else {
       authButtons.innerHTML = `
-        <a href="signin.html" class="auth-btn">Sign In</a>
-        <a href="signup.html" class="signup-btn">Sign Up</a>
+		<a href="signin.html?redirect=Feedback_Form.html">
+		<button class="auth-btn">Sign In</button></a>
+					
+        <a href="signup.html?redirect=Feedback_Form.html">
+        <button class="signup-btn">Sign Up</button></a>
       `;
     }
 
@@ -426,4 +468,3 @@
 </script>
 </body>
 </html>
-
