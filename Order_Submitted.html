@@ -123,26 +123,24 @@
 		</div>
 					<script>
 					  // Auth buttons functionality
-						const authButtons = document.getElementById("authButtons");
-						const username = localStorage.getItem("loggedInUser");
+					  const authButtons = document.getElementById("authButtons");
+					  const loggedInUser = localStorage.getItem("loggedInUser");
 
-						if (username) {
-						// User is logged in
+					  if (loggedInUser) {
 						authButtons.innerHTML = `
-							<span class="Username">Welcome, <strong>${username}</strong></span>
-							<button onclick="logout()" class="signup-btn">Logout</button>
-							`;
-						} 
-						else {
-						// Not logged in
-						authButtons.innerHTML = `
-						<a href="signin.html?redirect=Feedback_Form.html">
-						<button class="text-link">Sign In</button></a>
-						
-						<a href="signup.html?redirect=Feedback_Form.html">
-						<button class="signup-btn">Sign Up</button></a>
+						  <span style="font-size: clamp(1rem, 2vw, 1.2rem); 
+			margin-right: 1vw;">Welcome, <strong>${loggedInUser}</strong></span>
+						  <button onclick="logout()" class="signup-btn">Logout</button>
 						`;
-						}
+					  } else {
+						authButtons.innerHTML = `
+						 <a href="signin.html?redirect=Feedback_Form.html">
+					<button class="text-link">Sign In</button></a>
+					
+        			<a href="signup.html?redirect=Feedback_Form.html">
+            		<button class="signup-btn">Sign Up</button></a>
+						`;
+					  }
 
 					  function logout() {
 						localStorage.removeItem("loggedInUser");
