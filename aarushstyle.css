@@ -162,6 +162,11 @@ body {
 }
 
 /* === Buttons === */
+.Username {
+			font-size: clamp(1rem, 2vw, 1.2rem); 
+			margin-right: 1vw;
+		}
+
 .auth-btn {
 	font-size: clamp(0.75rem, 1.5vw, 1rem);
 	font-family: 'Montserrat';
@@ -322,7 +327,6 @@ body {
   font-size: clamp(14px, 2vw, 18px);
   font-family: 'Montserrat';
   color: #333;
-  margin-bottom: 30px;
 }
 
 .product-table {
