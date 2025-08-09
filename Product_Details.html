@@ -94,7 +94,7 @@
 		<div class="LRbanner" style="margin-top:0.1%; padding: 0.1% 0px;">
 			<div class="container">
 				<img style="width: clamp(12.5px, 1.5vw, 25px); height: auto; margin: 0.5vw;" src="zhengbopictures/Left_Arrow.png" alt="Description" width="25" height="20">
-				<a class="linkButton" href="Product_Catalogue.html" target="_blank" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(0.5rem, 2vw, 1rem)">Back to Browsing</a>
+				<button class="linkButton" onclick="window.history.back()" style="background-color: black; color: white; padding: 0.25vw; font-size: clamp(0.4rem, 1.3vw, 1.2rem)">Back Page</button>
 			</div>
 			
 			<div class="container">
@@ -122,14 +122,14 @@
 					<td colspan="2">
 					  Dimensions:<br>
 					  <span id="product-dimensions"></span><br><br>
-					  Description<br>
+					  Description:<br>
 					  <span id="product-description"></span>
 					</td>   
 				  </tr>
 				</table>
 				
 				<div class="HListBanner" style="margin-left: 1%; margin-top:4%; gap: 0.5vw;">
-					<button id="go-to-order-form" class="linkButton" style="background-color: #87CEEB; padding: 0.5vw 1vw; color: black; font-size: clamp(10px, 2vw, 20px); border:0px;">Order</button>
+					<button id="go-to-order-form" class="linkButton" style="border-radius: 10px; background-color: #87CEEB; font-weight: bold; padding: 0.5vw 1vw; color: black; font-size: clamp(10px, 2vw, 20px); border:0px;">Order</button>
 					
 					<button id="bookmark-btn" class="btn-bookmark" style="padding: 0.5vw 1vw; font-size: clamp(10px, 2vw, 20px); border:0px;">Bookmark</button>
 					
@@ -216,13 +216,14 @@
 			</table>
 		</div>
 	<!-- Review Submit -->
-		<div id="feedbackSection" style="margin-top: 25px; margin-bottom: 25px;">
+		<div id="feedbackSection" style="margin-top: 2%; margin-bottom: 4%;">
 			<span style="font-size: clamp(10px, 2vw, 25px); margin-left:12%;">
 				Submit your experience! &#40;If you have ordered the product&#41;:
 			</span>
-			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:clamp(10px, 2vw, 20px);"></textarea>
+			<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size:clamp(10px, 2vw, 20px); margin-bottom:1%"></textarea>
+			
 			<a class="linkbutton" href="javascript:void(0)" onclick="submitFeedback()" 
-			style="background-color: #87ceeb; padding: 7px 10px; color: black; margin-top: 10px; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 0px;">
+			style="background-color: #87ceeb; padding: 0.5% 1%; color: black; margin-left: 80%; font-size: clamp(10px, 2vw, 20px); border: 0px;">
 			  Submit
 			</a>
 		</div>
@@ -332,10 +333,10 @@
 					document.getElementById("go-to-order-form").onclick = function () {
 					  // Navigate to the order form page
 					  const user = localStorage.getItem("loggedInUser");
-					  if (!user) {
-						alert("Please sign in to make a purchase.");
-						return;
-					  }
+					  <!-- if (!user) { -->
+						<!-- alert("Please sign in to make a purchase."); -->
+						<!-- return; -->
+					  <!-- } -->
 					  
 					  window.location.href = "Order_Form.html";
 					};
