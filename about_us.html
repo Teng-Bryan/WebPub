@@ -157,11 +157,11 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
       <a class="linkButton" href="Feedback_Form.html">Feedback</a>
       <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
     </div>
-<script>	
-	function scrollToTop() {
+<script>
+    function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-	
+
     function logout() {
         localStorage.removeItem("loggedInUser");
         window.location.reload();
@@ -172,23 +172,74 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
     const username = localStorage.getItem("loggedInUser");
 
     if (username) {
-        // User is logged in - show welcome message and logout button
+        // User is logged in
         authButtons.innerHTML = `
             <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
             <button onclick="logout()" class="signup-btn">Logout</button>
         `;
     } 
 	else {
-        // Not logged in - show sign in and sign up buttons
+        // Not logged in
         authButtons.innerHTML = `
-            <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
-            <a href="signup.html?redirect=contact_us.html">
-                <button class="signup-btn">Sign Up</button>
-            </a>
+            <a href="signin.html" class="auth-btn">Sign In</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
         `;
     }
 
-	            // Apply styling to match the product catalogue
+    // Bookmark reminder functionality
+    window.onload = function () {
+        const user = localStorage.getItem("loggedInUser");
+        if (!user) return;  // not signed in
+
+        // Check for bookmarks using both possible keys
+        const keyNew = `bookmarks_${user}`;
+        const keyOld = `bookmark_${user}`;
+        let bmarks = JSON.parse(localStorage.getItem(keyNew)) 
+                  || JSON.parse(localStorage.getItem(keyOld)) 
+                  || [];
+
+        // Also check for old single bookmark format
+        const oldBookmark = localStorage.getItem(`bookmark_${user}`);
+        if (oldBookmark && !Array.isArray(bmarks)) {
+            bmarks = [oldBookmark];
+        }
+
+        if (bmarks.length >= 1) {
+            // Product data matching the catalogue
+            const products = [
+                { id: 1, name: "ASUS TUF Gaming A14" },
+                { id: 2, name: "MacBook Pro M3" },
+                { id: 3, name: "HP Victus 15" },
+                { id: 4, name: "Dell XPS 13" },
+                { id: 5, name: "iPhone 15 Pro" },
+                { id: 6, name: "Samsung Galaxy S24" },
+                { id: 7, name: "iPad Pro" },
+                { id: 8, name: "Samsung Galaxy Tab S9" }
+            ];
+
+            // Create banner element
+            const banner = document.createElement("div");
+            
+            if (bmarks.length === 1) {
+                const prodId = Array.isArray(bmarks) ? bmarks[0] : bmarks;
+                const prod = products.find(p => p.id === parseInt(prodId)) || { name: bmarks[0] };
+                banner.innerHTML = `
+                    👋 Hey ${user}! Remember "${prod.name}"? 
+                    <a href="Product_Catalogue.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Get it while you still can!
+                    </a>`;
+            } 
+			else {
+                banner.innerHTML = `
+                    👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
+                    <a href="bookmarks.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Check them out here or in your bookmarks page!
+                    </a>`;
+            }
+            
+            // Apply styling to match the product catalogue
             banner.style.background = "#FFF7C2";
             banner.style.padding = "15px";
             banner.style.fontWeight = "bold";
@@ -202,10 +253,12 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
             if (navBar) {
                 navBar.parentNode.insertBefore(banner, navBar.nextSibling);
             }
+        }
     };
 </script>
 </body>
 </html>
+
 
 
 
