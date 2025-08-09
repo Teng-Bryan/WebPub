@@ -1,4 +1,9 @@
- .header {
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -13,26 +18,41 @@
   font-family: 'Montserrat';
 }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-            animation: slideDowntop 0.7s ease-out forwards;
-        }
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: slideDowntop 0.7s ease-out forwards;
+}
 
-        .logo-section img {
-            width: 110px;
-            height: 100px;
-            margin-right: 10px;
-        }
+.logo-section img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    object-fit: contain;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
 
-        .logo-text {
-            font-weight: bold;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-family: 'Merriweather', serif;
-            color: black;
-            margin: 0;
-        }
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
 
+.logo-text {
+	font-weight: bold;
+	font-size: clamp(2rem, 4vw, 3.5rem);
+	font-family: 'Merriweather', serif;
+	color: black;
+	margin: 0;
+}
         .button-container {
             display: flex;
             align-items: center;
@@ -74,37 +94,37 @@
             padding: 0;
         }
 
-        .navigate {
-	       display: flex;
-               justify-content: center;
-            font-size: clamp(10px, 2vw, 25px);
-            background-color: #A6C6D3;
-            animation: slideright 0.8s ease-out 0.7s forwards;
-            opacity: 0;
-			gap: 5%;
-        }
+.navigate {
+   display: flex;
+	   justify-content: center;
+	font-size: clamp(10px, 2vw, 25px);
+	background-color: #A6C6D3;
+	animation: slideright 0.8s ease-out 0.7s forwards;
+	opacity: 0;
+	gap: 5%;
+}
 
-        .navigate a {
-            display: inline-flex;
-            align-items: center;
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 3px;
-            transition: background-color 0.3s ease;
-			margin: 0.5%;
-        }
+.navigate a {
+	display: inline-flex;
+	align-items: center;
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: background-color 0.3s ease;
+	margin: 0.5%;
+}
 
-        .navigate a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+.navigate a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
 
-        .navigate img {
-            vertical-align: middle;
-            margin-right: 0.5vw;
-            width: 25px;
-            height: 25px;
-        }
+.navigate img {
+	vertical-align: middle;
+	margin-right: 0.5vw;
+	width: 25px;
+	height: 25px;
+}
 
 		@media (max-width: 600px) {
 		  .navigate img {
@@ -606,6 +626,7 @@ function closePopup(id) {
             margin-top: 20px;
             color: #333;
         }	
+
 
 
 
