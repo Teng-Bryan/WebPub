@@ -25,7 +25,7 @@
       <a class="navItem" href="contact_us.html"><img src="bryanpictures/ContactUs.png" alt="Contact Us" width="20" height="20"><span>Contact Us</span></a>
     </div>
 
-    <!-- PHONE PRODUCT (NOW FIRST) -->
+    <!-- PHONE PRODUCT (FIRST) -->
     <div class="phone-showcase">
         <h1 class="phone-title">Samsung Galaxy S24</h1>
         <div class="phone-description">Sky high productivity with cutting-edge technology.</div>
@@ -110,56 +110,56 @@
 
   </div>
 
-<script>
+	<script>
 		const products = [
-	  { id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
-	  { id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
-	  { id: 8, name: "Samsung Galaxy Tab S9", type: "Tablet", price: 799, image: "aarushpictures/tabs7gal.png" }
+		{ id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
+		{ id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
+		{ id: 8, name: "Samsung Galaxy Tab S9", type: "Tablet", price: 799, image: "aarushpictures/tabs7gal.png" }
 	];
 	
-	    function buyNow(productId) {
-	  const user = localStorage.getItem("loggedInUser");
+		function buyNow(productId) {
+			const user = localStorage.getItem("loggedInUser");
 	 
-	 if (!user) {
-        alert("Please sign in to make a purchase.");
-        return;
-      }
+			if (!user) {
+				alert("Please sign in to make a purchase.");
+				return;
+			}
+			
+			const product = products.find(p => p.id === productId);
+			sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+			window.location.href = "Product_Details.html";
+			}
+		
+		function scrollToTop() {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+		
+		function logout() {
+			localStorage.removeItem("loggedInUser");
+			window.location.reload();
+		}
+		
+		// Auth buttons functionality
+		const authButtons = document.getElementById("authButtons");
+		const username = localStorage.getItem("loggedInUser");
+		
+		if (username) {
+		// User is logged in
+			authButtons.innerHTML = `
+			<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+			<button onclick="logout()" class="signup-btn">Logout</button>
+		`;
+		} 
+		else {
+		// Not logged in
+		authButtons.innerHTML = `
+			<a href="signin.html" class="auth-btn">Sign In</a>
+			<a href="signup.html" class="signup-btn">Sign Up</a>
+		`;
+		}
 
-	  const product = products.find(p => p.id === productId);
-	  sessionStorage.setItem("selectedProduct", JSON.stringify(product));
-	  window.location.href = "Product_Details.html";
-	}
-	
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function logout() {
-        localStorage.removeItem("loggedInUser");
-        window.location.reload();
-    }
-
-    // Auth buttons functionality
-    const authButtons = document.getElementById("authButtons");
-    const username = localStorage.getItem("loggedInUser");
-
-    if (username) {
-        // User is logged in
-        authButtons.innerHTML = `
-            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
-            <button onclick="logout()" class="signup-btn">Logout</button>
-        `;
-    } 
-	else {
-        // Not logged in
-        authButtons.innerHTML = `
-            <a href="signin.html" class="auth-btn">Sign In</a>
-            <a href="signup.html" class="signup-btn">Sign Up</a>
-        `;
-    }
-
-    // Bookmark reminder functionality
-    window.onload = function () {
+    	// Bookmark reminder functionality
+    	window.onload = function () {
         const user = localStorage.getItem("loggedInUser");
         if (!user) return;  // not signed in
 
@@ -170,7 +170,7 @@
                   || JSON.parse(localStorage.getItem(keyOld)) 
                   || [];
 
-        // Also check for old single bookmark format
+        // check for old single bookmark format
         const oldBookmark = localStorage.getItem(`bookmark_${user}`);
         if (oldBookmark && !Array.isArray(bmarks)) {
             bmarks = [oldBookmark];
@@ -211,7 +211,6 @@
                     </a>`;
             }
             
-            // Apply styling to match the product catalogue
             banner.style.background = "#FFF7C2";
             banner.style.padding = "15px";
             banner.style.fontWeight = "bold";
@@ -230,12 +229,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
