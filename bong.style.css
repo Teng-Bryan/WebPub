@@ -95,20 +95,24 @@ html, body {
   color: white;
 }
 
-        .signup-btn {
-            font-size: clamp(15px, 2vw, 25px);
-            border-radius: 10px;
-            background-color: #A6C6D3;
-            border: none;
-            cursor: pointer;
-            padding: 1vw;
-            font-weight: medium;
-            transition: background-color 0.3s ease;
-        }
+.signup-btn {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: #A6C6D3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
 
-        .signup-btn:hover {
-            background-color: #95b5c2;
-        }
+.signup-btn:hover {
+  background-color: #95b5c2;
+}
 
         .backgroundnav {
             background-color: #A6C6D3;
@@ -648,6 +652,7 @@ function closePopup(id) {
             margin-top: 20px;
             color: #333;
         }	
+
 
 
 
