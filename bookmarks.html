@@ -59,15 +59,43 @@
     <span style="font-size: 20px">You've reached the end of your Bookmarks.</span>
     <div class="HListBanner" style="gap: 20px; padding: 10px;">
       <a class="linkButton" href="index.html">Home Page</a>
-      <a class="linkButton" href="about.html">About Us</a>
+      <a class="linkButton" href="about_us.html">About Us</a>
       <a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()">Back To Top</a>
     </div>
     <span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
-    <a class="linkButton" href="feedback.html">Feedback</a>
+    <a class="linkButton" href="Feedback_Form.html">Feedback</a>
     <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
   </div>
 
   <script>
+	  function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.reload();
+    }
+
+    // Auth buttons functionality
+    const authButtons = document.getElementById("authButtons");
+    const username = localStorage.getItem("loggedInUser");
+
+    if (username) {
+        // User is logged in
+        authButtons.innerHTML = `
+            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+            <button onclick="logout()" class="signup-btn">Logout</button>
+        `;
+    } 
+	else {
+        // Not logged in
+        authButtons.innerHTML = `
+            <a href="signin.html" class="auth-btn">Sign In</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+        `;
+    }
+	  
   // 1) your master list of all products:
   const products = [
 	  { id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
@@ -155,3 +183,4 @@
 </script>
 </body>
 </html>
+
