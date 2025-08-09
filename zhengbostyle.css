@@ -7,10 +7,10 @@ html, body {
 
         body {
             background-color: #ffffff;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', serif;
             line-height: 1.6;
 			display: flex;
-			flex-direction: column;"
+			flex-direction: column;
         }
 
         .header {
@@ -25,7 +25,6 @@ html, body {
         .logo-section {
             display: flex;
             align-items: center;
-            animation: slideDowntop 0.7s ease-out forwards;
         }
 
         .logo-section img {
@@ -46,8 +45,6 @@ html, body {
             display: flex;
             align-items: center;
             gap: 1vw;
-            animation: slideDownsignin 0.6s ease-out 0.5s forwards;
-            opacity: 0;
         }
 		
 		.Username {
@@ -107,8 +104,6 @@ html, body {
 			justify-content: center;
             font-size: clamp(10px, 2vw, 25px);
             background-color: #A6C6D3;
-            animation: slideright 0.8s ease-out 0.7s forwards;
-            opacity: 0;
 			gap: 7vw;
         }
 
@@ -150,17 +145,20 @@ html, body {
 		 }
 		
 .linkButton {
-	text-decoration: none;
-	border-radius: 10px;
-	display: inline-block;
-	text-align: center;
-	transition: background-color 0.3s ease;
-	font-family: 'Montserrat';
-	font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: black;
+  border: 1px solid #000;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', serif;
+  font-size: clamp(10px, 2vw, 20px);
 }
 
 .linkButton:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .bannerLink {
