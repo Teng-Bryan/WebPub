@@ -545,12 +545,7 @@ width:100%;
 .HListBanner {
   display: flex;
   justify-content: center;
-	margin:0;
-	margin-bottom:0;
 }
-
-
-
 
 ✅ 3. JavaScript (Open/Close Popup)
 html
@@ -626,8 +621,6 @@ function closePopup(id) {
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 10px;
-            margin: 10px 0;
         }
 
         .linkButton {
