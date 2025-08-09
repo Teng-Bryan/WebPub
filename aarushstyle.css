@@ -446,15 +446,14 @@ a.btn {
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-  right: auto;
-  top: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 9999;
-  pointer-events: none;  /* clicks pass through unless on toast */
-  align-items: center;   /* center stack */
+  z-index: 2147483647;   /* <- max it out */
+  pointer-events: none;
+  align-items: center;
 }
+
 
 .toast {
   min-width: 240px;
@@ -484,4 +483,5 @@ a.btn {
 }
 @keyframes toast-out {
   to { opacity: 0; transform: translateY(20px); }
+
 }
