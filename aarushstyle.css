@@ -1,54 +1,59 @@
 html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
+body {
+    background-color: #ffffff;
+    font-family: 'Montserrat', serif;
+    line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+}
+
 /* === Base Font Styling === */
-.MainFrame {
-  font-family: 'Montserrat';
-}
+.header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5% 1%;
+            background-color: #87CEEB;
+            min-height: 10%;
+        }
 
-.bannerText {
-  font-size: 3em;
-  font-weight: bold;
-  font-family: 'Merriweather';
-}
-.logo {
-  width: 60px;
-  height: 60px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-/* make that .container.logo-section flex-center with a little gap */
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
 
-.logo-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  /* kill the white circle: */
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
+        .logo-section img {
+            width: clamp(3.5em, 3.5vw, 4rem);
+            height: auto;
+            margin-right: 1vw;
+        }
 
+        .logo-text {
+            font-weight: bold;
+            font-size: clamp(2rem, 3vw, 4rem);
+            font-family: 'Merriweather', serif;
+            color: black;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
 
 /* === Banner and Navigation === */
 .LRbanner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
 }
 
 .HListBanner {
@@ -99,52 +104,78 @@ html, body {
   color: #005577;
 }
 
-.navItem {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-family: 'Montserrat';
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: black;
-  z-index: 1;
-  transition: color 0.3s ease;
+.bannerText {
+	font-size: clamp(15px, 3vw, 60px);
+	font-weight: bold;
+	font-family: 'Merriweather';
 }
 
-.navItem::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-  z-index: -1;
+.backgroundnav {
+    background-color: #A6C6D3;
+    width:  100%;
+    padding: 0;
 }
 
-.navItem:hover::before {
-  transform: scaleX(1);
+.navigate {
+			display: flex;
+			justify-content: center;
+            font-size: clamp(10px, 2vw, 25px);
+            background-color: #A6C6D3;
+			gap: 7vw;
+        }
+
+.navigate img {
+            vertical-align: middle;
+            margin-right: 0.5vw;
+            width: clamp(10px, 1.5vw, 25px);
+            height: auto;
+        }
+		
+.navigate a {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25vw 0.5vw;
+	border-radius: 999px;
+	font-family: 'Montserrat';
+	font-size: clamp(10px, 1.5vw, 25px);
+	font-weight: bold;
+	color: black;
+	z-index: 1;
+	transition: color 0.3s ease;
+}
+
+.navigate a::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 999px;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.3s ease;
+	z-index: -1;
+}
+
+.navigate a:hover::before {
+	transform: scaleX(1);
 }
 
 /* === Buttons === */
 .auth-btn {
-  font-size: 18px;
-  font-family: 'Montserrat';
-  border-radius: 10px;
-  background-color: transparent;
-  border: 2px solid #A6C6D3;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-right: 10px;
+	font-size: clamp(0.75rem, 1.5vw, 1rem);
+	font-family: 'Montserrat';
+	border-radius: 10px;
+	background-color: transparent;
+	border: 2px solid #A6C6D3;
+	color: white;
+	padding: 0.5vw 1vw;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-block;
+	margin-right: 0.5vw;
 }
 
 .auth-btn:hover {
@@ -153,23 +184,64 @@ html, body {
 }
 
 .signup-btn {
-  font-size: 18px;
-  font-family: 'Montserrat';
-  border-radius: 10px;
-  background-color: #A6C6D3;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
+	font-size: clamp(0.75rem, 1.5vw, 1rem);
+	font-family: 'Montserrat';
+	border-radius: 10px;
+	background-color: #A6C6D3;
+	border: none;
+	color: white;
+	padding: 0.625vw 1.25vw;
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	display: inline-block;
 }
 
 .signup-btn:hover {
   background-color: #95b5c2;
 }
+
+@media (max-width: 785px) {
+            .header {
+                flex-direction: column;
+                min-height: auto;
+                padding: 20px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+			
+			.navigate {
+			display: flex;
+			flex-direction: column;
+            background-color: #A6C6D3;
+            animation: slideright 0.8s ease-out 0.7s forwards;
+			gap: 10%;
+			}
+
+            .navigate a {
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+			}    
+			
+			.navigate img {
+			width: 13px;
+			height: 13px;
+		  }
+        }
 
 .linkButton {
   font-size: 20px;
@@ -180,6 +252,8 @@ html, body {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
   transition: background-color 0.3s ease;
+  font-family: 'Montserrat', serif;
+  font-size: clamp(10px, 2vw, 20px);
 }
 
 .linkButton:hover {
@@ -199,16 +273,13 @@ html, body {
   text-align: center;
 }
 
-
-
 .btn-modern {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
+  padding: 0.75vw 1.5vw;
   border-radius: 10px;
   font-family: 'Montserrat';
-  font-size: 17px;
+  font-size: clamp(12px, 2vw, 17px);
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -243,20 +314,20 @@ html, body {
 
 .product-catalogue h1 {
   font-family: 'Merriweather';
-  font-size: 36px;
+  font-size: clamp(20px, 3vw, 36px);
   margin-bottom: 10px;
 }
 
 .product-catalogue .subheading {
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   font-family: 'Montserrat';
   color: #333;
   margin-bottom: 30px;
 }
 
 .product-table {
-  margin: 0 auto;
-  border-spacing: 20px;
+	margin: 0 auto;
+	border-spacing: 2vw;
 }
 
 .product-card {
@@ -266,16 +337,6 @@ html, body {
   width: 380px;
   height: 260px;
   vertical-align: top;
-}
-
-.product-card img {
-  float: left;
-  width: 150px;
-  height: 150px;
-  margin-right: 15px;
-  border-radius: 12px;
-  background-color: #1e1e23;
-  object-fit: cover;
 }
 
 .product-info {
@@ -294,13 +355,13 @@ html, body {
 .product-info .type {
   color: #777;
   margin: 4px 0;
-  font-size: 17px;
+  font-size: clamp(12px, 2vw, 17px);
 }
 
 .product-info .price {
   font-weight: bold;
   margin: 4px 0;
-  font-size: 23px;
+  font-size: clamp(10px, 5vw, 25px);
 }
 
 @media (max-width: 768px) {
@@ -309,8 +370,9 @@ html, body {
   }
   .product-card {
     display: block;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 87%;
+    margin-bottom: 2vh;
+	height: 190px;
   }
 }
 
@@ -318,8 +380,8 @@ html, body {
 .slide-panel {
   position: fixed;
   top: 0;
-  right: -400px;
-  width: 350px;
+  right: -100%;
+  width: 25%;
   height: 100%;
   background: #fff;
   padding: 30px 20px;
@@ -371,9 +433,9 @@ html, body {
 /* === Image Styling === */
 img.product-img {
   float: left;
-  width: 130px;
-  height: 130px;
-  margin-right: 15px;
+  width: clamp(50px, 25vw, 130px);
+  height: clamp(50px, 25vw, 130px);
+  margin-right: 2vw;
   border-radius: 12px;
   background-color: #1e1e23;
   object-fit: cover;
