@@ -26,9 +26,9 @@
 			font-size: clamp(10px, 1.25vw, 25px);
 			font-weight: bold;
 			white-space: nowrap;
-			  overflow: hidden;
-			  text-overflow: ellipsis;
-			  max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 100%;
 		}
   </style>
 </head>
@@ -152,13 +152,12 @@
   function loadBookmarks() {
     const user = localStorage.getItem("loggedInUser");
     
-
     const bookmarksKey = `bookmarks_${user}`;
     let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
 
     if (bookmarks.length === 0) {
-      document.getElementById("bookmarksList").innerHTML =
-        "<p>No bookmarks found.</p>";
+      document.getElementById("bookmarksList").innerHTML =`
+        <p style="padding: 3vw">No bookmarks found.</p>`;
       return;
     }
 
