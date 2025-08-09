@@ -50,6 +50,28 @@
 				font-weight: bold;
 			}
 			
+			.comments {
+			  display: -webkit-box;
+			  -webkit-line-clamp: 3;
+			  -webkit-box-orient: vertical;
+			  overflow: hidden;
+			  text-overflow: ellipsis;
+			  white-space: normal;
+			  word-break: break-word;
+			  width: 180%;
+			  font-size: clamp(15px, 2vw, 25px)
+			}
+
+			.comment-table {
+			  width: 25vw;
+			  min-height: 12vw;
+			  height: 12vw;
+			  table-layout: fixed;
+			  background-color: white;
+			  border-radius: 10px;
+			  border: 1px solid #333;
+			  overflow: hidden;
+			}
 			
 		</style>
 	</head>
@@ -136,10 +158,10 @@
 		</div>
 		<!-- Reviews -->
 		<div class="HListBanner" style="background-color: #87ceeb; gap: 2vw; padding: 1%;">
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
+			<table class="comment-table" border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
+					<td class="comments" colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%;">
+						"Worth the price! Highly recommended."
 					</td>
 				</tr>
 				<tr>
@@ -149,21 +171,21 @@
 						   style="display: inline-block; margin: auto;">
 					</td>
 					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
+						Paul Lee
 					</td>
 				</tr>
 				<tr>
 					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
+						Gamer
 					</td>
 					
 				</tr>
 			</table>
 			
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
+			<table class="comment-table" border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
+					<td class="comments" colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%;">
+						"Wow, I have never seen another similar product selling for a cheaper price!"
 					</td>
 				</tr>
 				<tr>
@@ -173,21 +195,21 @@
 						   style="display: inline-block; margin: auto;">
 					</td>
 					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
+						Alice Teo
 					</td>
 				</tr>
 				<tr>
 					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
+						Accountant
 					</td>
 					
 				</tr>
 			</table>
 			
-			<table border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
+			<table class="comment-table" border="0" height="0px" style="background-color:white; border-radius:10px; border: 1px solid #333;" >
 				<tr>
-					<td colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%; font-size: clamp(15px, 2vw, 25px);">
-						"A terrific piece of praise"
+					<td class="comments" colspan="2" style="padding: 0 12%; padding-top: 7%; padding-bottom: 5%;">
+						"Impressive waiting time and the quality was up to expectations!"
 					</td>
 				</tr>
 				<tr>
@@ -197,12 +219,12 @@
 						   style="display: inline-block; margin: auto;">
 					</td>
 					<td style="font-size: clamp(7px, 2vw, 15px);">
-						Name
+						Elvis Tan
 					</td>
 				</tr>
 				<tr>
 					<td style="font-size: clamp(7px, 2vw, 15px); padding-bottom: 1%; padding-right: 5vw;">
-						Description
+						Business
 					</td>
 					
 				</tr>
