@@ -3,12 +3,6 @@ html, body {
   padding: 0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .header {
             display: flex;
             justify-content: space-between;
@@ -551,6 +545,8 @@ width:100%;
 .HListBanner {
   display: flex;
   justify-content: center;
+	margin:0;
+	margin-bottom:0;
 }
 
 
@@ -658,6 +654,7 @@ function closePopup(id) {
             margin-top: 20px;
             color: #333;
         }	
+
 
 
 
