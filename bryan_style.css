@@ -3,10 +3,6 @@ html, body {
   padding: 0;
 }
 
-.MainFrame {
-  font-family: 'Montserrat';
-}
-
 body {
     background-color: #ffffff;
     font-family: Arial, sans-serif;
@@ -722,4 +718,5 @@ body {
 	transition: background-color 0.3s ease;
 	}    
 }
+
 
