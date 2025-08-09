@@ -73,6 +73,28 @@ html, body {
             text-decoration: underline;
         }
 
+/* Auth buttons */
+.auth-btn {
+  font-size: 18px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid #A6C6D3;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.auth-btn:hover {
+  background-color: #A6C6D3;
+  color: white;
+}
+
         .signup-btn {
             font-size: clamp(15px, 2vw, 25px);
             border-radius: 10px;
@@ -626,6 +648,7 @@ function closePopup(id) {
             margin-top: 20px;
             color: #333;
         }	
+
 
 
 
