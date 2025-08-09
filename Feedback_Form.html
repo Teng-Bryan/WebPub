@@ -100,7 +100,7 @@
 					</td>
 					
 					<td style="width: 500px">
-						&nbsp;<input type="range" id="qualitySlider" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
+						&nbsp;<input type="range" id="qualitySlider" name="productQuality" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="qualityNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
@@ -126,7 +126,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
+						&nbsp;<input type="range" id="deliverySpeed" name="deliverySpeed" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="deliverySpeedNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -152,7 +152,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
+						&nbsp;<input type="range" id="customerService" name="customerService" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="customerServiceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 												
 						<script>
@@ -178,7 +178,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
+						&nbsp;<input type="range" id="productValue" name="productValue" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="productValueNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -204,7 +204,7 @@
 					</td>
 					
 					<td>
-						&nbsp;<input type="range" id="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
+						&nbsp;<input type="range" id="convenience" name="convenience" min="1" max="5" step="1" list="allowedValues" value="1" style="width: 75%;">&nbsp;
 						<span id="convenienceNo" style="display: inline-block; width: 20px; text-align: center;">1</span>
 						
 						<script>
@@ -229,14 +229,14 @@
 				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
 					Share your detailed feedback:
 				</span>
-				<textarea rows="8" cols="105" required="required" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
+				<textarea rows="8" cols="105" name="detailedFeedback" required="required" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
 			</div>	
 			
 			<div style="margin-bottom:2%;">
 				<span style="font-size: clamp(8px, 2vw, 20px); margin-left:10%;">
 					Any suggestions? &#40;Leave "N/A" if none&#41;:
 				</span>
-				<textarea rows="8" cols="105" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
+				<textarea rows="8" cols="105" name="suggestions" style="display: block; margin: 5px auto; border-radius: 10px; font-size: clamp(8px, 2vw, 20px);"></textarea>
 			</div>	
 			
 			<div align="center" style="margin-bottom:2%; margin-top:2%;">
@@ -286,12 +286,26 @@
         			<a href="signup.html?redirect=Feedback_Form.html">
             		<button class="signup-btn">Sign Up</button></a>
     				`;
-			}
+					}
 
         			function logout() {
   						localStorage.removeItem("loggedInUser");
   						window.location.reload();
 					}
+					
+					document.getElementById("Feedback_Submitted.html").addEventListener("submit", function (e) {
+					  e.preventDefault(); // Stop default form submission
+
+					  // Collect form data
+					  const formData = new FormData(this);
+					  const params = new URLSearchParams();
+					  for (const [key, value] of formData.entries()) {
+						params.append(key, value);
+					  }
+
+					  // Redirect manually with query string
+					  window.location.href = `Feedback_Submitted.html?${params.toString()}`;
+					});
 				</script>
 	</body>
 </html>
