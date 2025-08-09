@@ -49,6 +49,11 @@ html, body {
             animation: slideDownsignin 0.6s ease-out 0.5s forwards;
             opacity: 0;
         }
+		
+		.Username {
+			font-size: clamp(1rem, 2vw, 1.2rem); 
+			margin-right: 1vw;
+		}
 
         .text-link {
 		  font-size: clamp(0.75rem, 1.5vw, 1rem);
