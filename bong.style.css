@@ -3,6 +3,12 @@ html, body {
   padding: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .header {
             display: flex;
             justify-content: space-between;
@@ -652,6 +658,7 @@ function closePopup(id) {
             margin-top: 20px;
             color: #333;
         }	
+
 
 
 
