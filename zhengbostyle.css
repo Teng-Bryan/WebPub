@@ -17,9 +17,8 @@ html, body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 0.5% 1%;
             background-color: #87CEEB;
-            position: relative;
             min-height: 10%;
         }
 
@@ -30,14 +29,14 @@ html, body {
         }
 
         .logo-section img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: clamp(3.5em, 3.5vw, 4rem);
+            height: auto;
+            margin-right: 1vw;
         }
 
         .logo-text {
             font-weight: bold;
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(2rem, 3vw, 4rem);
             font-family: 'Merriweather', serif;
             color: black;
             margin: 0;
@@ -52,7 +51,7 @@ html, body {
         }
 
         .text-link {
-		  font-size: clamp(12px, 1.5vw, 18px);
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
 		  font-family: 'Montserrat';
 		  border-radius: 10px;
 		  background-color: transparent;
@@ -64,7 +63,7 @@ html, body {
 		  cursor: pointer;
 		  transition: all 0.3s ease;
 		  display: inline-block;
-		  margin-right: 10px;
+		  margin-right: 0.5vw;
            
         }
 
@@ -74,13 +73,13 @@ html, body {
         }
 
 		.signup-btn {
-		  font-size: clamp(12px, 1.5vw, 18px);
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
 		  font-family: 'Montserrat';
 		  border-radius: 10px;
 		  background-color: #A6C6D3;
 		  border: none;
 		  color: white;
-		  padding: 1vw 2vw;
+		  padding: 0.625vw 1.25vw;
 		  text-decoration: none;
 		  font-weight: bold;
 		  cursor: pointer;
@@ -111,8 +110,8 @@ html, body {
         .navigate img {
             vertical-align: middle;
             margin-right: 0.5vw;
-            width: 25px;
-            height: 25px;
+            width: clamp(10px, 1.5vw, 25px);
+            height: auto;
         }
 		
 		.navigate a {
@@ -122,7 +121,7 @@ html, body {
 		  padding: 0.25vw 0.5vw;
 		  border-radius: 999px;
 		  font-family: 'Montserrat';
-		  font-size: clamp(10px, 1vw, 25px);
+		  font-size: clamp(10px, 1.5vw, 25px);
 		  font-weight: bold;
 		  color: black;
 		  z-index: 1;
@@ -196,7 +195,7 @@ html, body {
 }
 
 .bannerText {
-	font-size: clamp(20px, 3vw, 60px);
+	font-size: clamp(15px, 3vw, 60px);
 	font-weight: bold;
 	font-family: 'Merriweather';
 }
