@@ -32,7 +32,7 @@
         
         <div class="phone-buttons" style="display: none;">
             <a href="Product_Catalogue.html#samsung-panel" class="learn-more-btn2">Learn more</a>
-            <a href="#buy" class="buy-btn2">Buy</a>
+            <button onclick="buyNow(6) class="buy-btn2">Buy</button>
         </div>
 
         <div class="phone-image-container">
@@ -40,7 +40,7 @@
             
             <div class="image-overlay-buttons2">
                 <a href="Product_Catalogue.html#samsung-panel" class="overlay-btn overlay-learn-more2">Learn more</a>
-                <a href="#buy" class="overlay-btn overlay-buy2">Buy</a>
+                <button onclick="buyNow(6) class="overlay-btn overlay-buy2">Buy</button>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
         
         <div class="laptop-buttons" style="display: none;">
             <a href="Product_Catalogue.html#asus-panel" class="learn-more-btn">Learn more</a>
-            <a href="#buy" class="buy-btn">Buy</a>
+            <button onclick="buyNow(1) class="buy-btn">Buy</button>
         </div>
 
         <div class="laptop-image-container">
@@ -64,7 +64,7 @@
             
             <div class="image-overlay-buttons">
                 <a href="Product_Catalogue.html#asus-panel" class="overlay-btn overlay-learn-more">Learn more</a>
-                <a href="#buy" class="overlay-btn overlay-buy">Buy</a>
+                <button onclick="buyNow(1) class="overlay-btn overlay-buy">Buy</button>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
         
         <div class="tablet-buttons" style="display: none;">
             <a href="Product_Catalogue.html#samsung-panel" class="learn-more-btn3">Learn more</a>
-            <a href="#buy" class="buy-btn3">Buy</a>
+            <button onclick="buyNow(8) class="buy-btn3">Buy</button>
         </div>
 
         <div class="tablet-image-container">
@@ -88,7 +88,7 @@
             
             <div class="image-overlay-buttons3">
                 <a href="Product_Catalogue.html#samsung-panel" class="overlay-btn overlay-learn-more3">Learn more</a>
-                <a href="#buy" class="overlay-btn overlay-buy3">Buy</a>
+                <button onclick="buyNow(8) class="overlay-btn overlay-buy3">Buy</button>
             </div>
         </div>
 
@@ -111,6 +111,12 @@
   </div>
 
 <script>
+		const products = [
+	  { id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
+	  { id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
+	  { id: 8, name: "Samsung Galaxy Tab S9", type: "Tablet", price: 799, image: "aarushpictures/tabs7gal.png" }
+	];
+	
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -211,6 +217,7 @@
 </script>
 </body>
 </html>
+
 
 
 
