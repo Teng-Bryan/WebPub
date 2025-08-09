@@ -1,6 +1,5 @@
 <html>
 <head>
-<div class="MainFrame">	
 <title>About Us Page</title>
   <link href="bong.style.css" rel="stylesheet"></link>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
@@ -8,7 +7,6 @@
 	
 </head>
 <body>
-<!-- Blue Banner -->
   <div class="MainFrame">
     <!-- Top Banner -->
     <div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
@@ -164,22 +162,7 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
 			<a class="linkButton" href="Feedback_Form.html" target="" style="font-size:20px; padding: 10px 20px; color: black; border: 1px solid #000;">Feedback</a>
 			<span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
 		</div>
-<script>
-	            // Apply styling to match the product catalogue
-            banner.style.background = "#FFF7C2";
-            banner.style.padding = "15px";
-            banner.style.fontWeight = "bold";
-            banner.style.fontSize = "18px";
-            banner.style.textAlign = "center";
-            banner.style.marginBottom = "15px";
-            banner.style.cursor = "pointer";
-            
-            // Insert after navigation bar (below the blue menu)
-            const navBar = document.querySelector('.HListBanner');
-            if (navBar) {
-                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
-            }
-	
+<script>	
 	function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -199,7 +182,8 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
             <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
             <button onclick="logout()" class="signup-btn">Logout</button>
         `;
-    } else {
+    } 
+	else {
         // Not logged in - show sign in and sign up buttons
         authButtons.innerHTML = `
             <a href="signin.html?redirect=contact_us.html" class="text-link">Sign In</a>
@@ -208,9 +192,26 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
             </a>
         `;
     }
+
+	            // Apply styling to match the product catalogue
+            banner.style.background = "#FFF7C2";
+            banner.style.padding = "15px";
+            banner.style.fontWeight = "bold";
+            banner.style.fontSize = "18px";
+            banner.style.textAlign = "center";
+            banner.style.marginBottom = "15px";
+            banner.style.cursor = "pointer";
+            
+            // Insert after navigation bar (below the blue menu)
+            const navBar = document.querySelector('.HListBanner');
+            if (navBar) {
+                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
+            }
+    };
 </script>
 </body>
 </html>
+
 
 
 
