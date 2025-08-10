@@ -24,7 +24,7 @@ body {
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .logo-section img {
@@ -713,4 +713,5 @@ body {
 	border-radius: 3px;
 	}    
 }
+
 
