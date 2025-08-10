@@ -129,15 +129,15 @@
 					  if (loggedInUser) {
 						authButtons.innerHTML = `
 						  <span style="font-size: clamp(1rem, 2vw, 1.2rem); 
-			margin-right: 1vw;">Welcome, <strong>${loggedInUser}</strong></span>
+					margin-right: 1vw;">Welcome, <strong>${loggedInUser}</strong></span>
 						  <button onclick="logout()" class="signup-btn">Logout</button>
 						`;
 					  } else {
 						authButtons.innerHTML = `
-						 <a href="signin.html?redirect=Feedback_Form.html">
+						 <a href="signin.html?redirect=Order_Submitted.html">
 					<button class="text-link">Sign In</button></a>
 					
-        			<a href="signup.html?redirect=Feedback_Form.html">
+        			<a href="signup.html?redirect=Order_Submitted.html">
             		<button class="signup-btn">Sign Up</button></a>
 						`;
 					  }
