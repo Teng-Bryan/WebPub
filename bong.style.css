@@ -427,8 +427,8 @@ width:100%;
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  width: 650px;
-  height: 650px;
+  width: 550px;
+  height: 550px;
 }
 
 .center-img {
@@ -653,6 +653,7 @@ width:100%;
   display: flex;
   justify-content: center;
 }
+
 
 
 
