@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>About Us Page</title>
+<title>About Us</title>
 	<link href="bong.style.css" rel="stylesheet"></link>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
@@ -58,7 +58,7 @@
 	</div>
 	
 	<!--  Text	-->
-	<div class="Ginfonorm">
+	<div class="Ginfonorm" style="max-width: 75vw; margin:0 auto">
 	<p style="font-size: clamp(8px, 3vw, 20px);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	KeElectronics was founded by Bong, Aarush, Bryan, and Zheng Bo on 10 August 2025 with a shared goal: to become one of Asia’s leading e-commerce platforms for consumer electronics.
 Our brand name is a tribute to our lecturer, Mr. Kee, who equipped us with the essential software development skills that brought our vision to life. By combining his name with our product focus, KeElectronics was born.
@@ -108,7 +108,7 @@ At KeElectronics, our vision is not only to grow as a business but to create a s
   <img src="bongpictures/picture3.png" alt="Mission Pic" class="center-img" style="width: 50vw">
 </div>
 	
-	<div class="Ginfonorm" style="max-width: 100vw">
+	<div class="Ginfonorm" style="max-width: 75vw; margin:0 auto">
 		<p style="font-size: clamp(8px, 3vw, 20px)">
 		1. To be the go-to brand for reliable, innovative and affordable electronics worldwide:</br>
 We aim to become the most trusted source for modern tech solutions by offering</br> quality-assured products at competitive prices, backed by a commitment to continuous innovation.
@@ -156,7 +156,7 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
 		</br>
 		
 		<div class="news-card" onclick="openPopup('popup1')">
-    <img src="bongpictures/newsroom3.jpg" alt="News Image">
+    <img src="bongpictures/newsroom3.png" alt="News Image">
     <div class="news-info">
       <p class="label">PRESS RELEASE</p>
       <h3>Worldwide Top 30 E-commerce Platform</h3>
@@ -253,45 +253,55 @@ We envision reshaping the e-commerce landscape by creating an intuitive, seamles
                 { id: 8, name: "Samsung Galaxy Tab S9" }
             ];
 
-            // Create banner element
-            const banner = document.createElement("div");
-            
-            if (bmarks.length === 1) {
-                const prodId = Array.isArray(bmarks) ? bmarks[0] : bmarks;
-                const prod = products.find(p => p.id === parseInt(prodId)) || { name: bmarks[0] };
-                banner.innerHTML = `
-                    👋 Hey ${user}! Remember "${prod.name}"? 
-                    <a href="Product_Catalogue.html"
-                       style="color:#005577;font-weight:bold;text-decoration:underline;">
-                        Get it while you still can!
-                    </a>`;
-            } 
-			else {
-                banner.innerHTML = `
-                    👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
-                    <a href="bookmarks.html"
-                       style="color:#005577;font-weight:bold;text-decoration:underline;">
-                        Check them out here or in your bookmarks page!
-                    </a>`;
-            }
-            
-            // Apply styling to match the product catalogue
-            banner.style.background = "#FFF7C2";
-            banner.style.padding = "15px";
-            banner.style.fontWeight = "bold";
-            banner.style.fontSize = "18px";
-            banner.style.textAlign = "center";
-            banner.style.marginBottom = "15px";
-            banner.style.cursor = "pointer";
-            
-            // Insert after navigation bar (below the blue menu)
-            const navBar = document.querySelector('.HListBanner');
-            if (navBar) {
-                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
-            }
-        }
+      // Create banner element
+      const banner = document.createElement("div");
+      if (bmarks.length === 1) {
+        const prod = products.find(p => p.id === bmarks[0]);
+        if (!prod) return;
+        banner.innerHTML = `
+          👋 Hey ${user}! Remember “${prod.name}”? 
+          <a href="#" onclick="buyNow(${prod.id})"
+             style="color:#005577;font-weight:bold;text-decoration:underline;">
+            Get it while you still can!
+          </a>`;
+      } else {
+        banner.innerHTML = `
+          👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
+          <a href="bookmarks.html"
+             style="color:#005577;font-weight:bold;text-decoration:underline;">
+            Check them out here or in your bookmarks page!
+          </a>`;
+      }
+      
+      // Apply styling
+			function styleBanner(el) {
+    el.style.background   = "#FFF7C2";
+    el.style.padding      = "15px";
+    el.style.fontWeight   = "bold";
+    el.style.fontSize     = "18px";
+    el.style.textAlign    = "center";
+    el.style.cursor       = "pointer";
+  }
+			
+      styleBanner(banner);
+      
+      // Insert after the real nav bar (below the blue menu)
+		const nav = document.querySelector('.backgroundnav') || document.querySelector('.navigate');
+
+		if (nav) {
+		  // puts the banner right under the nav bar
+		  nav.insertAdjacentElement('afterend', banner);
+		} else {
+		  // fallback: under the header if present, else at very top
+		  const header = document.querySelector('.header');
+		  if (header) {
+			header.insertAdjacentElement('afterend', banner);
+		  } else {
+			document.body.insertBefore(banner, document.body.firstChild);
+		  }
+		}
+}
     };
 </script>
 </body>
 </html>
-
