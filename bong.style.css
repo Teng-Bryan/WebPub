@@ -410,18 +410,17 @@ width:100%;
 	background-color: #87ceeb;
   }
   
- .image-row {
+  .image-row {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
   flex-wrap: wrap;
-  gap: 1vw;
 }
 
 .image-row img {
-  width: 20vw;
-  height: 20vw;
+  width: 300px;
+  height: 348px;
   object-fit: cover;
-  border-radius: 20px;
 }
 
 .pic{
@@ -438,6 +437,18 @@ width:100%;
   height: auto;
 }
 
+.logo-row {
+  display: flex;
+  justify-content: center;
+  gap: 250px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.logo {
+  width: 155px;
+  height: auto;
+}
 .mission {
 	font-family:Montserrat;
 	text-align:center;
@@ -641,3 +652,4 @@ width:100%;
   display: flex;
   justify-content: center;
 }
+
