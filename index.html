@@ -1,134 +1,117 @@
+<html>
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Homepage - KeElectronics</title>
-	<link rel="stylesheet" href="bryan_style.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="bryan_style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 </head>
 <body>
   <div class="MainFrame">
-
     <!-- Top Banner -->
-    <header class="LRbanner">
-      <div class="container logo-section">
-        <img src="bryanpictures/KeELogoWhiteTransparent2NoText.png" alt="KeElectronics Logo" class="logo-img" />
+    <div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 95px;">
+      <div class="container logo-section" >
+        <img src="bryanpictures/KeELogoWhiteTransparent2NoText.png" alt="KeElectronics Logo" width="50" height="50" class="logo-img">
         <div class="bannerText">KeElectronics</div>
       </div>
-      <div class="container" id="authButtons"></div>
-    </header>
+      <div class="container" id="authButtons" style="font-size: 20px;"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="HListBanner">
-      <a class="navItem" href="index.html">
-        <img src="bryanpictures/Home.png" alt="Home" width="20" height="20" />
-        <span>Home</span>
-      </a>
-      <a class="navItem" href="Product_Catalogue.html">
-        <img src="bryanpictures/Shop.png" alt="Products" width="20" height="20" />
-        <span>Products</span>
-      </a>
-      <a class="navItem" href="bookmarks.html">
-        <img src="aarushpictures/bkmk.png" alt="Bookmarks" width="20" height="20" />
-        <span>Bookmarks</span>
-      </a>
-      <a class="navItem" href="about_us.html">
-        <img src="bryanpictures/AboutUs.png" alt="About Us" width="20" height="20" />
-        <span>About Us</span>
-      </a>
-      <a class="navItem" href="contact_us.html">
-        <img src="bryanpictures/ContactUs.png" alt="Contact Us" width="20" height="20" />
-        <span>Contact Us</span>
-      </a>
-    </nav>
+    <div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
+      <a class="navItem" href="index.html"><img src="bryanpictures/Home.png" alt="Home" width="20" height="20"><span>Home</span></a>
+      <a class="navItem" href="Product_Catalogue.html"><img src="bryanpictures/Shop.png" alt="Products" width="20" height="20"><span>Products</span></a>
+      <a class="navItem" href="bookmarks.html"><img src="aarushpictures/bkmk.png" alt="Bookmarks" width="20" height="20"><span>Bookmarks</span></a>
+      <a class="navItem" href="about_us.html"><img src="bryanpictures/AboutUs.png" alt="About Us" width="20" height="20"><span>About Us</span></a>
+      <a class="navItem" href="contact_us.html"><img src="bryanpictures/ContactUs.png" alt="Contact Us" width="20" height="20"><span>Contact Us</span></a>
+    </div>
 
-    <!-- Bookmark Reminder Banner (injected by JS) -->
-
-    <!-- PHONE PRODUCT -->
-    <section class="phone-showcase">
+    <!-- PHONE PRODUCT (FIRST) -->
+    <div class="phone-showcase" font-size: clamp(8px, 3vw, 20px)>
         <h1 class="phone-title">Samsung Galaxy S24</h1>
-        <p class="phone-description">Sky high productivity with cutting-edge technology.</p>
+        <div class="phone-description">Sky high productivity with cutting-edge technology.</div>
         
-        <div class="phone-buttons">
+        <div class="phone-buttons" style="display: none;" font-size: clamp(8px, 3vw, 20px)>
             <a href="Product_Catalogue.html#samsung-panel" class="learn-more-btn2">Learn more</a>
             <button onclick="buyNow(6)" class="buy-btn2">Buy</button>
         </div>
 
-        <div class="phone-image-container">
-            <img src="bryanpictures/s25.png" alt="Samsung Galaxy S24" class="phone-image" />
-            <div class="image-overlay-buttons2">
+        <div class="phone-image-container" font-size: clamp(8px, 3vw, 20px)>
+            <img src="bryanpictures/s25.png" class="phone-image">
+            
+            <div class="image-overlay-buttons2" font-size: clamp(8px, 3vw, 20px)>
                 <a href="Product_Catalogue.html#samsung-panel" class="overlay-btn overlay-learn-more2">Learn more</a>
                 <button onclick="buyNow(6)" class="overlay-btn overlay-buy2">Buy</button>
             </div>
         </div>
 
-        <p class="feature-highlight2">Where Performance Meets Perfection.</p>
-    </section>
+        <p class="feature-highlight2" font-size: clamp(8px, 3vw, 20px)>Where Performance Meets Perfection.</p>
+    </div>
 
     <!-- GAP BETWEEN PRODUCTS -->
-    <div class="product-gap"></div>
-
+    <div style="height: 20px;"></div font-size: clamp(8px, 3vw, 20px)>
     <!-- LAPTOP PRODUCT -->
-    <section class="laptop-showcase">
+    <div class="laptop-showcase" font-size: clamp(8px, 3vw, 20px)>
         <h1 class="laptop-title">ASUS TUF Gaming A14</h1>
-        <p class="laptop-description">Maximize output. Minimize effort. Master the future.</p>
+        <div class="laptop-description">Maximize output. Minimize effort. Master the future.</div>
         
-        <div class="laptop-buttons">
+        <div class="laptop-buttons" style="display: none;">
             <a href="Product_Catalogue.html#asus-panel" class="learn-more-btn">Learn more</a>
             <button onclick="buyNow(1)" class="buy-btn">Buy</button>
         </div>
 
         <div class="laptop-image-container">
-            <img src="bryanpictures/laptop.png" alt="ASUS TUF Gaming A14" class="laptop-image" />
+            <img src="bryanpictures/laptop.png" class="laptop-image">
+            
             <div class="image-overlay-buttons">
                 <a href="Product_Catalogue.html#asus-panel" class="overlay-btn overlay-learn-more">Learn more</a>
                 <button onclick="buyNow(1)" class="overlay-btn overlay-buy">Buy</button>
             </div>
         </div>
 
-        <p class="feature-highlight">The Choice of Driven Professionals.</p>
-    </section>
+        <p class="feature-highlight" font-size: clamp(8px, 3vw, 20px)>The Choice of Driven Professionals.</p>
+    </div>
 
     <!-- GAP BETWEEN PRODUCTS -->
-    <div class="product-gap"></div>
-
+    <div style="height: 20px;" font-size: clamp(8px, 3vw, 20px)></div>
     <!-- TABLET PRODUCT -->
-    <section class="tablet-showcase">
+    <div class="tablet-showcase" font-size: clamp(8px, 3vw, 20px)>
         <h1 class="tablet-title">Samsung Galaxy Tab S9</h1>
-        <p class="tablet-description">Reaching new heights with intelligent solutions.</p>
+        <div class="tablet-description">Reaching new heights with intelligent solutions.</div>
         
-        <div class="tablet-buttons">
+        <div class="tablet-buttons" style="display: none;">
             <a href="Product_Catalogue.html#galaxytab-panel" class="learn-more-btn3">Learn more</a>
             <button onclick="buyNow(8)" class="buy-btn3">Buy</button>
         </div>
 
         <div class="tablet-image-container">
-            <img src="bryanpictures/tabs7gal.png" alt="Samsung Galaxy Tab S9" class="tablet-image" />
+            <img src="bryanpictures/tabs7gal.png" class="tablet-image">
+            
             <div class="image-overlay-buttons3">
                 <a href="Product_Catalogue.html#galaxytab-panel" class="overlay-btn overlay-learn-more3">Learn more</a>
                 <button onclick="buyNow(8)" class="overlay-btn overlay-buy3">Buy</button>
             </div>
         </div>
 
-        <p class="feature-highlight3">Built for Professional Excellence.</p>
-    </section>
+        <p class="feature-highlight3" font-size: clamp(8px, 3vw, 20px)>Built for Professional Excellence.</p>
+    </div>
 	
 	<!-- Footer -->
-    <footer class="VListBanner">
+    <div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;" font-size: clamp(8px, 3vw, 20px)>
       <div class="bannerText">End of the line!</div>
-      <span class="footer-text">You've reached the end of the Homepage.</span>
-      <nav class="HListBanner footer-links">
+      <span style="font-size: 20px">You've reached the end of the Homepage.</span>
+      <div class="HListBanner" style="gap: 20px; padding: 10px;">
         <a class="linkButton" href="about_us.html">About Us</a>
         <a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()">Back To Top</a>
-      </nav>
-      <span class="footer-text">Have any feedback for us? Leave it down here!</span>
+      </div>
+      <span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
       <a class="linkButton" href="Feedback_Form.html">Feedback</a>
-      <span class="copyright">© 2025 KeElectronics. All rights reserved.</span>
-    </footer>
+      <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
+    </div>
 
   </div>
 
-  <script>
+	<script>
 		const products = [
 		{ id: 1, name: "ASUS TUF Gaming A14", type: "Laptop", price: 1499, image: "aarushpictures/asusa14.jpg" },
 		{ id: 6, name: "Samsung Galaxy S24", type: "Smartphone", price: 899, image: "aarushpictures/s25.png" },
@@ -146,7 +129,7 @@
 			const product = products.find(p => p.id === productId);
 			sessionStorage.setItem("selectedProduct", JSON.stringify(product));
 			window.location.href = "Product_Details.html";
-		}
+			}
 		
 		function scrollToTop() {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -162,79 +145,88 @@
 		const username = localStorage.getItem("loggedInUser");
 		
 		if (username) {
+		// User is logged in
 			authButtons.innerHTML = `
 			<span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
 			<button onclick="logout()" class="signup-btn">Logout</button>
-			`;
-		} else {
-			authButtons.innerHTML = `
+		`;
+		} 
+		else {
+		// Not logged in
+		authButtons.innerHTML = `
 			<a href="signin.html" class="auth-btn">Sign In</a>
 			<a href="signup.html" class="signup-btn">Sign Up</a>
-			`;
+		`;
 		}
 
-		// Bookmark reminder functionality
-		window.onload = function () {
-			const user = localStorage.getItem("loggedInUser");
-			if (!user) return;  // not signed in
+    	// Bookmark reminder functionality
+    	window.onload = function () {
+        const user = localStorage.getItem("loggedInUser");
+        if (!user) return;  // not signed in
 
-			const keyNew = `bookmarks_${user}`;
-			const keyOld = `bookmark_${user}`;
-			let bmarks = JSON.parse(localStorage.getItem(keyNew)) 
-					  || JSON.parse(localStorage.getItem(keyOld)) 
-					  || [];
+        // Check for bookmarks using both possible keys
+        const keyNew = `bookmarks_${user}`;
+        const keyOld = `bookmark_${user}`;
+        let bmarks = JSON.parse(localStorage.getItem(keyNew)) 
+                  || JSON.parse(localStorage.getItem(keyOld)) 
+                  || [];
 
-			const oldBookmark = localStorage.getItem(`bookmark_${user}`);
-			if (oldBookmark && !Array.isArray(bmarks)) {
-				bmarks = [oldBookmark];
-			}
+        // check for old single bookmark format
+        const oldBookmark = localStorage.getItem(`bookmark_${user}`);
+        if (oldBookmark && !Array.isArray(bmarks)) {
+            bmarks = [oldBookmark];
+        }
 
-			if (bmarks.length >= 1) {
-				const products = [
-					{ id: 1, name: "ASUS TUF Gaming A14" },
-					{ id: 2, name: "MacBook Pro M3" },
-					{ id: 3, name: "HP Victus 15" },
-					{ id: 4, name: "Dell XPS 13" },
-					{ id: 5, name: "iPhone 15 Pro" },
-					{ id: 6, name: "Samsung Galaxy S24" },
-					{ id: 7, name: "iPad Pro" },
-					{ id: 8, name: "Samsung Galaxy Tab S9" }
-				];
+        if (bmarks.length >= 1) {
+            // Product data matching the catalogue
+            const products = [
+                { id: 1, name: "ASUS TUF Gaming A14" },
+                { id: 2, name: "MacBook Pro M3" },
+                { id: 3, name: "HP Victus 15" },
+                { id: 4, name: "Dell XPS 13" },
+                { id: 5, name: "iPhone 15 Pro" },
+                { id: 6, name: "Samsung Galaxy S24" },
+                { id: 7, name: "iPad Pro" },
+                { id: 8, name: "Samsung Galaxy Tab S9" }
+            ];
 
-				const banner = document.createElement("div");
-				
-				if (bmarks.length === 1) {
-					const prodId = Array.isArray(bmarks) ? bmarks[0] : bmarks;
-					const prod = products.find(p => p.id === parseInt(prodId)) || { name: bmarks[0] };
-					banner.innerHTML = `
-						👋 Hey ${user}! Remember "${prod.name}"? 
-						<a href="Product_Catalogue.html"
-						   style="color:#005577;font-weight:bold;text-decoration:underline;">
-							Get it while you still can!
-						</a>`;
-				} else {
-					banner.innerHTML = `
-						👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
-						<a href="bookmarks.html"
-						   style="color:#005577;font-weight:bold;text-decoration:underline;">
-							Check them out here or in your bookmarks page!
-						</a>`;
-				}
-				
-				banner.style.background = "#FFF7C2";
-				banner.style.padding = "15px";
-				banner.style.fontWeight = "bold";
-				banner.style.fontSize = "18px";
-				banner.style.textAlign = "center";
-				banner.style.marginBottom = "0px";
-				banner.style.cursor = "pointer";
-
-				const navBar = document.querySelector('.HListBanner');
-				if (navBar) {
-					navBar.parentNode.insertBefore(banner, navBar.nextSibling);
-				}
-			}
-		};
-  </script>
+            // Create banner element
+            const banner = document.createElement("div");
+            
+            if (bmarks.length === 1) {
+                const prodId = Array.isArray(bmarks) ? bmarks[0] : bmarks;
+                const prod = products.find(p => p.id === parseInt(prodId)) || { name: bmarks[0] };
+                banner.innerHTML = `
+                    👋 Hey ${user}! Remember "${prod.name}"? 
+                    <a href="Product_Catalogue.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Get it while you still can!
+                    </a>`;
+            } 
+			else {
+                banner.innerHTML = `
+                    👋 Hey ${user}! You have ${bmarks.length} products bookmarked. 
+                    <a href="bookmarks.html"
+                       style="color:#005577;font-weight:bold;text-decoration:underline;">
+                        Check them out here or in your bookmarks page!
+                    </a>`;
+            }
+            
+            banner.style.background = "#FFF7C2";
+            banner.style.padding = "15px";
+            banner.style.fontWeight = "bold";
+            banner.style.fontSize = "18px";
+            banner.style.textAlign = "center";
+            banner.style.marginBottom = "0px";
+            banner.style.cursor = "pointer";
+            
+            // Insert after navigation bar (below the blue menu)
+            const navBar = document.querySelector('.HListBanner');
+            if (navBar) {
+                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
+            }
+        }
+    };
+</script>
 </body>
 </html>
