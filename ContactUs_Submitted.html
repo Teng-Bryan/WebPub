@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<title>Feedback Submitted</title>
+		
+		<link href="zhengbostyle.css" rel="stylesheet"></link>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
+		
+		<style>
+			.summaryBold {
+				font-size: clamp(5px, 1.5vw, 20px);
+				font-weight: bold;
+			}
+		
+			.summaryText {
+				font-size: clamp(5px, 1.5vw, 20px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo-section">
+				<img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+				<h1 class="logo-text">KeElectronics</h1>
+			</div>
+			
+			<div class="button-container" id="authButtons">
+				<!-- Buttons will be inserted by JavaScript -->
+			</div>
+		</div>
+
+		<div class="backgroundnav">
+			<div class="navigate">
+				<a href="index.html">
+					<img src="zhengbopictures/Home.png" alt="Home" />
+					Home
+				</a>
+				<a href="Product_Catalogue.html">
+					<img src="zhengbopictures/Shop.png" alt="Products" />
+					Products
+				</a>
+				<a href="bookmarks.html">
+					<img src="aarushpictures/bkmk.png" alt="Products" />
+					Bookmarks
+				</a>
+				<a href="about_us.html">
+					<img src="zhengbopictures/AboutUs.png" alt="About Us" />
+					About Us
+				</a>
+				<a href="contact_us.html">
+					<img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
+					Contact Us
+				</a>
+			</div>
+		</div>
+		
+		<!-- Feedback Summary -->
+		<div style="width: 100%; background-color: #87ceeb; margin-top:2.5%; padding-top: 1.5%; padding-bottom: 1.5%;">
+		  <div style="width: 60%; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-family: 'Montserrat';">
+			
+			<div style="display: flex; flex-wrap: wrap; gap: 1vw">
+			  <!-- Left: Order Summary -->
+			  <div style="flex: 1; min-width: 250px;">
+				<span style="font-size: clamp(7px, 1.7vw, 25px); font-weight: bold;">Summary</span>
+				<div id="feedbackSummary"></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<!-- Thank You Text -->
+		<div class="VListBanner" style="padding: 1%; margin-top: 10%; margin-bottom: 10%; align-items: center;">
+			<span class="bannerText">Thank you for Contacting Us</span>
+			<span style="font-size: clamp(15px, 2vw, 30px)">We will investigate on this matter</span>
+			<span style="font-size: clamp(10px, 2vw, 20px); margin-top:2%">Your message will be received during working hours</span>
+			<span style="font-size: clamp(10px, 2vw, 20px);">Sorry for the inconvenience!</span>
+		</div>
+		
+		<!-- End Banner -->
+		<div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
+			<div class="bannerText">End of the line!</div>
+			<!---->
+			<span style="font-size: clamp(15px, 2vw, 20px); font-family: 'Montserrat', serif;">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+				<a class="linkButton" href="index.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="about_us.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">About Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    	</div>
+			<br/>
+			<span style="font-size: clamp(10px, 2vw, 15px); font-family: 'Montserrat', serif;">© 2025 KeElectronics. All rights reserved.</span>
+		</div>
+
+			<script>
+				  // Auth buttons functionality (using sessionStorage instead of localStorage for demo)
+		  			const authButtons = document.getElementById("authButtons");
+  					const username = localStorage.getItem("loggedInUser");
+
+        			if (username) {
+           			// User is logged in
+            		authButtons.innerHTML = `
+                		<span class="Username">Welcome, <strong>${username}</strong></span>
+                		<button onclick="logout()" class="signup-btn">Logout</button>
+            			`;
+        			} 
+					else {
+            		// Not logged in
+            		authButtons.innerHTML = `
+        			<a href="signin.html?redirect=Feedback_Form.html">
+					<button class="text-link">Sign In</button></a>
+					
+        			<a href="signup.html?redirect=Feedback_Form.html">
+            		<button class="signup-btn">Sign Up</button></a>
+    				`;
+					}
+
+        			function logout() {
+  						localStorage.removeItem("loggedInUser");
+  						window.location.reload();
+					}
+					
+					const params = new URLSearchParams(window.location.search);
+
+					const issue = params.get("issue");
+					const others = params.get("others");
+					const name = params.get("name");
+					const email = params.get("email");
+					const message = params.get("message");
+					
+					document.getElementById("feedbackSummary").innerHTML = `
+						<div><span class="summaryBold">Issue:</span> <span class="summaryText">${issue}</span></div>
+						<div><span class="summaryBold">Others:</span> <span class="summaryText">${others}</span></div>
+						<div><span class="summaryBold">How may we address you:</span> <span class="summaryText">${name}</span></div>
+						<div><span class="summaryBold">Email:</span> <span class="summaryText">${email}</span></div>
+						<div><span class="summaryBold">Tell Us More:</span> <span class="summaryText">${message}</span></div>
+					`;
+				</script>
+	</body>
+</html>
