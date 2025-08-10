@@ -1,6 +1,4 @@
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -90,7 +88,7 @@ html, body {
 		.signup-btn:hover {
 		  background-color: #95b5c2;
 }
-
+			
         .backgroundnav {
             background-color: #A6C6D3;
             width:  100%;
@@ -704,4 +702,5 @@ html, body {
 			height: 13px;
 		  }
         }
+
 
