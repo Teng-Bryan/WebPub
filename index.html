@@ -149,9 +149,9 @@
 			const user = localStorage.getItem("loggedInUser");
 	 
 			if (!user) {
-				alert("Please sign in to make a purchase.");
+				showToast('Please sign in to make a purchase.', 'error');
 				return;
-			}
+			  }
 			
 			const product = products.find(p => p.id === productId);
 			sessionStorage.setItem("selectedProduct", JSON.stringify(product));
@@ -272,6 +272,27 @@
     }
 };
 </script>
+<script>
+  function showToast(message, type = 'info') {
+    const root = document.getElementById('toast-root');
+    if (!root) return;
+
+    const el = document.createElement('div');
+    el.className = `toast toast--${type}`;
+    el.setAttribute('role', 'status');
+    el.textContent = message;
+
+    el.addEventListener('animationend', (e) => {
+      if (e.animationName === 'toast-out') el.remove();
+    });
+
+    root.appendChild(el);
+  }
+</script>
+<!-- Toast anchor -->
+<div id="toast-root" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+	
 </body>
 </html>
+
 
