@@ -379,22 +379,6 @@
       window.location.reload();
     }
 
-    function bookmark(productId, productName) {
-      const user = localStorage.getItem("loggedInUser");
-     
-      
-      const bookmarksKey = `bookmarks_${user}`;
-      let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
-      
-      if (!bookmarks.includes(productId)) {
-        bookmarks.push(productId);
-        localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
-        showToast(`${productName} has been bookmarked!`, 'success');
-      } else {
-        showToast(`${productName} is already bookmarked.`, 'info');
-      }
-    }
-
     function buyNow(productId) {
 	  const user = localStorage.getItem("loggedInUser");
 	 
@@ -421,12 +405,7 @@
   window.onload = function() {
     const user = localStorage.getItem("loggedInUser");
     if (!user) return;  // not signed in
-	
-	if (!user) {
-        alert("Please sign in to bookmark.");
-        return;
-      }
-
+	  
     // read bookmarks
     const keyNew = `bookmarks_${user}`;
     const keyOld = `bookmark_${user}`;
@@ -458,15 +437,22 @@
       // Apply styling
       styleBanner(banner);
       
-      // Insert after navigation bar (below the blue menu)
-      const navBar = document.querySelector('.HListBanner');
-      if (navBar) {
-        navBar.parentNode.insertBefore(banner, navBar.nextSibling);
-      } else {
-        // Fallback: insert at top if nav not found
-        document.body.insertBefore(banner, document.body.firstChild);
-      }
-    }
+      // Insert after the real nav bar (below the blue menu)
+const nav = document.querySelector('.backgroundnav') || document.querySelector('.navigate');
+
+if (nav) {
+  // puts the banner right under the nav bar
+  nav.insertAdjacentElement('afterend', banner);
+} else {
+  // fallback: under the header if present, else at very top
+  const header = document.querySelector('.header');
+  if (header) {
+    header.insertAdjacentElement('afterend', banner);
+  } else {
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
+}
+}
 };
 </script>
 
