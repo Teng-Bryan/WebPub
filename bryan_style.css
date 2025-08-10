@@ -703,7 +703,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	background-color: #A6C6D3;
-	animation: slideright 0.8s ease-out 0.7s forwards;
 	opacity: 0;
 	gap: 10%;
 	}
@@ -715,6 +714,5 @@ body {
 	font-weight: bold;
 	text-decoration: _;
 	border-radius: 3px;
-	transition: background-color 0.3s ease;
 	}    
 }
