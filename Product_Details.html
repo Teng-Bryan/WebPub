@@ -37,19 +37,6 @@
 			font-size: clamp(10px, 1.8vw, 20px);
 		  }
 			
-			.btn-bookmark {
-			  background-color: #ffb933;
-			  color: white;
-			  
-			  text-decoration: none;
-				border-radius: 10px;
-				display: inline-block;
-				text-align: center;
-				transition: background-color 0.3s ease;
-				font-family: 'Montserrat';
-				font-weight: bold;
-			}
-			
 			.comments {
 			  display: -webkit-box;
 			  -webkit-line-clamp: 3;
@@ -140,14 +127,16 @@
 					  <span id="product-price"></span>
 					</th>
 				  </tr>
+				   <tr>
+					<td>
+					  <span id="product-type" style="text-align: left; font-size: clamp(8px, 1.5vw, 50px); color: #757575;"></span>
+					</td>   
+				  </tr>
 				 
 				</table>
 				
-				<div class="HListBanner" style="margin-left: 1%; margin-top:15%; gap: 0.5vw;">
+				<div style="margin-left: 50%; margin-top:15%">
 					<button id="go-to-order-form" class="linkButton" style="border-radius: 10px; background-color: #87CEEB; font-weight: bold; padding: 0.5vw 1vw; color: black; font-size: clamp(10px, 2vw, 20px); border:0px;">Order</button>
-					
-					<button id="bookmark-btn" class="btn-bookmark" style="padding: 0.5vw 1vw; font-size: clamp(10px, 2vw, 20px); border:0px;">Bookmark</button>
-					
 				</div>
 			</div>
 		</div>
@@ -312,50 +301,49 @@
 
 					  if (productData) {
 						document.getElementById("product-name").textContent = productData.name;
+						document.getElementById("product-type").textContent = productData.type;
 						document.getElementById("product-price").textContent = `$${productData.price}`;
 						document.getElementById("product-image").src = productData.image;
 						document.getElementById("product-image").alt = productData.name;
 						
-						const bookmarkBtn = document.getElementById("bookmark-btn");
-						bookmarkBtn.onclick = function () {
-						  bookmark(productData.id, productData.name);
-						};
 					  } else {
 						document.body.innerHTML = "<h2 style='text-align:center;'>Product not found.</h2>";
 					  }
 					};
 					
-					//Book Mark
-					 function bookmark(productId, productName) {
-					  const user = localStorage.getItem("loggedInUser");
-					  if (!user) {
-						alert("Please sign in to bookmark products.");
-						return;
-					  }
-					  
-					  const bookmarksKey = `bookmarks_${user}`;
-					  let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey)) || [];
-					  
-					  if (!bookmarks.includes(productId)) {
-						bookmarks.push(productId);
-						localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
-						alert(productName + " has been bookmarked!");
-					  } else {
-						alert(productName + " is already bookmarked!");
-					  }
-					}
-					
 					document.getElementById("go-to-order-form").onclick = function () {
 					  // Navigate to the order form page
 					  const user = localStorage.getItem("loggedInUser");
-					  <!-- if (!user) { -->
-						<!-- alert("Please sign in to make a purchase."); -->
-						<!-- return; -->
-					  <!-- } -->
+					  if (!user) {
+						showToast('Please sign in to make a purchase.', 'error');
+						return;
+					  }
 					  
 					  window.location.href = "Order_Form.html";
 					};
 				</script>		
+				
+<!-- Toast utils (only include once per page) -->
+<script>
+  function showToast(message, type = 'info') {
+    const root = document.getElementById('toast-root');
+    if (!root) return;
+
+    const el = document.createElement('div');
+    el.className = `toast toast--${type}`;
+    el.setAttribute('role', 'status');
+    el.textContent = message;
+
+    el.addEventListener('animationend', (e) => {
+      if (e.animationName === 'toast-out') el.remove();
+    });
+
+    root.appendChild(el);
+  }
+</script>
+
+<!-- Toast anchor -->
+<div id="toast-root" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 	</body>
 </div>	
 </html>
