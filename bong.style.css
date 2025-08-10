@@ -1,117 +1,96 @@
 html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.header {
+        body {
+            background-color: #ffffff;
+            font-family: 'Montserrat', serif;
+            line-height: 1.6;
+			display: flex;
+			flex-direction: column;
+        }
+
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 0.5% 1%;
             background-color: #87CEEB;
-            position: relative;
-            min-height: 120px;
+            min-height: 10%;
         }
 
-/* === Base Font Styling === */
-.MainFrame {
-  font-family: 'Montserrat';
-}
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    animation: slideDowntop 0.7s ease-out forwards;
-}
+        .logo-section img {
+            width: clamp(3.5em, 3.5vw, 4rem);
+            height: auto;
+            margin-right: 1vw;
+        }
 
-.logo-section img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-    object-fit: contain;
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-}
+        .logo-text {
+            font-weight: bold;
+            font-size: clamp(2rem, 3vw, 4rem);
+            font-family: 'Merriweather', serif;
+            color: black;
+            margin: 0;
+        }
 
-.logo-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.logo-text {
-	font-weight: bold;
-	font-size: clamp(2rem, 4vw, 3.5rem);
-	font-family: 'Merriweather', serif;
-	color: black;
-	margin: 0;
-}
         .button-container {
             display: flex;
             align-items: center;
-            gap: 20px;
-            animation: slideDownsignin 0.6s ease-out 0.5s forwards;
-            opacity: 0;
+            gap: 1vw;
         }
+		
+		.Username {
+			font-size: clamp(1rem, 2vw, 1.2rem); 
+			margin-right: 1vw;
+		}
 
         .text-link {
-            font-size: clamp(15px, 2vw, 25px);
-            color: black;
-			padding: 1vw;
-            text-decoration: none;
-            font-weight: medium;
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
+		  font-family: 'Montserrat';
+		  border-radius: 10px;
+		  background-color: transparent;
+		  border: 2px solid #A6C6D3;
+		  color: white;
+		  padding: 0.5vw 1vw;
+		  text-decoration: none;
+		  font-weight: bold;
+		  cursor: pointer;
+		  transition: all 0.3s ease;
+		  display: inline-block;
+		  margin-right: 0.5vw;
+           
         }
 
         .text-link:hover {
-            text-decoration: underline;
+            background-color: #A6C6D3;
+			color: white;
         }
 
-/* Auth buttons */
-.auth-btn {
-  font-size: 18px;
-  font-family: 'Montserrat';
-  border-radius: 10px;
-  background-color: transparent;
-  border: 2px solid #A6C6D3;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-right: 10px;
-}
+		.signup-btn {
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
+		  font-family: 'Montserrat';
+		  border-radius: 10px;
+		  background-color: #A6C6D3;
+		  border: none;
+		  color: white;
+		  padding: 0.625vw 1.25vw;
+		  text-decoration: none;
+		  font-weight: bold;
+		  cursor: pointer;
+		  transition: background-color 0.3s ease;
+		  display: inline-block;
+		}
 
-.auth-btn:hover {
-  background-color: #A6C6D3;
-  color: white;
-}
-
-.signup-btn {
-  font-size: 18px;
-  font-family: 'Montserrat';
-  border-radius: 10px;
-  background-color: #A6C6D3;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-}
-
-.signup-btn:hover {
-  background-color: #95b5c2;
+		.signup-btn:hover {
+		  background-color: #95b5c2;
 }
 
         .backgroundnav {
@@ -120,63 +99,182 @@ html, body {
             padding: 0;
         }
 
-.navigate {
-   display: flex;
-	   justify-content: center;
-	font-size: clamp(10px, 2vw, 25px);
-	background-color: #A6C6D3;
-	animation: slideright 0.8s ease-out 0.7s forwards;
-	opacity: 0;
-	gap: 5%;
-}
+        .navigate {
+			display: flex;
+			justify-content: center;
+            font-size: clamp(10px, 2vw, 25px);
+            background-color: #A6C6D3;
+			gap: 7vw;
+        }
 
-.navigate a {
-	display: inline-flex;
-	align-items: center;
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-	border-radius: 3px;
-	transition: background-color 0.3s ease;
-	margin: 0.5%;
-}
+        .navigate img {
+            vertical-align: middle;
+            margin-right: 0.5vw;
+            width: clamp(10px, 1.5vw, 25px);
+            height: auto;
+        }
+		
+		.navigate a {
+		  position: relative;
+		  display: inline-flex;
+		  align-items: center;
+		  padding: 0.25vw 0.5vw;
+		  border-radius: 999px;
+		  font-family: 'Montserrat';
+		  font-size: clamp(10px, 1.5vw, 25px);
+		  font-weight: bold;
+		  color: black;
+		  z-index: 1;
+		  transition: color 0.3s ease;
+		}
 
-.navigate a:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-}
+		.navigate a::before {
+		  content: '';
+		  position: absolute;
+		  inset: 0;
+		  background: rgba(255, 255, 255, 0.3);
+		  border-radius: 999px;
+		  transform: scaleX(0);
+		  transform-origin: center;
+		  transition: transform 0.3s ease;
+		  z-index: -1;
+		}
 
-.navigate img {
-	vertical-align: middle;
-	margin-right: 0.5vw;
-	width: 25px;
-	height: 25px;
-}
+		.navigate a:hover::before {
+		  transform: scaleX(1);
+		 }
 
-		@media (max-width: 600px) {
-		  .navigate img {
+/* Auth buttons */
+.button-container {
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+		
+		.Username {
+			font-size: clamp(1rem, 2vw, 1.2rem); 
+			margin-right: 1vw;
+		}
+
+        .text-link {
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
+		  font-family: 'Montserrat';
+		  border-radius: 10px;
+		  background-color: transparent;
+		  border: 2px solid #A6C6D3;
+		  color: white;
+		  padding: 0.5vw 1vw;
+		  text-decoration: none;
+		  font-weight: bold;
+		  cursor: pointer;
+		  transition: all 0.3s ease;
+		  display: inline-block;
+		  margin-right: 0.5vw;
+           
+        }
+
+        .text-link:hover {
+            background-color: #A6C6D3;
+			color: white;
+        }
+
+		.signup-btn {
+		  font-size: clamp(0.75rem, 1.5vw, 1rem);
+		  font-family: 'Montserrat';
+		  border-radius: 10px;
+		  background-color: #A6C6D3;
+		  border: none;
+		  color: white;
+		  padding: 0.625vw 1.25vw;
+		  text-decoration: none;
+		  font-weight: bold;
+		  cursor: pointer;
+		  transition: background-color 0.3s ease;
+		  display: inline-block;
+		}
+
+		.signup-btn:hover {
+		  background-color: #95b5c2;
+}	
+
+        .backgroundnav {
+            background-color: #A6C6D3;
+            width:  100%;
+            padding: 0;
+        }
+		
+		@media (max-width: 785px) {
+            .header {
+                flex-direction: column;
+                min-height: auto;
+                padding: 20px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+			
+			.navigate {
+			display: flex;
+			flex-direction: column;
+            background-color: #A6C6D3;
+            animation: slideright 0.8s ease-out 0.7s forwards;
+            
+			gap: 10%;
+			}
+
+            .navigate a {
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+			}    
+			
+			.navigate img {
 			width: 13px;
 			height: 13px;
 		  }
-		}
+        }
 
-.MainFrame {
-	font-family: 'Montserrat';
-}
+
 
 .Subtitle {
-font-family: 'Merriweather';
-    background-color: #87ceeb;
-    color: black;
-    text-align: center;
-	padding:10px;
+  font-family: 'Merriweather';
+  font-size: clamp(16px, 5vw, 30px);
+  background-color: #87ceeb;
+  color: black;
+  text-align: center;
+  padding: 0.5vw 1vw;
+  width: fit-content;
+  margin: 2vw auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .linkButton {
-	text-decoration: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	display: inline-block;
-	text-align: center;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: black;
+  border: 1px solid #000;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', serif;
+  font-size: clamp(10px, 2vw, 20px);
+}
+
+.linkButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .NBarLink {
@@ -215,8 +313,8 @@ font-family: 'Merriweather';
 	flex-direction: column;
 }
 
-.BannerText {
-	font-size: 2em;
+.bannerText {
+	font-size: clamp(15px, 3vw, 60px);
 	font-weight: bold;
 	font-family: 'Merriweather';
 }
@@ -231,11 +329,6 @@ font-family: 'Merriweather';
 .container img {
     margin-left: 5px;
 	margin-right: 5px;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
 }
 
 .webform {
@@ -294,9 +387,12 @@ width:100%;
   }
   
   .Ginfonorm{
-	font-family:Montserrat;
-	text-align:center;
-	color:black;
+	margin: 2vw auto;
+	font-family: 'Montserrat';
+	color: black;
+	max-width: 90vw;
+	padding: 0 5vw;
+	box-sizing: border-box;
   }
   
   .Ginfosub{
@@ -317,14 +413,15 @@ width:100%;
  .image-row {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
   flex-wrap: wrap;
+  gap: 1vw;
 }
 
 .image-row img {
-  width: 300px;
-  height: 348px;
+  width: 20vw;
+  height: 20vw;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .pic{
@@ -341,54 +438,58 @@ width:100%;
   height: auto;
 }
 
-.logo-row {
-  display: flex;
-  justify-content: center;
-  gap: 250px;
-  margin-top: 20px;
-  align-items: stretch;
-}
-
-.logo {
-  width: 155px;
-  height: auto;
-}
-
 .mission {
 	font-family:Montserrat;
 	text-align:center;
 	color:black;	
 }
 
+.logo-container {
+  height: 120px; /* Set consistent height for all logos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .logo-row {
   display: flex;
   justify-content: center;
-  gap: 180px;
-  margin-top: 20px;
+  gap: 5vw;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 500px) {
+	.logo-row {
+	  display: flex;
+	  justify-content: center;
+	  flex-direction:column;
+	  gap: 5vw;
+	  flex-wrap: wrap;
+	  align-items: center;
+	}
 }
 
 .logotxt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 250px;
-  text-align: center;
+  max-width: 25vw;
   box-sizing: border-box;
-  height: 320px;
-  justify-content: flex-start;
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .logotxt p {
-  font-size: 14px;
+  font-size: clamp(9px, 1.5vw, 14px);
   line-height: 1.4;
+  margin: 0;
 }
 
 .newsroom{
@@ -536,132 +637,7 @@ width:100%;
   align-items: center;
 }
 
-.bannerText {
-  font-size: 3em;
-  font-weight: bold;
-  font-family: 'Merriweather';
-}
-
 .HListBanner {
   display: flex;
   justify-content: center;
 }
-
-✅ 3. JavaScript (Open/Close Popup)
-html
-Copy
-Edit
-<script>
-function openPopup(id) {
-  document.getElementById(id).style.display = "flex";
-}
-
-function closePopup(id) {
-  document.getElementById(id).style.display = "none";
-}
-</script>
-
-/* Responsive design */
-@media (max-width: 700px) {
-	.header {
-		flex-direction: column;
-		min-height: auto;
-		padding: 20px;
-	}
-
-	.logo-section {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.logo-text {
-		font-size: 2rem;
-		margin-top: 10px;
-	}
-	
-	.navigate {
-	display: flex;
-	flex-direction: column;
-	background-color: #A6C6D3;
-	animation: slideright 0.8s ease-out 0.7s forwards;
-	opacity: 0;
-	gap: 10%;
-	}
-
-	.navigate a {
-	display: inline-flex;
-	align-items: center;
-	color: black;
-	font-weight: bold;
-	text-decoration: none;
-	border-radius: 3px;
-	transition: background-color 0.3s ease;
-	}    
-}
-.VListBanner {
-  margin-top: auto;
-  padding: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bannerText {
-	font-size: clamp(20px, 3vw, 60px);
-	font-weight: bold;
-	font-family: 'Merriweather';
-}
-
-        .banner-description {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .HListBanner {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .linkButton {
-            font-size: 20px;
-            padding: 10px 20px;
-            color: black;
-            border: 1px solid #000;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.3);
-            transition: background-color 0.3s ease;
-        }
-
-        .linkButton:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .feedback-section {
-            margin-top: 20px;
-        }
-
-        .copyright {
-            font-size: 15px;
-            margin-top: 20px;
-            color: #333;
-        }	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
