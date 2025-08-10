@@ -14,136 +14,134 @@ body {
 }
 
 .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5% 1%;
-            background-color: #87CEEB;
-            min-height: 10%;
-        }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 1%;
+  background-color: #87CEEB;
+  min-height: 10%;
+}
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
+.logo-section {
+  display: flex;
+  align-items: center;
+}
 
-        .logo-section img {
-            width: clamp(3.5em, 3.5vw, 4rem);
-            height: auto;
-            margin-right: 1vw;
-        }
+.logo-section img {
+  width: clamp(3.5em, 3.5vw, 4rem);
+  height: auto;
+  margin-right: 1vw;
+}
 
-        .logo-text {
-            font-weight: bold;
-            font-size: clamp(2rem, 3vw, 4rem);
-            font-family: 'Merriweather', serif;
-            color: black;
-            margin: 0;
-        }
+.logo-text {
+  font-weight: bold;
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-family: 'Merriweather', serif;
+  color: black;
+  margin: 0;
+}
 
-        .button-container {
-            display: flex;
-            align-items: center;
-            gap: 1vw;
-        }
-		
-		.Username {
-			font-size: clamp(1rem, 2vw, 1.2rem); 
-			margin-right: 1vw;
-		}
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
 
-        .text-link {
-		  font-size: clamp(0.75rem, 1.5vw, 1rem);
-		  font-family: 'Montserrat';
-		  border-radius: 10px;
-		  background-color: transparent;
-		  border: 2px solid #A6C6D3;
-		  color: white;
-		  padding: 0.5vw 1vw;
-		  text-decoration: none;
-		  font-weight: bold;
-		  cursor: pointer;
-		  transition: all 0.3s ease;
-		  display: inline-block;
-		  margin-right: 0.5vw;
-           
-        }
+.Username {
+  font-size: clamp(1rem, 2vw, 1.2rem); 
+  margin-right: 1vw;
+}
 
-        .text-link:hover {
-            background-color: #A6C6D3;
-			color: white;
-        }
+.text-link {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid #A6C6D3;
+  color: white;
+  padding: 0.5vw 1vw;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-right: 0.5vw;
+}
 
-		.signup-btn {
-		  font-size: clamp(0.75rem, 1.5vw, 1rem);
-		  font-family: 'Montserrat';
-		  border-radius: 10px;
-		  background-color: #A6C6D3;
-		  border: none;
-		  color: white;
-		  padding: 0.625vw 1.25vw;
-		  text-decoration: none;
-		  font-weight: bold;
-		  cursor: pointer;
-		  transition: background-color 0.3s ease;
-		  display: inline-block;
-		}
+.text-link:hover {
+  background-color: #A6C6D3;
+  color: white;
+}
 
-		.signup-btn:hover {
-		  background-color: #95b5c2;
+.signup-btn {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  background-color: #A6C6D3;
+  border: none;
+  color: white;
+  padding: 0.625vw 1.25vw;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.signup-btn:hover {
+  background-color: #95b5c2;
 }	
 
-        .backgroundnav {
-            background-color: #A6C6D3;
-            width:  100%;
-            padding: 0;
-        }
+.backgroundnav {
+  background-color: #A6C6D3;
+  width:  100%;
+  padding: 0;
+}
 
-        .navigate {
-			display: flex;
-			justify-content: center;
-            font-size: clamp(10px, 2vw, 25px);
-            background-color: #A6C6D3;
-			gap: 7vw;
-        }
+.navigate {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(10px, 2vw, 25px);
+  background-color: #A6C6D3;
+  gap: 7vw;
+}
 
-        .navigate img {
-            vertical-align: middle;
-            margin-right: 0.5vw;
-            width: clamp(10px, 1.5vw, 25px);
-            height: auto;
-        }
-		
-		.navigate a {
-		  position: relative;
-		  display: inline-flex;
-		  align-items: center;
-		  padding: 0.25vw 0.5vw;
-		  border-radius: 999px;
-		  font-family: 'Montserrat';
-		  font-size: clamp(10px, 1.5vw, 25px);
-		  font-weight: bold;
-		  color: black;
-		  z-index: 1;
-		  transition: color 0.3s ease;
-		}
+.navigate img {
+    vertical-align: middle;
+    margin-right: 0.5vw;
+    width: clamp(10px, 1.5vw, 25px);
+    height: auto;
+}
 
-		.navigate a::before {
-		  content: '';
-		  position: absolute;
-		  inset: 0;
-		  background: rgba(255, 255, 255, 0.3);
-		  border-radius: 999px;
-		  transform: scaleX(0);
-		  transform-origin: center;
-		  transition: transform 0.3s ease;
-		  z-index: -1;
-		}
+.navigate a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25vw 0.5vw;
+  border-radius: 999px;
+  font-family: 'Montserrat';
+  font-size: clamp(10px, 1.5vw, 25px);
+  font-weight: bold;
+  color: black;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
 
-		.navigate a:hover::before {
-		  transform: scaleX(1);
-		 }
-		
+.navigate a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navigate a:hover::before {
+  transform: scaleX(1);
+}
 
 /* RWD For Header and Nav */
  @media (max-width: 785px) {
@@ -193,27 +191,27 @@ body {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* This ensures everything is centered */
+	align-items: center;
 	z-index: 1; 
 }
 
 .laptop-title {
-	margin: 0; /* Remove all margins */
+	margin: 0;
 	font-size: 4rem;
 	font-weight: bold;
 	color: #000000;
 	font-family: 'Merriweather', serif;
 	text-align: center;
-	width: 100%; /* Ensure full width */
+	width: 100%; 
 }
 
 .laptop-description {
 	font-size: 1.8rem;
     color: #000000;   
-    margin: 10px 0 20px 0; /* Add some spacing */
+    margin: 10px 0 20px 0;
     font-weight: 500;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 .laptop-buttons {
@@ -336,27 +334,27 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This ensures everything is centered */
+    align-items: center; 
     z-index: 1; 
 }
 
 .phone-title {
-    margin: 0; /* Remove all margins */
+    margin: 0; 
     font-size: 4rem;
     font-weight: bold;
     color: #000000;
     font-family: 'Merriweather', serif;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%; 
 }
 
 .phone-description {
     font-size: 1.8rem;
     color: #000000;   
-    margin: 10px 0 20px 0; /* Add some spacing */
+    margin: 10px 0 20px 0;
     font-weight: 500;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 .phone-buttons {
@@ -481,27 +479,27 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This ensures everything is centered */
+    align-items: center; 
     z-index: 1; 
 }
 
 .tablet-title {
-    margin: 0; /* Remove all margins */
+    margin: 0; 
     font-size: 4rem;
     font-weight: bold;
     color: #000000;
     font-family: 'Merriweather', serif;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 .tablet-description {
     font-size: 1.8rem;
     color: #000000;   
-    margin: 10px 0 20px 0; /* Add some spacing */
+    margin: 10px 0 20px 0;
     font-weight: 500;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
 }
 
 .tablet-buttons {
@@ -619,38 +617,6 @@ body {
 	width: 100%;
 }
 
-.navItem {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-family: 'Montserrat';
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: black;
-  z-index: 1;
-  transition: color 0.3s ease;
-  text-decoration: _;
-}
-
-.navItem::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.navItem:hover::before {
-  transform: scaleX(1);
-}
-
 /* === Banner and Navigation === */
 .LRbanner {
   display: flex;
@@ -680,26 +646,18 @@ body {
 }
 
 .linkButton {
-	font-size: 20px;
-	padding: 10px 20px;
-	color: black;
-	border: 1px solid #000;
-	text-decoration: none;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, 0.3);
-	transition: background-color 0.3s ease;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: black;
+  border: 1px solid #000;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', serif;
+  font-size: clamp(10px, 2vw, 20px);
 }
 
 .linkButton:hover {
-	background-color: rgba(255, 255, 255, 0.5);
-}
-
-.feedback-section {
-	margin-top: 20px;
-}
-
-.copyright {
-	font-size: 15px;
-	margin-top: 20px;
-	color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
 }
