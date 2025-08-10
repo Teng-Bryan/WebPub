@@ -1,30 +1,50 @@
 <html>
 <head>
-<div class="MainFrame">	
-<title>Contact Us Page</title>
-  <link href="bong.style.css" rel="stylesheet"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
-		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
-	
+<title>Contact Us</title>
+	<link href="bong.style.css" rel="stylesheet"></link>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></link>
 </head>
+
 <body>
     <!-- Top Banner -->
-    <div class="LRbanner" style="background-color: #87ceeb; padding: 10px 20px; height: 90px;">
-      <div class="container logo-section" >
-        <img src="aarushpictures/KeELogoWhiteTransparent2NoText.png" alt="KeElectronics Logo" width="50" height="50" class="logo-img">
-        <div class="bannerText">KeElectronics</div>
-      </div>
-      <div class="container" id="authButtons" style="font-size: 20px;"></div>
-    </div>
+    <div class="header">
+			<div class="logo-section">
+				<img src="zhengbopictures/KeELogoWhiteTransparent2NoText.png" />
+				<h1 class="logo-text">KeElectronics</h1>
+			</div>
+			
+			<div class="button-container" id="authButtons">
+				<!-- Buttons will be inserted by JavaScript -->
+			</div>
+		</div>
 
     <!-- Navigation -->
-    <div class="HListBanner" style="background-color: #A6C6D3; gap: 100px; padding: 1px;">
-      <a class="navItem" href="index.html"><img src="bongpictures/Home.png" alt="Home" width="20" height="20"><span>Home</span></a>
-      <a class="navItem" href="Product_Catalogue.html"><img src="bongpictures/Shop.png" alt="Products" width="20" height="20"><span>Products</span></a>
-      <a class="navItem" href="bookmarks.html"><img src="aarushpictures/bkmk.png" alt="Bookmarks" width="20" height="20"><span>Bookmarks</span></a>
-      <a class="navItem" href="about_us.html"><img src="bongpictures/AboutUs.png" alt="About Us" width="20" height="20"><span>About Us</span></a>
-      <a class="navItem" href="contact_us.html"><img src="bongpictures/ContactUs.png" alt="Contact Us" width="20" height="20"><span>Contact Us</span></a>
-    </div>
+    <div class="backgroundnav">
+			<div class="navigate">
+				<a href="index.html">
+					<img src="zhengbopictures/Home.png" alt="Home" />
+					Home
+				</a>
+				<a href="Product_Catalogue.html">
+					<img src="zhengbopictures/Shop.png" alt="Products" />
+					Products
+				</a>
+				<a href="bookmarks.html">
+					<img src="aarushpictures/bkmk.png" alt="Products" />
+					Bookmarks
+				</a>
+				<a href="about_us.html">
+					<img src="zhengbopictures/AboutUs.png" alt="About Us" />
+					About Us
+				</a>
+				<a href="contact_us.html">
+					<img src="zhengbopictures/ContactUs.png" alt="Contact Us" />
+					Contact Us
+				</a>
+			</div>
+		</div>
 	
 	<!-- Contact Us	-->	
 			<h2 class="Subtitle">Contact Us</h2>
@@ -32,9 +52,9 @@
 	<!-- Web Form	-->
 
 <div class="webform">
-	<form action="submit_page.html" method="get">
+	<form id="ContactUs_Submitted.html" method="get">
     <label for="issue">How may we assist you?</label>
-    <select id="issue" name="issue" style="width: 100%";>
+    <select id="issue" name="issue" required="required" style="width: 100%";>
       <option value="Missing Parts">Missing Parts</option>
       <option value="Late Delivery">Late Delivery</option>
       <option value="Warranty Claim">Warranty Claim</option>
@@ -44,65 +64,64 @@
     </select>
 
     <label for="otherText">*Others:</label>
-    <input type="text" id="otherText" name="otherText" placeholder="Please specify if others">
+    <input type="text" width="100" id="otherText" name="others" required="required" placeholder="Please specify if others">
 
     <label for="name">*How may we address you?</label>
-    <input type="text" id="name" name="name" placeholder="Name">
+    <input type="text" id="name" name="name" required="required" placeholder="Name">
 
     <label for="email">*E-mail</label>
-    <input type="email" id="email" name="email" placeholder="Email">
+    <input type="email" id="email" name="email" required="required" placeholder="Email">
 
     <label for="message">*Tell us more!</label>
-    <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
-    <button type="submit">Submit</button>
-
+    <textarea id="message" name="message" required="required" placeholder="Type your message here..."></textarea>
+    <button type="submit" style="margin-left:85%">Submit</button>
   </form>
 </div>
 </br>
+
 		<!-- General Info	-->
-	<div class="wholeG">`
-	<h2 class="Ginfosub"> General Information:</h2>
-	</style>
-	<h3 class ="Ginfo normal" input type="solid radio" name="info" value="Dial us at +65 1234 5678" />-Dial us at +65 1234 5678</h3>
-	<h3 class ="Ginfo normal">-Email us k33letronics@yahoo.com.sg</h3>
-	</br>
-	<h2 class="Ginfosub"> Address:</h2>
-	<h3 class ="Ginfo normal">-180 Ang Mo Kio Avenue, Singapore 569830</h3>
-	</br>
-	<h2 class="Ginfosub"> Operating Office Hours:</h3>
-	
-	<h3 class ="Ginfo normal">-Monday to Friday, 0800-1830</h3>
-	<h3 class ="Ginfo normal">-Lunch Time: 1300-1400</h3>
-	<h3 class ="Ginfo normal">-Closed on Public Holidays</h3>
-	</br>
+	<div class="wholeG" style="margin-bottom:5%;">
+	<div style="margin-left: 25%;">
+		<h2 class="Ginfosub"> General Information:</h2>
+		</style>
+		<h3 class ="Ginfonorm">-Dial us at +65 1234 5678</h3>
+		<h3 class ="Ginfonorm">-Email us k33letronics@yahoo.com.sg</h3>
+		</br>
+		<h2 class="Ginfosub"> Address:</h2>
+		<h3 class ="Ginfonorm">-180 Ang Mo Kio Avenue, Singapore 569830</h3>
+		</br>
+		<h2 class="Ginfosub"> Operating Office Hours:</h3>
+		
+		<h3 class ="Ginfonorm">-Monday to Friday, 0800-1830</h3>
+		<h3 class ="Ginfonorm">-Lunch Time: 1300-1400</h3>
+		<h3 class ="Ginfonorm">-Closed on Public Holidays</h3>
+		</br>
+	</div>
 	</div>
 	
-
-	
-	<!-- Stay Connected with Us!	-->
-	 <style>
-	h2 {
-    background-color: white;
-	font-family: Merriweather;
-    color: #000;
-    text-align: center;
-}
-	 </style>
-		 <h2>Stay Connected with Us!</h2>
-		  
     <!-- Footer -->
-    <div class="VListBanner" style="background-color: #87ceeb; padding: 10px; align-items: center;">
-      <div class="bannerText">End of the line!</div>
-      <span style="font-size: 20px">You've reached the end of Contact Us page.</span>
-      <div class="HListBanner" style="gap: 20px; padding: 10px;">
-        <a class="linkButton" href="index.html">Home Page</a>
-        <a class="linkButton" href="about_us.html">About Us</a>
-        <a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()">Back To Top</a>
-      </div>
-      <span style="font-size: 20px">Have any feedback for us? Leave it down here!</span>
-      <a class="linkButton" href="Feedback_Form.html">Feedback</a>
-      <span style="font-size: 15px">© 2025 KeElectronics. All rights reserved.</span>
-    </div>
+    <div class="VListBanner" style="background-color: #87ceeb; padding: 1%; align-items: center; margin-top:auto; flex: 1;">
+			<div class="bannerText">End of the line!</div>
+			<!---->
+			<span style="font-size: clamp(15px, 2vw, 20px)">You've reached the end of the Order Form.</span>
+			<div class="HListBanner" style="background-color: #87ceeb; gap: 1vw; padding: 1% 1vw; font-size: clamp(13px, 2vw, 20px);">
+				<a class="linkButton" href="index.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Home Page</a>
+				<a class="linkButton" href="contact_us.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Contact Us</a>
+				<a class="linkButton" href="javascript:void(0)" onclick="scrollToTop()" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000;">Back To Top</a>
+				<!-- Back to Top Java-->
+				<script>
+				  function scrollToTop() {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				  }
+				</script>
+		    	</div>
+                	<div style="font-size: clamp(15px, 2vw, 20px)">Have any feedback for us? Leave it down here!</div>
+			<a class="linkButton" href="Feedback_Form.html" target="" style="padding: 0.5vw 1.5vw; color: black; border: 1px solid #000; font-size: clamp(13px, 2vw, 20px);">
+			Feedback</a>
+
+			<br/>
+			<span style="font-size: clamp(10px, 2vw, 15px)">© 2025 KeElectronics. All rights reserved.</span>
+		</div>
 <script>
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -120,15 +139,18 @@
     if (username) {
         // User is logged in
         authButtons.innerHTML = `
-            <span style="font-size: 26px; margin-right: 20px;">Welcome, <strong>${username}</strong></span>
+            <span class="Username">Welcome, <strong>${username}</strong></span>
             <button onclick="logout()" class="signup-btn">Logout</button>
         `;
     } 
 	else {
         // Not logged in
         authButtons.innerHTML = `
-            <a href="signin.html" class="auth-btn">Sign In</a>
-            <a href="signup.html" class="signup-btn">Sign Up</a>
+            <a href="signin.html?redirect=Feedback_Form.html">
+					<button class="text-link">Sign In</button></a>
+					
+        			<a href="signup.html?redirect=Feedback_Form.html">
+            		<button class="signup-btn">Sign Up</button></a>
         `;
     }
 
@@ -201,13 +223,20 @@
             }
         }
     };
+	
+	document.getElementById("ContactUs_Submitted.html").addEventListener("submit", function (e) {
+		e.preventDefault(); // Stop default form submission
+
+		// Collect form data
+		const formData = new FormData(this);
+		const params = new URLSearchParams();
+		for (const [key, value] of formData.entries()) {
+			params.append(key, value);
+		}
+
+		// Redirect manually with query string
+		window.location.href = `ContactUs_Submitted.html?${params.toString()}`;
+	});
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
