@@ -151,12 +151,12 @@
 			if (!user) {
 				showToast('Please sign in to make a purchase.', 'error');
 				return;
-			  }
+			}
 			
 			const product = products.find(p => p.id === productId);
 			sessionStorage.setItem("selectedProduct", JSON.stringify(product));
 			window.location.href = "Product_Details.html";
-			}
+		}
 		
 		function scrollToTop() {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -294,6 +294,7 @@
 	
 </body>
 </html>
+
 
 
 
