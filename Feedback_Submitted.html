@@ -124,30 +124,30 @@
 					else {
             		// Not logged in
             		authButtons.innerHTML = `
-        			<a href="signin.html?redirect=Feedback_Form.html">
+        			<a href="signin.html?redirect=Feedback_Submitted.html">
 					<button class="text-link">Sign In</button></a>
 					
-        			<a href="signup.html?redirect=Feedback_Form.html">
+        			<a href="signup.html?redirect=Feedback_Submitted.html">
             		<button class="signup-btn">Sign Up</button></a>
     				`;
-			}
+					}
 
         			function logout() {
   						localStorage.removeItem("loggedInUser");
   						window.location.reload();
 					}
 					
-					 const params = new URLSearchParams(window.location.search);
+					const params = new URLSearchParams(window.location.search);
 
-					  const productQuality = params.get("productQuality");
-					  const deliverySpeed = params.get("deliverySpeed");
-					  const customerService = params.get("customerService");
-					  const productValue = params.get("productValue");
-					  const convenience = params.get("convenience");
-					  const detailedFeedback = params.get("detailedFeedback");
-					  const suggestions = params.get("suggestions");
+					const productQuality = params.get("productQuality");
+					const deliverySpeed = params.get("deliverySpeed");
+					const customerService = params.get("customerService");
+					const productValue = params.get("productValue");
+					const convenience = params.get("convenience");
+					const detailedFeedback = params.get("detailedFeedback");
+					const suggestions = params.get("suggestions");
 					 
-					  document.getElementById("feedbackSummary").innerHTML = `
+					document.getElementById("feedbackSummary").innerHTML = `
 						<div><span class="summaryBold">Product Quality:</span> <span class="summaryText">${productQuality}</span></div>
 						<div><span class="summaryBold">Delivery Speed:</span> <span class="summaryText">${deliverySpeed}</span></div>
 						<div><span class="summaryBold">Customer Service:</span> <span class="summaryText">${customerService}</span></div>
@@ -155,7 +155,7 @@
 						<div><span class="summaryBold">Convenience:</span> <span class="summaryText">${convenience}</span></div>
 						<div><span class="summaryBold">Detailed Feedback:</span> <span class="summaryText">${detailedFeedback}</span></div>
 						<div><span class="summaryBold">Suggestions:</span> <span class="summaryText">${suggestions}</span></div>
-					  `;
+					`;
 				</script>
 	</body>
 </html>
