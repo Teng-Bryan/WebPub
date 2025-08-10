@@ -242,21 +242,35 @@
                     </a>`;
             }
             
-            banner.style.background = "#FFF7C2";
-            banner.style.padding = "15px";
-            banner.style.fontWeight = "bold";
-            banner.style.fontSize = "18px";
-            banner.style.textAlign = "center";
-            banner.style.marginBottom = "0px";
-            banner.style.cursor = "pointer";
-            
-            // Insert after navigation bar (below the blue menu)
-            const navBar = document.querySelector('.HListBanner');
-            if (navBar) {
-                navBar.parentNode.insertBefore(banner, navBar.nextSibling);
-            }
-        }
-    };
+            // Apply styling
+			function styleBanner(el) {
+    el.style.background   = "#FFF7C2";
+    el.style.padding      = "15px";
+    el.style.fontWeight   = "bold";
+    el.style.fontSize     = "18px";
+    el.style.textAlign    = "center";
+    el.style.cursor       = "pointer";
+  }
+			
+      styleBanner(banner);
+      
+      // Insert after the real nav bar (below the blue menu)
+		const nav = document.querySelector('.backgroundnav') || document.querySelector('.navigate');
+
+		if (nav) {
+		  // puts the banner right under the nav bar
+		  nav.insertAdjacentElement('afterend', banner);
+		} else {
+		  // fallback: under the header if present, else at very top
+		  const header = document.querySelector('.header');
+		  if (header) {
+			header.insertAdjacentElement('afterend', banner);
+		  } else {
+			document.body.insertBefore(banner, document.body.firstChild);
+		  }
+		}
+    }
+};
 </script>
 </body>
 </html>
