@@ -277,68 +277,16 @@ html, body {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.NBarLink {
-	font-weight: bold;
-	text-decoration: underline;
-	color: black; 
-	padding: 0;
-	font-size:25px;
-	border: none;
-	cursor: pointer;
-	transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-
-.NBar:hover {
-	text-shadow: 0 0 8px #ffffff, 0 0 12px #87ceeb;
-	color: #005577;
-}
-
-.Blubanner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #87CEEB;
-            position: relative;
-            min-height: 120px;
-}
-
-.NavBar {
-  display: flex;
-  justify-content: center;
-}
-
-.EBanner {
-	display: flex;
-	flex-direction: column;
-}
-
 .bannerText {
 	font-size: clamp(15px, 3vw, 60px);
 	font-weight: bold;
 	font-family: 'Merriweather';
 }
 
-.container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-	margin: 0;
-}
-	
-.container img {
-    margin-left: 5px;
-	margin-right: 5px;
-}
-
-.webform {
-font-family: 'Montserrat';
-font-weight: bold;
-width:100%;
-}
   .webform {
-    width: 150%;
-    max-width: 600px;
+    max-width: 60%;
+	min-width: 250px;
+	font-weight: bold;
     margin: auto;
     font-family: 'Montserrat';
   }
@@ -346,7 +294,8 @@ width:100%;
   .webform label {
     font-weight: bold;
     display: block;
-    margin: 15px 0 5px;
+	font-size: clamp(12px, 2vw, 20px);
+    margin: 1vw 0 0.5vw;
   }
 
   .webform input,
@@ -354,31 +303,32 @@ width:100%;
   .webform textarea {
 	text-align: left;
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: 0.5vw;
+    font-size: clamp(10px, 1.8vw, 16px);
     border: 1px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box;
   }
 
   .webform textarea {
-    height: 120px;
+    height: 30vw;
     resize: vertical;
   }
 
   .webform button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 16px;
+    margin-top: 2%;
+    padding: 0.5vw 1vw;
+    font-size: clamp(10px, 2vw, 20px);
     background-color: #87ceeb;
     color: black;
     border: 1px solid black;
     border-radius: 6px;
     cursor: pointer;
+	transition: background-color 0.3s ease;
   }
   
  .webform button:hover {
-    background-color: white;
+    background-color: #B0E0E6;
   }
   
   .webform {
@@ -398,12 +348,13 @@ width:100%;
   .Ginfosub{
 	font-family:Merriweather;
 	background-color:#A6C6D3; 
+	font-size: clamp(13px, 2vw, 40px);
 	text-align:left;
 	color:black;
   }
    .wholeG {
 	background-color:#A6C6D3; 
-	padding: 1px;
+	padding: 0.5vw;
   }
   .submit{
 	text-align:center;
@@ -413,13 +364,14 @@ width:100%;
   .image-row {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  gap: 1vw;
   flex-wrap: wrap;
 }
 
 .image-row img {
-  width: 300px;
-  height: 348px;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -427,14 +379,13 @@ width:100%;
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  width: 600px;
-  height: 600px;
+  height: auto;
 }
 
 .center-img {
   display: block;
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 33%;
   height: auto;
 }
 
@@ -653,13 +604,4 @@ width:100%;
   display: flex;
   justify-content: center;
 }
-
-
-
-
-
-
-
-
-
 
